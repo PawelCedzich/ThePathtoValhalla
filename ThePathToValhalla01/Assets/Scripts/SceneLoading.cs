@@ -8,6 +8,7 @@ public class SceneLoading : MonoBehaviour
 {
     [SerializeField]
     private Image _progressBar;
+
     void Start()
     {
         StartCoroutine(LoadAsyncOperation());
