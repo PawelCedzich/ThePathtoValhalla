@@ -6,23 +6,29 @@ using UnityEngine.UI;
 
 public class SceneLoading : MonoBehaviour
 {
-    [SerializeField]
-    private Image _progressBar;
+    [SerializeField] private Image _progressBar;
 
     void Start()
     {
-        StartCoroutine(LoadAsyncOperation());
+        StartCoroutine(LoadLevelAsync());
     }
 
-    IEnumerator LoadAsyncOperation()
+    IEnumerator LoadLevelAsync()
     {
-        AsyncOperation gameLevel = SceneManager.LoadSceneAsync(2);
-        
-        while(gameLevel.progress < 1)
-        {
-            _progressBar.fillAmount = gameLevel.progress;
-            yield return new WaitForEndOfFrame();
-        }
+        yield return null;
 
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(2);
+        asyncOperation.allowSceneActivation = false;
+        Debug.Log("Pro: " + asyncOperation.progress);
+        while (asyncOperation.isDone != true)
+        {
+            Debug.Log("Loading progress: " + (asyncOperation.progress * 100) + "%");
+            _progressBar.fillAmount = asyncOperation.progress;
+            if (asyncOperation.progress >= 0.9f)
+            {
+                asyncOperation.allowSceneActivation = true;
+            }
+            yield return null;
+        }
     }
 }
