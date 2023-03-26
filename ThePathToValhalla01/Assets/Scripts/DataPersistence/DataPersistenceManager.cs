@@ -35,6 +35,7 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame()
     {
         this.gameData = new GameData();
+        dataHandler.Save(gameData);
     }
 
     public void LoadGame()
@@ -66,14 +67,12 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
         // save that data to a file using the data handler
-        dataHandler.Save(gameData);
-
-        
+        dataHandler.Save(gameData);    
     }
 
     private void OnApplicationQuit()
     {
-        SaveGame();
+        //SaveGame();
     }
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()
