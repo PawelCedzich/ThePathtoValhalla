@@ -27,19 +27,21 @@ public class DataPersistenceManager : MonoBehaviour
     public void Start()
     { 
         Debug.Log("starting");
-        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
-        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
 
     public void NewGame()
     {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         this.gameData = new GameData();
         dataHandler.Save(gameData);
     }
 
     public void LoadGame()
     {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
+        this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         // load any saved data from a file using the data handler
         this.gameData = dataHandler.Load();
 
