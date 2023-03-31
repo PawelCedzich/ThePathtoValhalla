@@ -8,12 +8,8 @@ public class GameData
 {
     public Vector3 playerPosition;
     public Quaternion playerRotation;
-    public int maxHealth;
-    public int currentHealth;
 
     public GameData() {
-        maxHealth = 50;
-        currentHealth = 50;
         playerPosition = Vector3.zero;
         playerRotation = Quaternion.identity;
     }
