@@ -10,15 +10,20 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        SetHealthBar();
+    }
+
+    public void SetHealthBar()
+    {
         healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(10);
+            TakeDamage(5);
         }
     }
 

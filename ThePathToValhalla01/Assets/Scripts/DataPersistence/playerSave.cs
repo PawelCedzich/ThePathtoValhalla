@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class playerSave : MonoBehaviour, IDataPersistence
 {
+    public PlayerStats playerStats;
+
     public void LoadData(GameData data)
     {
+
         Debug.Log("loading player position");
         this.transform.position = data.playerPosition;
         Debug.Log("loading player rotation");
         this.transform.rotation = data.playerRotation;
+
+        Debug.Log("loading player stats");
+        this.playerStats.maxHealth = data.maxHealth;
+        this.playerStats.currentHealth = data.currentHealth;
+        this.playerStats.SetHealthBar();
     }
 
     public void SaveData(GameData data)
@@ -17,5 +25,7 @@ public class playerSave : MonoBehaviour, IDataPersistence
         Debug.Log("saving player position");
         data.playerPosition = this.transform.position;
         data.playerRotation = this.transform.rotation;
+        data.maxHealth = this.playerStats.maxHealth;
+        data.currentHealth = this.playerStats.currentHealth;
     }
 }
