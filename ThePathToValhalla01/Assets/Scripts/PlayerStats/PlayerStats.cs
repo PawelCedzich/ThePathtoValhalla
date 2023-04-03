@@ -11,11 +11,13 @@ public class PlayerStats : MonoBehaviour
     private int maxLevel = 25;
     public int currentLevel = 0;
     public int currentXP = 0;
+    public DisplayLevel displayLevel;
 
 
     void Start()
     {
         SetHealthBar();
+        SetLevelDisplay();
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class PlayerStats : MonoBehaviour
                 currentLevel++;
                 maxHealth += 2;
                 SetHealthBar();
+                SetLevelDisplay();
             } else
             {
                 currentXP = 0;
@@ -52,6 +55,11 @@ public class PlayerStats : MonoBehaviour
     {
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
+    }
+
+    public void SetLevelDisplay()
+    {
+        displayLevel.SetDisplay(currentLevel);
     }
 
     void TakeDamage(int damage)
