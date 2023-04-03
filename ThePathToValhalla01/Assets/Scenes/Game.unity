@@ -915,12 +915,12 @@ GameObject:
   - component: {fileID: 330547599}
   - component: {fileID: 330547598}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: EscMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &330547598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,7 +998,7 @@ RectTransform:
   - {fileID: 2094380017}
   - {fileID: 511784479}
   m_Father: {fileID: 842387288}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1487,7 +1487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1533,8 +1533,8 @@ RectTransform:
   m_Children:
   - {fileID: 674399838}
   - {fileID: 1465765178}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 842387288}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2583,7 +2583,7 @@ PrefabInstance:
     - target: {fileID: 8063073397250431797, guid: f0271df749728104eac22c3d897fd8ce,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8063073397250431797, guid: f0271df749728104eac22c3d897fd8ce,
         type: 3}
@@ -2826,7 +2826,7 @@ GameObject:
   - component: {fileID: 842387288}
   - component: {fileID: 842387287}
   m_Layer: 0
-  m_Name: EscapeMenu
+  m_Name: HUD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2847,6 +2847,7 @@ MonoBehaviour:
   Canvas: {fileID: 330547596}
   Camera: {fileID: 190588454}
   CameraMov: {fileID: 165158795}
+  PlayerHUD: {fileID: 484222184}
   Paused: 0
 --- !u!4 &842387288
 Transform:
@@ -2860,9 +2861,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 484222188}
   - {fileID: 330547601}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845766355
 GameObject:
@@ -4765,6 +4767,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 50
   healthBar: {fileID: 1465765181}
+  currentLevel: 0
 --- !u!1 &1764214107
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,6 +5354,7 @@ MonoBehaviour:
   Canvas: {fileID: 330547596}
   Camera: {fileID: 190588454}
   CameraMov: {fileID: 165158795}
+  PlayerHUD: {fileID: 0}
   Paused: 0
 --- !u!114 &2094380020
 MonoBehaviour:

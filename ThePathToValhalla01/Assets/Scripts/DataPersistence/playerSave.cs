@@ -18,6 +18,9 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.playerStats.maxHealth = data.maxHealth;
         this.playerStats.currentHealth = data.currentHealth;
         this.playerStats.SetHealthBar();
+
+        this.playerStats.currentLevel = data.currentLevel;
+        this.playerStats.currentXP = data.currentXP;
     }
 
     public void SaveData(GameData data)
@@ -25,7 +28,10 @@ public class playerSave : MonoBehaviour, IDataPersistence
         Debug.Log("saving player position");
         data.playerPosition = this.transform.position;
         data.playerRotation = this.transform.rotation;
+
         data.maxHealth = this.playerStats.maxHealth;
         data.currentHealth = this.playerStats.currentHealth;
+        data.currentLevel = this.playerStats.currentLevel;
+        data.currentXP = this.playerStats.currentXP;
     }
 }

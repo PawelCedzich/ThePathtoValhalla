@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int maxHealth;
-    public int currentHealth;
+    public int maxHealth = 50;
+    public int currentHealth = 50;
     public HealthBar healthBar;
+
+    private int maxLevel = 25;
+    public int currentLevel = 0;
+    public int currentXP = 0;
+
 
     void Start()
     {
         SetHealthBar();
-    }
-
-    public void SetHealthBar()
-    {
-        healthBar.SetMaxHealth(maxHealth);
-        healthBar.SetHealth(currentHealth);
     }
 
     void Update()
@@ -25,6 +24,34 @@ public class PlayerStats : MonoBehaviour
         {
             TakeDamage(5);
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            currentXP += 50;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (currentXP >= 100)
+        {
+            if (currentLevel < 25)
+            {
+                currentXP = 0;
+                currentLevel++;
+                maxHealth += 2;
+                SetHealthBar();
+            } else
+            {
+                currentXP = 0;
+            }
+        }
+    }
+
+    public void SetHealthBar()
+    {
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 
     void TakeDamage(int damage)
