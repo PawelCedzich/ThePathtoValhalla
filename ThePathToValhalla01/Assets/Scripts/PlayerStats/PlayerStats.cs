@@ -29,12 +29,13 @@ public class PlayerStats : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            currentXP += 50;
+            currentXP += 30;
         }
     }
 
     void FixedUpdate()
     {
+        SetLevelDisplay();
         if (currentXP >= 100)
         {
             if (currentLevel < maxLevel)
@@ -43,7 +44,6 @@ public class PlayerStats : MonoBehaviour
                 currentLevel++;
                 maxHealth += 2;
                 SetHealthBar();
-                SetLevelDisplay();
             } else
             {
                 currentXP = 0;
@@ -55,11 +55,13 @@ public class PlayerStats : MonoBehaviour
     {
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
+        healthBar.SetTXT();
     }
 
     public void SetLevelDisplay()
     {
         displayLevel.SetDisplay(currentLevel);
+        displayLevel.SetImage(currentXP);
     }
 
     void TakeDamage(int damage)
@@ -71,6 +73,6 @@ public class PlayerStats : MonoBehaviour
             currentHealth = 0;
         }
 
-        healthBar.SetHealth(currentHealth);
+        SetHealthBar();
     }
 }
