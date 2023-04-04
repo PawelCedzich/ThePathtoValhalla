@@ -37,9 +37,9 @@ public class PlayerStats : MonoBehaviour
     {
         if (currentXP >= 100)
         {
-            if (currentLevel < 25)
+            if (currentLevel < maxLevel)
             {
-                currentXP = 0;
+                currentXP -= 100;
                 currentLevel++;
                 maxHealth += 2;
                 SetHealthBar();
