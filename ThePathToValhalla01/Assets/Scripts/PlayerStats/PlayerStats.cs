@@ -61,7 +61,16 @@ public class PlayerStats : MonoBehaviour
     public void SetLevelDisplay()
     {
         displayLevel.SetDisplay(currentLevel);
-        displayLevel.SetImage(currentXP);
+        if (currentLevel == 25)
+        {
+            displayLevel.SetImage(100);
+            displayLevel.GigaChad();
+        }
+        else
+        {
+
+            displayLevel.SetImage(currentXP);
+        }
     }
 
     void TakeDamage(int damage)

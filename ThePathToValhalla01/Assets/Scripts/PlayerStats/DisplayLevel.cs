@@ -17,5 +17,8 @@ public class DisplayLevel : MonoBehaviour
     {
         image.fillAmount = (float)currentXP / 100.0f;
     }
-
+    public void GigaChad()
+    {
+        image.color = new Color32(255, 255, 0, 100);
+    }
 }
