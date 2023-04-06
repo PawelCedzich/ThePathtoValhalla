@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class InventoryPause : MonoBehaviour
+public class Pause : MonoBehaviour
 {
     public GameObject Canvas;
     public GameObject Camera;
@@ -19,7 +19,7 @@ public class InventoryPause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("escape"))
         {
             if (Paused == true)
             {
