@@ -13,6 +13,7 @@ public class GameData
     public HealthBar healthBar;
     public int currentLevel;
     public int currentXP;
+    public int currentHunger;
 
     public GameData() {
         playerPosition = Vector3.zero;
@@ -21,5 +22,6 @@ public class GameData
         currentHealth = 50;
         currentLevel = 0;
         currentXP = 0;
+        currentHunger = 0;
     }
 }

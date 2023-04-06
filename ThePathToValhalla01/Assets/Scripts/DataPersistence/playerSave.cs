@@ -19,6 +19,9 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.playerStats.currentHealth = data.currentHealth;
         this.playerStats.SetHealthBar();
 
+        this.playerStats.currentHunger = data.currentHunger;
+        this.playerStats.SetHungerBar();
+
         this.playerStats.currentLevel = data.currentLevel;
         this.playerStats.currentXP = data.currentXP;
     }
@@ -31,6 +34,9 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         data.maxHealth = this.playerStats.maxHealth;
         data.currentHealth = this.playerStats.currentHealth;
+
+        data.currentHunger = this.playerStats.currentHunger;
+
         data.currentLevel = this.playerStats.currentLevel;
         data.currentXP = this.playerStats.currentXP;
     }
