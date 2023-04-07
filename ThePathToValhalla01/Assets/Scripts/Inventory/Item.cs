@@ -15,5 +15,6 @@ public class Item : ScriptableObject
         Food,
         Weapon,
         Other,
+        Armory,
     }
 }

@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
     {
         for (int i = 0; i < inventorySlots.Length; i++)
         {
-            if (inventorySlots[i].slotItem == null)
+            if (inventorySlots[i].ItemInSlot == null)
             {
                 //add Item 
                 inventorySlots[i].AddItemToSlot(item);

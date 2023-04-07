@@ -2,10 +2,11 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class InventoryPause : MonoBehaviour
+public class Pause : MonoBehaviour
 {
     public GameObject Canvas;
     public GameObject Camera;
+    public GameObject Invenntory;
     public GameObject CameraMov;
     public GameObject PlayerHUD;
     public bool Paused = false;
@@ -19,12 +20,13 @@ public class InventoryPause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("escape"))
         {
             if (Paused == true)
             {
                 Time.timeScale = 1.0f;
                 Canvas.gameObject.SetActive(false);
+                Invenntory.gameObject.SetActive(true);
                 PlayerHUD.gameObject.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 CameraMov.gameObject.SetActive(true);
@@ -36,6 +38,7 @@ public class InventoryPause : MonoBehaviour
             {
                 Time.timeScale = 0.0f;
                 Canvas.gameObject.SetActive(true);
+                Invenntory.gameObject.SetActive(false);
                 PlayerHUD.gameObject.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.lockState = CursorLockMode.None;
@@ -50,6 +53,7 @@ public class InventoryPause : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         Canvas.gameObject.SetActive(false);
+        Invenntory.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         CameraMov.gameObject.SetActive(true);
         Cursor.visible = false;
