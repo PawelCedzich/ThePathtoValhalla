@@ -8,20 +8,24 @@ public class PlayerStats : MonoBehaviour
     public int currentHealth = 50;
     public HealthBar healthBar;
 
-    public int currentHunger = 10;
+    private int maxHunger = 10;
+    public int currentHunger = 0;
     public HungerBar hungerBar;
+
 
     private int maxLevel = 25;
     public int currentLevel = 0;
     public int currentXP = 0;
     public DisplayLevel displayLevel;
 
+
+
     void Start()
     {
         SetHealthBar();
         SetLevelDisplay();
         SetHungerBar();
-        InvokeRepeating("DecreaseHunger", 10.0f, 10.0f);
+        InvokeRepeating("IncreaseHunger", 10.0f, 10.0f);
     }
 
     void Update()
@@ -38,13 +42,12 @@ public class PlayerStats : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.J))
         {
-            IncreaseHunger(1);
+            DecreaseHunger(1);
         }
     }
 
     void FixedUpdate()
     {
-        SetHungerBar();
         SetLevelDisplay();
 
         if (currentXP >= 100)
@@ -76,25 +79,24 @@ public class PlayerStats : MonoBehaviour
         hungerBar.SetTXT();
     }
 
-    public void IncreaseHunger(int eatPoints)
+    public void IncreaseHunger()
     {
-        currentHunger += eatPoints;
-        if (currentHunger > 10)
+        if (currentHunger < 10)
         {
-            currentHunger = 10;
+            currentHunger += 1;
+        } else
+        {
+            TakeDamage(3);
         }
         SetHungerBar();
     }
 
-    public void DecreaseHunger()
+    public void DecreaseHunger(int eatPoints)
     {
-        if (currentHunger > 0)
+        currentHunger -= eatPoints;
+        if (currentHunger < 0)
         {
-            currentHunger -= 1;
-        }
-        else
-        {
-            TakeDamage(3);
+            currentHunger = 0;
         }
         SetHungerBar();
     }

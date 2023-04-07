@@ -22,6 +22,6 @@ public class GameData
         currentHealth = 50;
         currentLevel = 0;
         currentXP = 0;
-        currentHunger = 10;
+        currentHunger = 0;
     }
 }

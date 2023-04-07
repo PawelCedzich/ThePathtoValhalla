@@ -3209,7 +3209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10 / 10
+  m_text: 0 / 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b5943bb047162c4a97ec6fa993f6d1a, type: 2}
   m_sharedMaterial: {fileID: -4624089210988900884, guid: 6b5943bb047162c4a97ec6fa993f6d1a,
@@ -8642,7 +8642,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 50
   healthBar: {fileID: 1465765181}
-  currentHunger: 10
+  currentHunger: 0
   hungerBar: {fileID: 807336887}
   currentLevel: 0
   currentXP: 0
