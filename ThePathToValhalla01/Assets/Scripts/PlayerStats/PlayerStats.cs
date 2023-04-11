@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public int maxHealth = 50;
     public int currentHealth = 50;
     public HealthBar healthBar;
+    public Image getDamageEffect;
+    private float fadeSpeed = 1f;
 
     private int maxHunger = 10;
     public int currentHunger = 0;
@@ -82,9 +85,9 @@ public class PlayerStats : MonoBehaviour
     public void IncreaseHunger(int eatPoints)
     {
         currentHunger += eatPoints;
-        if (currentHunger > 10)
+        if (currentHunger > maxHunger)
         {
-            currentHunger = 10;
+            currentHunger = maxHunger;
         }
         SetHungerBar();
     }
@@ -127,5 +130,25 @@ public class PlayerStats : MonoBehaviour
         }
 
         SetHealthBar();
+        var tempColor = getDamageEffect.color;
+        tempColor.a = 0.5f;
+        getDamageEffect.color = tempColor;
+        StartCoroutine(FadeScreenEffect());
+    }
+
+    IEnumerator FadeScreenEffect()
+    {
+        var tempColor = getDamageEffect.color;
+        yield return null;
+        while (tempColor.a > 0)
+        {
+            tempColor.a -= fadeSpeed * Time.deltaTime;
+            getDamageEffect.color = tempColor;
+            yield return null;
+        }
+
+        // Ensure the canvas is fully faded out
+        tempColor.a = 0f;
+        getDamageEffect.color = tempColor;
     }
 }
