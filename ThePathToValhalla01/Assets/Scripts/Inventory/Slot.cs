@@ -2,9 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngineInternal;
-using static UnityEditor.Progress;
 using static Item;
-using Microsoft.Cci;
 using Unity.VisualScripting;
 
 public class Slot : MonoBehaviour, IDropHandler, IDataPersistence

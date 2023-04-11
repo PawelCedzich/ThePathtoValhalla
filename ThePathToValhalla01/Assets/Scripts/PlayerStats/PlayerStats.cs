@@ -28,7 +28,7 @@ public class PlayerStats : MonoBehaviour
         SetHealthBar();
         SetLevelDisplay();
         SetHungerBar();
-        InvokeRepeating("DecreaseHunger", 10.0f, 10.0f);
+        InvokeRepeating("DecreaseHunger", 5.0f, 5.0f);
     }
 
     void Update()
