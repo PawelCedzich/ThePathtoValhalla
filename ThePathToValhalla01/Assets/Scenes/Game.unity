@@ -593,6 +593,11 @@ PrefabInstance:
       propertyPath: SlotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7249055585040385000, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2186,6 +2191,11 @@ PrefabInstance:
       propertyPath: SlotType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6098281993810969046, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: m_Sprite
@@ -2314,6 +2324,11 @@ PrefabInstance:
     - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: SlotType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6098281993810969046, guid: 0b6deb78adb627149bae3734420f9b33,
@@ -2874,6 +2889,11 @@ PrefabInstance:
       propertyPath: SlotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7249055585040385000, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: m_Pivot.x
@@ -3394,6 +3414,11 @@ PrefabInstance:
     - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: SlotType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7249055585040385000, guid: 0b6deb78adb627149bae3734420f9b33,
@@ -5347,6 +5372,11 @@ PrefabInstance:
       propertyPath: SlotType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6098281993810969046, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: m_Sprite
@@ -6062,6 +6092,11 @@ PrefabInstance:
     - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: SlotType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6098281993810969046, guid: 0b6deb78adb627149bae3734420f9b33,
@@ -8763,6 +8798,7 @@ GameObject:
   - component: {fileID: 1665343564}
   - component: {fileID: 1665343563}
   - component: {fileID: 1665343565}
+  - component: {fileID: 1665343566}
   m_Layer: 5
   m_Name: UseBar
   m_TagString: Untagged
@@ -8857,6 +8893,19 @@ MonoBehaviour:
   m_Spacing: {x: 19, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1665343566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665343561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317ae4567835bc147810c4f2166f2505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlots: []
 --- !u!1 &1719832143
 GameObject:
   m_ObjectHideFlags: 0
@@ -9509,6 +9558,11 @@ PrefabInstance:
       propertyPath: SlotType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7249055585040385000, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
       propertyPath: m_Pivot.x
@@ -9945,6 +9999,7 @@ GameObject:
   - component: {fileID: 1956854334}
   - component: {fileID: 1956854333}
   - component: {fileID: 1956854332}
+  - component: {fileID: 1956854335}
   m_Layer: 5
   m_Name: Armory
   m_TagString: Untagged
@@ -10038,6 +10093,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956854330}
   m_CullTransparentMesh: 1
+--- !u!114 &1956854335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956854330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317ae4567835bc147810c4f2166f2505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlots: []
 --- !u!1 &1964365005
 GameObject:
   m_ObjectHideFlags: 0
@@ -10356,6 +10424,7 @@ GameObject:
   - component: {fileID: 1989183796}
   - component: {fileID: 1989183798}
   - component: {fileID: 1989183797}
+  - component: {fileID: 1989183799}
   m_Layer: 5
   m_Name: VisibleInv
   m_TagString: Untagged
@@ -10422,6 +10491,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989183795}
   m_CullTransparentMesh: 1
+--- !u!114 &1989183799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989183795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 317ae4567835bc147810c4f2166f2505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlots: []
 --- !u!1001 &1993586221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10839,6 +10921,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SlotType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6092429298711741659, guid: 0b6deb78adb627149bae3734420f9b33,
+        type: 3}
+      propertyPath: slotType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7249055585040385000, guid: 0b6deb78adb627149bae3734420f9b33,
         type: 3}
@@ -11640,6 +11727,7 @@ GameObject:
   - component: {fileID: 4416926083347132239}
   - component: {fileID: 6982812147933622151}
   - component: {fileID: 6982812147933622152}
+  - component: {fileID: 6982812147933622153}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -11994,8 +12082,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ee0d073f49e5744970fa327d142043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: c4e1c1d4b2301944eb05a05515cf8bf7, type: 2}
+  food: {fileID: 11400000, guid: 63a9b8e0c562daf4da44dfeacb982baa, type: 2}
+  weapon: {fileID: 11400000, guid: 3642ba880a9686d429b1de1e98a53894, type: 2}
+  other: {fileID: 11400000, guid: 653236a98a2092045bd307239d78a3e4, type: 2}
+  armory: {fileID: 11400000, guid: c4e1c1d4b2301944eb05a05515cf8bf7, type: 2}
   inventory: {fileID: 1077675562}
+--- !u!114 &6982812147933622153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926083347132227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5625876223c5d45abdf46f3be17e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invetory: {fileID: 1989183799}
 --- !u!4 &7073534504278568567
 Transform:
   m_ObjectHideFlags: 0

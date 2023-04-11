@@ -27,6 +27,7 @@ public class Slot : MonoBehaviour, IDropHandler
         BackpackSlot,
         UsableSlot,
         ArmorySlot,
+        WeaponSlot,
     }
 
     public void AddItemToSlot(Item item)
@@ -41,13 +42,32 @@ public class Slot : MonoBehaviour, IDropHandler
     {
         if (ItemInSlot == null)
         {
-            //Debug.Log(ItemPrefab.item);
 
-            ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
-            ItemPrefab.IfDropped = true;
-            ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
-            
+            if (this.slotType == SlotType.BackpackSlot)
+            {
+                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
+                ItemPrefab.IfDropped = true;
+                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
+            }
+            else if (this.slotType == SlotType.WeaponSlot && ItemPrefab.DraggedItem.itemType == ItemType.Weapon)
+            {
+                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
+                ItemPrefab.IfDropped = true;
+                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            }
+            else if (this.slotType == SlotType.UsableSlot && ItemPrefab.DraggedItem.itemType == ItemType.Food)
+            {
+                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
+                ItemPrefab.IfDropped = true;
+                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            }
+            else if (this.slotType == SlotType.ArmorySlot && ItemPrefab.DraggedItem.itemType == ItemType.Armory)
+            {
+                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
+                ItemPrefab.IfDropped = true;
+                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            }
         }
     }
 }
