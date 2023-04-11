@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [System.Serializable]
 
@@ -14,6 +15,8 @@ public class GameData
     public int currentLevel;
     public int currentXP;
     public int currentHunger;
+
+    public SerializableDictionery<int, int> ItemsInSLots;
 
     public GameData() {
         playerPosition = Vector3.zero;

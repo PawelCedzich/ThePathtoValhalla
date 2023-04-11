@@ -116,4 +116,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PrefabItem: {fileID: 5369442915850629241, guid: f2b110fbd651c7a4cb12f311bdb36423,
     type: 3}
+  slotID: 0
   slotType: 0

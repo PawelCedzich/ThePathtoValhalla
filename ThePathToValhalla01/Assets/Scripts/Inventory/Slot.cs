@@ -4,8 +4,10 @@ using UnityEngine.EventSystems;
 using UnityEngineInternal;
 using static UnityEditor.Progress;
 using static Item;
+using Microsoft.Cci;
+using Unity.VisualScripting;
 
-public class Slot : MonoBehaviour, IDropHandler
+public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 {
     public GameObject ItemInSlot
     {
@@ -19,6 +21,7 @@ public class Slot : MonoBehaviour, IDropHandler
     }
 
     public GameObject PrefabItem;
+    public int slotID = 0;
 
     public SlotType slotType = SlotType.BackpackSlot;
 
@@ -69,5 +72,23 @@ public class Slot : MonoBehaviour, IDropHandler
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        int value;
+        if (data.ItemsInSLots.TryGetValue(this.slotID, out value)) {
+            //item = new Item
+            //AddItemToSlot(vaue);
+            Debug.Log("found item for this slot");
+        }
+    }
+
+    public void SaveData(GameData data)
+    {
+    //    if (this.ItemInSlot != null)
+    //    {
+    //        data.ItemsInSLots.Add(slotID, ItemInSlot.gameObject.);
+    //    }
     }
 }
