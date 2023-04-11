@@ -129,11 +129,13 @@ public class PlayerStats : MonoBehaviour
             currentHealth = 0;
         }
 
+        if (currentHealth > 0) {
+            var tempColor = getDamageEffect.color;
+            tempColor.a = 0.5f;
+            getDamageEffect.color = tempColor;
+            StartCoroutine(FadeScreenEffect());
+        }
         SetHealthBar();
-        var tempColor = getDamageEffect.color;
-        tempColor.a = 0.5f;
-        getDamageEffect.color = tempColor;
-        StartCoroutine(FadeScreenEffect());
     }
 
     IEnumerator FadeScreenEffect()
