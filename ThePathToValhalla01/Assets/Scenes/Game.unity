@@ -1853,8 +1853,8 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: -6247945034147084998, guid: 9ad1c6c6366b43c4080f5e8f2cf46b6d,
     type: 3}
   m_AABB:
-    m_Center: {x: -0.0002411101, y: 0.00013941713, z: -0.0021018712}
-    m_Extent: {x: 0.009010125, y: 0.009024106, z: 0.01859691}
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 1, y: 1, z: 1}
   m_DirtyAABB: 0
 --- !u!1 &292644358
 GameObject:
