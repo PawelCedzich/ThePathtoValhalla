@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InteractionPointFollow : MonoBehaviour
 {
-
     Transform ParentTransform;
     void Start()
     {
@@ -17,5 +16,6 @@ public class InteractionPointFollow : MonoBehaviour
         this.transform.position = ParentTransform.transform.localPosition;
         this.transform.position += fixedPos;
         this.transform.rotation = ParentTransform.transform.rotation;
+        
     }
 }
