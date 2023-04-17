@@ -42,18 +42,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DrawWeapon",
-                    "type": "Button",
-                    "id": "58db7821-4748-4915-9c99-119fc26fc2eb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "3b2ac2f6-8076-48d3-b2e3-6fd1a0ed6092",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StrongAttack",
+                    "type": "Button",
+                    "id": "a5ecccda-ef75-4a63-a078-2875d7a48062",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -239,23 +239,23 @@
                 },
                 {
                     "name": "",
-                    "id": "ee93812e-726d-48a8-a5df-c537a9bb5123",
-                    "path": "<Keyboard>/r",
-                    "interactions": "Tap",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "DrawWeapon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0bfa4baa-f174-451f-8e76-14c5f30d16f2",
                     "path": "<Mouse>/leftButton",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "14c0a4c5-18e0-4f46-beae-02f1e403cc5a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "StrongAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

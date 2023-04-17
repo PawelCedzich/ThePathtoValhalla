@@ -15,6 +15,7 @@ public class Pause : MonoBehaviour
     {
         PlayerHUD.gameObject.SetActive(true);
         Canvas.gameObject.SetActive(false);
+        CameraMov.gameObject.SetActive(true);
     }
 
     void Update()
