@@ -7,6 +7,7 @@ public class Pause : MonoBehaviour
     public GameObject Canvas;
     public GameObject Camera;
     public GameObject CameraMov;
+    public GameObject InteractionCam;
     public GameObject PlayerHUD;
     public bool Paused = false;
 
@@ -29,6 +30,7 @@ public class Pause : MonoBehaviour
                 //Inventory.gameObject.SetActive(true);
                 PlayerHUD.gameObject.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
+                InteractionCam.gameObject.SetActive(true);
                 CameraMov.gameObject.SetActive(true);
                 Cursor.visible = false;
                 //Camera.GetComponent<AudioSource>().Play();
@@ -41,6 +43,7 @@ public class Pause : MonoBehaviour
                 //Inventory.gameObject.SetActive(false);
                 PlayerHUD.gameObject.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
+                InteractionCam.gameObject.SetActive(false);
                 CameraMov.gameObject.SetActive(false);
                 Cursor.visible = true;
                 //Camera.GetComponent<AudioSource>().Pause();
@@ -54,6 +57,7 @@ public class Pause : MonoBehaviour
         Canvas.gameObject.SetActive(false);
         //Inventory.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        InteractionCam.gameObject.SetActive(true);
         CameraMov.gameObject.SetActive(true);
         Cursor.visible = false;
         //Camera.GetComponent<AudioSource>().Play();

@@ -1,11 +1,12 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ChosenWeapon : MonoBehaviour
 {
     public InventoryManager inventory;
-    private Slot currentChosenSlot;
+    public static Slot currentChosenSlot;
     public static Item currentItem;
     void Start()
     {
@@ -35,10 +36,19 @@ public class ChosenWeapon : MonoBehaviour
         } 
     }
 
-    public static void CurrentItem(Slot slot)
+    public static Item CurrentItem(Slot slot)
     {
-        Debug.Log(slot.Instance.GetComponent<ItemPrefab>().item);
-        //currentItem = slot.GetComponent<ItemPrefab>();
-        
+
+        if (slot.Instance != null)
+        {
+            return slot.Instance.GetComponent<ItemPrefab>().item;
+        }
+        return null;
+
+    }
+    public static Slot GetCurrentSlot()
+    {
+        return currentChosenSlot;
+
     }
 }

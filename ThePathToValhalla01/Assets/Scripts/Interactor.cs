@@ -13,6 +13,8 @@ public class Interactor : MonoBehaviour
     public float InteractionRange = 50;
     public bool isInteracting = false;
     private IInteractable interactObj;
+    static private IInteractable CurentInteracted;
+    public GameObject movCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -26,30 +28,29 @@ public class Interactor : MonoBehaviour
 
         int layerMask = 10;
         if (Input.GetKeyDown(KeyCode.F)) {
-           
-            Ray r = new Ray(InteractionSource.position, InteractionSource.forward);
-            Debug.DrawRay(InteractionSource.position, InteractionSource.forward, Color.yellow, layerMask);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractionRange))
-            {
-                if (hitInfo.collider.gameObject.TryGetComponent(out interactObj))
-                {
-                    if (isInteracting == false)
-                    {
 
+            if(isInteracting == false){
+                Ray r = new Ray(InteractionSource.position, InteractionSource.forward);
+                Debug.DrawRay(InteractionSource.position, InteractionSource.forward, Color.yellow, layerMask);
+                if (Physics.Raycast(r, out RaycastHit hitInfo, InteractionRange))
+                {
+                    if (hitInfo.collider.gameObject.TryGetComponent(out interactObj))
+                    {
+                        movCamera.SetActive(false);
                         Debug.Log("interaction");
                         interactObj.Interact();
                         isInteracting = true;
-                    }
-                    else
-                    {
-
-                        Debug.Log("stopped interaction");
-                        interactObj.StopInteracting();
-                        isInteracting = false;
+                        CurentInteracted = interactObj;
                     }
                 }
+            }else{
+
+                movCamera.SetActive(true);
+                Debug.Log("stopped interaction");
+                CurentInteracted.StopInteracting();
+                isInteracting = false;
             }
-                       
+
         }
     }
 }

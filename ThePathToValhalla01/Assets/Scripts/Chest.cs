@@ -7,7 +7,7 @@ public class Chest : MonoBehaviour, IInteractable
 {
     public InventoryManager playerInventory;
     public InventoryManager chestInventory;
-    public GameObject movCamera;
+   
 
 
     public void Interact()
@@ -16,7 +16,6 @@ public class Chest : MonoBehaviour, IInteractable
         playerInventory.gameObject.SetActive(true);
         chestInventory.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-        movCamera.SetActive(false);
         Cursor.visible = true;
 
     }
@@ -28,7 +27,6 @@ public class Chest : MonoBehaviour, IInteractable
         playerInventory.gameObject.SetActive(false);
         chestInventory.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
-        movCamera.SetActive(true);
         Cursor.visible = false;
     }
 

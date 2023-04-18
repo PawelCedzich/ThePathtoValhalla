@@ -78,13 +78,17 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 
     public void LoadData(GameData data)
     {
+        Debug.Log("item loading");
         int value;
-        if (data.ItemsInSLots.TryGetValue(this.slotID, out value)) {
-            Debug.Log("found item for this slot");
+        if (data.ItemsInSLots.TryGetValue(slotID, out value)) {
+            Debug.Log("item id " + value);
         }
     }
 
     public void SaveData(GameData data)
     {
+        if (this.Instance != null) {
+            data.ItemsInSLots.Add(this.slotID, this.Instance.GetComponent<ItemPrefab>().item.ID);
+        }
     }
 }
