@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
     public StaminaBar staminaBar;
 
     private int maxHunger = 10;
-    public int currentHunger = 0;
+    public int currentHunger = 10;
     public HungerBar hungerBar;
 
     private int maxLevel = 25;
@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
         SetLevelDisplay();
         SetHungerBar();
         SetStaminaBar();
-        InvokeRepeating("DecreaseHunger", 15.0f, 15.0f);
+        InvokeRepeating("DecreaseHunger", 2.0f, 2.0f);
         InvokeRepeating("HealthRegen", 1.0f, 1.0f);
     }
 
@@ -77,7 +77,7 @@ public class PlayerStats : MonoBehaviour
 
     public void HealthRegen()
     {
-        if (currentStamina >= 90 && currentHealth < maxHealth)
+        if (currentStamina >= 90 && currentHealth < maxHealth && currentHunger > 0)
         {
             currentHealth += 1;
         }
