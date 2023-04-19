@@ -79,7 +79,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
     public void LoadData(GameData data)
     {
         Debug.Log("item loading");
-        string value;
+        int value;
         if (data.ItemsInSLots.TryGetValue(slotID, out value)) {
             Debug.Log("item id " + value);
         }
@@ -92,7 +92,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             {
                 data.ItemsInSLots.Remove(slotID);
             }
-            data.ItemsInSLots.Add(slotID, this.Instance.GetComponent<ItemPrefab>().item.itemName);
+            data.ItemsInSLots.Add(slotID, this.Instance.GetComponent<ItemPrefab>().item.ID);
         }
     }
 }
