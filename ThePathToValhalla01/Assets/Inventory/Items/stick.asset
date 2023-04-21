@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: stick
   icon: {fileID: 21300000, guid: 68ba8dd854216cc4db47417f6c1a5226, type: 3}
   itemType: 1
+  model: {fileID: 919132149155446097, guid: ee065759186892d4bb892803988751d3, type: 3}

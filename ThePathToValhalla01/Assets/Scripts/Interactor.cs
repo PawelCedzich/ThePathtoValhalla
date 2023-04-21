@@ -36,17 +36,17 @@ public class Interactor : MonoBehaviour
                 {
                     if (hitInfo.collider.gameObject.TryGetComponent(out interactObj))
                     {
+                        Time.timeScale = 0;
                         movCamera.SetActive(false);
-                        Debug.Log("interaction");
-                        interactObj.Interact();
                         isInteracting = true;
                         CurentInteracted = interactObj;
+                        interactObj.Interact();
                     }
                 }
             }else{
 
+                Time.timeScale = 1;
                 movCamera.SetActive(true);
-                Debug.Log("stopped interaction");
                 CurentInteracted.StopInteracting();
                 isInteracting = false;
             }

@@ -14,6 +14,10 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     Vector2 startPosition;
     Transform startParent;
 
+    public int Damage = 0;
+    public int healValue = 0;
+    public int hungerValue = 0;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         ItemInSlot = this.gameObject;

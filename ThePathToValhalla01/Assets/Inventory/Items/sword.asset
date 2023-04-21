@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: sword
   icon: {fileID: 21300000, guid: b4212e5f5b13b514ab21b853056ff43d, type: 3}
   itemType: 1
+  model: {fileID: 919132149155446097, guid: c91a9b06b06c2614fa4f67184e94317e, type: 3}

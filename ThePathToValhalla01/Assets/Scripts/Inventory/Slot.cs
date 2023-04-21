@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngineInternal;
 using static Item;
 using Unity.VisualScripting;
+using UnityEditor;
 
 public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 {
@@ -81,7 +82,8 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         Debug.Log("item loading");
         int value;
         if (data.ItemsInSLots.TryGetValue(slotID, out value)) {
-            Debug.Log("item id " + value);
+            string[] loadItem  = AssetDatabase.FindAssets("" + value + " l:itemObj");
+            Debug.Log("item id " + loadItem);
         }
     }
 

@@ -5,13 +5,18 @@ using UnityEngine;
 public class Anvil : MonoBehaviour, IInteractable
 {
     public GameObject player;
+    private ItemPrefab item;
     public void Interact()
     {
-        Debug.Log(ChosenWeapon.CurrentItem(ChosenWeapon.GetCurrentSlot()));
+        if (ChosenWeapon.GetCurrentSlot().Instance != null)
+        {
+            item = ChosenWeapon.GetCurrentSlot().Instance.GetComponent<ItemPrefab>();
+            item.Damage += 5;
+            Debug.Log(item.Damage);
+        }
     }
 
     public void StopInteracting()
     {
-
     }
 }
