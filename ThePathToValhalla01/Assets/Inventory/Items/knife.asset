@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: knife
   icon: {fileID: 21300000, guid: e347cd689835a8a408de8d0c1e25fe69, type: 3}
   itemType: 1
+  model: {fileID: 919132149155446097, guid: 8c8ea49809668d2478a24d68936743b9, type: 3}

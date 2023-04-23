@@ -6,7 +6,6 @@ public class Pause : MonoBehaviour
 {
     public GameObject Canvas;
     public GameObject Camera;
-    public GameObject Inventory;
     public GameObject CameraMov;
     public GameObject PlayerHUD;
     public bool Paused = false;
@@ -16,6 +15,7 @@ public class Pause : MonoBehaviour
     {
         PlayerHUD.gameObject.SetActive(true);
         Canvas.gameObject.SetActive(false);
+        CameraMov.gameObject.SetActive(true);
     }
 
     void Update()
@@ -40,7 +40,6 @@ public class Pause : MonoBehaviour
                 Canvas.gameObject.SetActive(true);
                 //Inventory.gameObject.SetActive(false);
                 PlayerHUD.gameObject.SetActive(false);
-                Cursor.lockState = CursorLockMode.Locked;
                 Cursor.lockState = CursorLockMode.None;
                 CameraMov.gameObject.SetActive(false);
                 Cursor.visible = true;

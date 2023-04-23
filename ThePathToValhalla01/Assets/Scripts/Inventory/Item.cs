@@ -9,8 +9,10 @@ public class Item : ScriptableObject
     public string itemName = "NewItem";
     public Sprite icon= null;
     public ItemType itemType = ItemType.Other;
+    public GameObject model;
 
-   public enum ItemType
+
+    public enum ItemType
     {
         Food,
         Weapon,

@@ -11,10 +11,13 @@ public class PlayerStats : MonoBehaviour
     public Image getDamageEffect;
     private float fadeSpeed = 1f;
 
-    private int maxHunger = 10;
-    public int currentHunger = 0;
-    public HungerBar hungerBar;
+    public int maxStamina = 100;
+    public int currentStamina = 50;
+    public StaminaBar staminaBar;
 
+    private int maxHunger = 10;
+    public int currentHunger = 10;
+    public HungerBar hungerBar;
 
     private int maxLevel = 25;
     public int currentLevel = 0;
@@ -28,7 +31,9 @@ public class PlayerStats : MonoBehaviour
         SetHealthBar();
         SetLevelDisplay();
         SetHungerBar();
-        InvokeRepeating("DecreaseHunger", 5.0f, 5.0f);
+        SetStaminaBar();
+        InvokeRepeating("DecreaseHunger", 15.0f, 15.0f);
+        InvokeRepeating("HealthRegen", 1.0f, 1.0f);
     }
 
     void Update()
@@ -67,6 +72,16 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
+        SetStaminaBar();
+    }
+
+    public void HealthRegen()
+    {
+        if (currentStamina >= 90 && currentHealth < maxHealth && currentHunger > 0)
+        {
+            currentHealth += 1;
+        }
+        SetHealthBar();
     }
 
     public void SetHealthBar()
@@ -74,6 +89,13 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
         healthBar.SetTXT();
+    }
+
+    public void SetStaminaBar()
+    {
+        staminaBar.SetMaxStamina(maxStamina);
+        staminaBar.SetStamina(currentStamina);
+        staminaBar.SetTXT();
     }
 
     public void SetHungerBar()

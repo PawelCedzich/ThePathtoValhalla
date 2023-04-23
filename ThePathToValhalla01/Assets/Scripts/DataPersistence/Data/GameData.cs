@@ -15,6 +15,7 @@ public class GameData
     public int currentLevel;
     public int currentXP;
     public int currentHunger;
+    public int currentStamina;
 
     public SerializableDictionery<int, int> ItemsInSLots;
 
@@ -26,5 +27,6 @@ public class GameData
         currentLevel = 0;
         currentXP = 0;
         currentHunger = 10;
+        currentStamina = 100;
     }
 }

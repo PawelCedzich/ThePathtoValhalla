@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: axe2
   icon: {fileID: 21300000, guid: f2ec8a033e7d4214d8e4bc7ea2536405, type: 3}
   itemType: 1
+  model: {fileID: 919132149155446097, guid: 16fe671a875b64241a8a2f46b22b089b, type: 3}

@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngineInternal;
 using static Item;
 using Unity.VisualScripting;
+using UnityEditor;
 
 public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 {
@@ -18,6 +19,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         }
     }
 
+    public GameObject Instance;
     public GameObject PrefabItem;
     public int slotID = 0;
 
@@ -37,6 +39,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         newItem.transform.SetParent(this.transform);
         newItem.GetComponent<ItemPrefab>().item = item;
         newItem.GetComponent<Image>().sprite = item.icon;
+        Instance = newItem;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -44,6 +47,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         if (ItemInSlot == null)
         {
 
+            Instance = ItemPrefab.ItemInSlot;
             if (this.slotType == SlotType.BackpackSlot)
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
@@ -56,6 +60,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                ChosenWeapon.CurrentItem(this);
             }
             else if (this.slotType == SlotType.UsableSlot && ItemPrefab.DraggedItem.itemType == ItemType.Food)
             {
@@ -74,19 +79,22 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 
     public void LoadData(GameData data)
     {
+        Debug.Log("item loading");
         int value;
-        if (data.ItemsInSLots.TryGetValue(this.slotID, out value)) {
-            //item = new Item
-            //AddItemToSlot(vaue);
-            Debug.Log("found item for this slot");
+        if (data.ItemsInSLots.TryGetValue(slotID, out value)) {
+            string[] loadItem  = AssetDatabase.FindAssets("" + value + " l:itemObj");
+            Debug.Log("item id " + loadItem);
         }
     }
 
     public void SaveData(GameData data)
     {
-    //    if (this.ItemInSlot != null)
-    //    {
-    //        data.ItemsInSLots.Add(slotID, ItemInSlot.gameObject.);
-    //    }
+        if (this.Instance != null) {
+            if (data.ItemsInSLots.ContainsKey(slotID))
+            {
+                data.ItemsInSLots.Remove(slotID);
+            }
+            data.ItemsInSLots.Add(slotID, this.Instance.GetComponent<ItemPrefab>().item.ID);
+        }
     }
 }
