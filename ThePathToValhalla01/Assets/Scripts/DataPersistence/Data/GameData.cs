@@ -17,6 +17,11 @@ public class GameData
     public int currentHunger;
     public int currentStamina;
 
+    public bool isEnemy01Dead;
+    public Vector3 enemy01Position;
+    public bool isEnemy02Dead;
+    public Vector3 enemy02Position;
+
     public SerializableDictionery<int, int> ItemsInSLots;
 
     public GameData() {
@@ -28,5 +33,8 @@ public class GameData
         currentXP = 0;
         currentHunger = 10;
         currentStamina = 100;
+
+        isEnemy01Dead = false;
+        isEnemy02Dead = false;
     }
 }

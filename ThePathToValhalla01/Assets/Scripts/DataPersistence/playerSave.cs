@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerSave : MonoBehaviour, IDataPersistence
 {
     public PlayerStats playerStats;
+    public SimpleEnemy enemy01;
+    public SimpleEnemy enemy02;
 
     public void LoadData(GameData data)
     {
@@ -27,6 +29,11 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         this.playerStats.currentLevel = data.currentLevel;
         this.playerStats.currentXP = data.currentXP;
+
+        this.enemy01.isDead = data.isEnemy01Dead;
+        this.enemy01.transform.position = data.enemy01Position;
+        this.enemy02.isDead = data.isEnemy02Dead;
+        this.enemy02.transform.position = data.enemy02Position;
     }
 
     public void SaveData(GameData data)
@@ -44,5 +51,10 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         data.currentLevel = this.playerStats.currentLevel;
         data.currentXP = this.playerStats.currentXP;
+
+        data.isEnemy01Dead = this.enemy01.isDead;
+        data.enemy01Position = this.enemy01.transform.position;
+        data.isEnemy02Dead = this.enemy02.isDead;
+        data.enemy02Position = this.enemy02.transform.position;
     }
 }
