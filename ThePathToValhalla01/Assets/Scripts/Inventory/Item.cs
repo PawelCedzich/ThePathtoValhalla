@@ -10,6 +10,7 @@ public class Item : ScriptableObject
     public Sprite icon= null;
     public ItemType itemType = ItemType.Other;
     public GameObject model;
+    public int ItemDamage;
 
 
     public enum ItemType

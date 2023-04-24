@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,8 @@ public class PlayerStats : MonoBehaviour
     public int currentLevel = 0;
     public int currentXP = 0;
     public DisplayLevel displayLevel;
+
+    public List<Quest> Quests = new List<Quest>();
 
 
 

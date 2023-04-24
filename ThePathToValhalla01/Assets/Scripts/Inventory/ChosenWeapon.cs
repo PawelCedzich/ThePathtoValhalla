@@ -10,6 +10,8 @@ public class ChosenWeapon : MonoBehaviour
     public static Item currentItem;
     public Transform HandPosition;
 
+    public PlayerAttack playerAttack;
+
     void Start()
     {
         currentChosenSlot = inventory.inventorySlots[0];
@@ -26,8 +28,8 @@ public class ChosenWeapon : MonoBehaviour
 
             if (currentChosenSlot.Instance != null) {
 
-                CurrentItem(currentChosenSlot);
-                EquipItem();
+                playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
+
             }
 
         }
@@ -39,11 +41,11 @@ public class ChosenWeapon : MonoBehaviour
 
             if (currentChosenSlot.Instance != null)
             {
-
-                CurrentItem(currentChosenSlot);
-                EquipItem();
+                playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
+                //EquipItem();
             }
         }
+
 
     }
 

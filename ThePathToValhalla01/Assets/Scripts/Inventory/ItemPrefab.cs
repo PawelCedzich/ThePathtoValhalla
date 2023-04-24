@@ -18,6 +18,11 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     public int healValue = 0;
     public int hungerValue = 0;
 
+    public void Start()
+    {
+        Damage = item.ItemDamage;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         ItemInSlot = this.gameObject;
@@ -32,8 +37,6 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     public void OnDrag(PointerEventData eventData)
     {
         this.transform.position = Input.mousePosition;
-
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
