@@ -4,6 +4,8 @@ using System;
 
 public class SimpleEnemy : MonoBehaviour, IDamageable
 {
+    private Animator _animator;
+
     [SerializeField]
     private int currentHealth = 100;
 
@@ -11,11 +13,17 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
 
     private RandomMovement moving;
 
+    private void Awake()
+    {
+        _animator = GetComponentInChildren<Animator>();
+    }
+
     void Start()
     {
         moving = GetComponent<RandomMovement>();
         if (isDead)
         {
+            _animator.SetTrigger("setDead");
             currentHealth = 0;
             Debug.Log("Martwy po wczytaniu.");
             if (moving != null)
@@ -26,27 +34,20 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
         }
     }
 
-    // private Animator _animator;
-
-    /*
-     private void Awake(){
-        _animator = GetComponent<Animator>();
-    }
-     */
     public void Damage(int damageAmount)
     {
         currentHealth -= damageAmount;
         Debug.Log("HP po uderzeniu: " + currentHealth + ". | Ile obra¿eñ otrzymano: " + damageAmount);
         if (currentHealth <= 0)
         {
+            currentHealth = 0;
             isDead = true;
-            Debug.Log("NPC UMIERA");
             if (moving != null)
             {
                 moving.agent.isStopped = true;
                 Destroy(moving);
+                _animator.SetTrigger("setDead");
             }
         }
-        //_animator.SetTrigger("Damaged");
     }
 }

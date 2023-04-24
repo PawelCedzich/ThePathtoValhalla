@@ -10,17 +10,23 @@ public class RandomMovement : MonoBehaviour
     public Transform centrePoint;
     public float playerDetectionRange;
 
+    private bool isWalking;
+    private bool isRunning;
     private bool fleeing;
     private Vector3 fleeTarget;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        isWalking = false;
+        isRunning = false;
         fleeing = false;
     }
 
     void Update()
     {
+        float speed = agent.velocity.magnitude;
+
         if (!fleeing)
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
@@ -30,6 +36,9 @@ public class RandomMovement : MonoBehaviour
                 {
                     Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
                     agent.SetDestination(point);
+                    agent.speed = 2f;
+                    isWalking = true;
+                    isRunning = false;
                     //Debug.Log("Chilled AI - " + point);
                 }
             }
@@ -43,6 +52,9 @@ public class RandomMovement : MonoBehaviour
                     direction.y = 0f;
                     fleeTarget = transform.position + direction.normalized * range * 5;
                     fleeing = true;
+                    agent.speed = 3.5f;
+                    isWalking = false;
+                    isRunning = true;
                 }
             }
         }
@@ -52,9 +64,15 @@ public class RandomMovement : MonoBehaviour
             agent.SetDestination(fleeTarget);
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
+                agent.speed = 1f;
                 fleeing = false;
+                isWalking = false;
+                isRunning = false;
             }
         }
+        Animator animator = GetComponent<Animator>();
+        animator.SetBool("isWalking", isWalking);
+        animator.SetBool("isRunning", isRunning);
     }
 
     bool RandomPoint(Vector3 center, float range, out Vector3 result)

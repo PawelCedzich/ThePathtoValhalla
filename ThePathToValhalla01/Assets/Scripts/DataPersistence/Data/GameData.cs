@@ -35,8 +35,6 @@ public class GameData
         currentStamina = 100;
 
         isEnemy01Dead = false;
-        enemy01Position = Vector3.zero;
         isEnemy02Dead = false;
-        enemy02Position = Vector3.zero;
     }
 }
