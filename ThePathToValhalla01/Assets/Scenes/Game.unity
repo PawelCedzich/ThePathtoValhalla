@@ -9397,11 +9397,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519716650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.72, y: 1.99, z: 19.53}
+  m_LocalPosition: {x: -19.87, y: 1.99, z: 19.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1797778813}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10217,7 +10216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1666610679}
   range: 3
-  centrePoint: {fileID: 1797778813}
+  centrePoint: {fileID: 1767142013}
   playerDetectionRange: 1
 --- !u!195 &1666610679
 NavMeshAgent:
@@ -10329,11 +10328,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666610676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.74, y: 1.99, z: 19.53}
+  m_LocalPosition: {x: -27.95, y: 1.99, z: 19.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1767142013}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10953,7 +10951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1767142013}
   m_Layer: 0
-  m_Name: MovPoint
+  m_Name: MovPoint AI02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10967,12 +10965,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767142012}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.34, y: -0.54, z: 0.25}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -27.4, y: 1.45, z: 19.78}
+  m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1666610684}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1769486349
 PrefabInstance:
@@ -11140,7 +11138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797778813}
   m_Layer: 0
-  m_Name: MovPoint
+  m_Name: MovPoint AI01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11154,12 +11152,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797778812}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.17000008, y: -0.5357603, z: -2.9010658}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -20.07, y: 1.45, z: 19.62}
+  m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1519716657}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804154652
 GameObject:

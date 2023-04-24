@@ -1,5 +1,6 @@
 using UnityEngine;
 using Interfaces;
+using System;
 
 public class SimpleEnemy : MonoBehaviour, IDamageable
 {
@@ -15,9 +16,11 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
         moving = GetComponent<RandomMovement>();
         if (isDead)
         {
+            currentHealth = 0;
             Debug.Log("Martwy po wczytaniu.");
             if (moving != null)
             {
+                moving.agent.isStopped = true;
                 Destroy(moving);
             }
         }
@@ -40,6 +43,7 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
             Debug.Log("NPC UMIERA");
             if (moving != null)
             {
+                moving.agent.isStopped = true;
                 Destroy(moving);
             }
         }
