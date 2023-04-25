@@ -14,13 +14,13 @@ public class NpcQuest : MonoBehaviour, IInteractable
 
     public Text QuestText;
     public Text QuestTitle;
+    public Interactor interactor;
     public void Interact()
     {
-
-        QuestWindow.SetActive(true);
-        QuestTitle.text = quest.Tittle;
-        QuestText.text = quest.Description;
-        Cursor.lockState = CursorLockMode.None;
+            QuestWindow.SetActive(true);
+            QuestTitle.text = quest.Tittle;
+            QuestText.text = quest.Description;
+            Cursor.lockState = CursorLockMode.None;
     }
 
     public void StopInteracting()
@@ -31,6 +31,8 @@ public class NpcQuest : MonoBehaviour, IInteractable
     public void AcceptQuest()
     {
         playerStats.Quests.Add(quest);
+        StopInteracting();
+        interactor.StopInteraction();
     }
 }
 

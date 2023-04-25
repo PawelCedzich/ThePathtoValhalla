@@ -10,7 +10,7 @@ interface IInteractable {
 public class Interactor : MonoBehaviour
 {
     public Transform InteractionSource;
-    public float InteractionRange = 50;
+    public float InteractionRange;
     public bool isInteracting = false;
     private IInteractable interactObj;
     static private IInteractable CurentInteracted;
@@ -44,13 +44,16 @@ public class Interactor : MonoBehaviour
                     }
                 }
             }else{
-
-                Time.timeScale = 1;
-                movCamera.SetActive(true);
-                CurentInteracted.StopInteracting();
-                isInteracting = false;
+                StopInteraction();
             }
 
         }
+    }
+
+    public void StopInteraction() {
+        Time.timeScale = 1;
+        movCamera.SetActive(true);
+        CurentInteracted.StopInteracting();
+        isInteracting = false;
     }
 }

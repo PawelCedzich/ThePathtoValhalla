@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 468668194507888072}
   - component: {fileID: 1358061732536887717}
   - component: {fileID: -6372512481135574608}
+  - component: {fileID: 802196149534931016}
   m_Layer: 0
   m_Name: ItemPrefab
   m_TagString: Untagged
@@ -53,6 +54,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  Damage: 0
+  healValue: 0
+  hungerValue: 0
 --- !u!222 &468668194507888072
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -103,3 +107,27 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &802196149534931016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5369442915850629241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 70, y: 70}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2

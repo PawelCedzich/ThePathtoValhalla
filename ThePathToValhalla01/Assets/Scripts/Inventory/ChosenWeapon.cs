@@ -22,21 +22,21 @@ public class ChosenWeapon : MonoBehaviour
     {
         if (Input.GetKeyDown("q") && currentChosenSlot == inventory.inventorySlots[0])
         {
-            inventory.inventorySlots[1].GetComponent<Image>().color = new Color32(255, 255, 255, 200);
-            inventory.inventorySlots[0].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            inventory.inventorySlots[0].GetComponent<Image>().color = new Color32(255, 255, 255, 200);
+            inventory.inventorySlots[1].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             currentChosenSlot = inventory.inventorySlots[1];
 
             if (currentChosenSlot.Instance != null) {
 
                 playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
-
+                //EquipItem();
             }
 
         }
         else if (Input.GetKeyDown("q") && currentChosenSlot == inventory.inventorySlots[1])
         {
-            inventory.inventorySlots[0].GetComponent<Image>().color = new Color32(255, 255, 255, 200);
-            inventory.inventorySlots[1].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            inventory.inventorySlots[1].GetComponent<Image>().color = new Color32(255, 255, 255, 200);
+            inventory.inventorySlots[0].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             currentChosenSlot = inventory.inventorySlots[0];
 
             if (currentChosenSlot.Instance != null)

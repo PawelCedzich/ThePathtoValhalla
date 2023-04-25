@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: 2xaxe
   icon: {fileID: 21300000, guid: 954361a08423ec842af8e1edfbe4e630, type: 3}
   itemType: 1
-  model: {fileID: 919132149155446097, guid: 16fe671a875b64241a8a2f46b22b089b, type: 3}
+  model: {fileID: 919132149155446097, guid: 4f058a2af6cb6b9419170174039da6b0, type: 3}
   ItemDamage: 10
