@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5070c52c912ee2a449378f18e7181fde
+guid: e7ad0ba7695a9be40bd81dc3bfda2483
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -33,18 +33,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: rig.001|rig.001Action
-      takeName: rig.001|rig.001Action
-      internalID: -6851493242495694946
+      name: rig|rigAction.002
+      takeName: rig|rigAction.002
+      internalID: 8105518610988583752
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -118,15 +118,16 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: rig.001
+    rootMotionBoneName: rig
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: eb80ef606b3b0664db481ac8568ebb7b,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0

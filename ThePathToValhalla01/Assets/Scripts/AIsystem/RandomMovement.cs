@@ -9,11 +9,14 @@ public class RandomMovement : MonoBehaviour
     public float range;
     public Transform centrePoint;
     public float playerDetectionRange;
+    public int stopTime;
+    public float NPCSpeed;
 
     private bool isWalking;
     private bool isRunning;
     private bool fleeing;
     private Vector3 fleeTarget;
+
 
     void Start()
     {
@@ -23,38 +26,50 @@ public class RandomMovement : MonoBehaviour
         fleeing = false;
     }
 
+    IEnumerator wait(Animator animator)
+    {
+        agent.isStopped = true;
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isRunning", false);
+        yield return new WaitForSeconds(stopTime);
+        agent.isStopped = false;
+        isWalking = true; // ustawienie isWalking na true po zakoñczeniu coroutine
+    }
+
     void Update()
     {
-        float speed = agent.velocity.magnitude;
+        Animator animator = GetComponent<Animator>();
 
         if (!fleeing)
         {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, playerDetectionRange);
+            foreach (Collider collider in colliders)
+            {
+                if (collider.tag == "Player")
+                {
+                    agent.isStopped = false;
+                    StopCoroutine(wait(animator));
+                    Vector3 direction = transform.position - collider.transform.position;
+                    direction.y = 0f;
+                    fleeTarget = transform.position + direction.normalized * range * 5;
+                    fleeing = true;
+                    agent.speed = NPCSpeed * 2;
+                    isWalking = false;
+                    isRunning = true;
+                }
+            }
+
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
                 Vector3 point;
                 if (RandomPoint(centrePoint.position, range, out point))
                 {
                     Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-                    agent.SetDestination(point);
-                    agent.speed = 2f;
-                    isWalking = true;
+                    agent.speed = NPCSpeed;
+                    isWalking = false; // ustawienie isWalking na false przed coroutine
                     isRunning = false;
-                    //Debug.Log("Chilled AI - " + point);
-                }
-            }
-
-            Collider[] colliders = Physics.OverlapSphere(transform.position, playerDetectionRange);
-            foreach (Collider collider in colliders)
-            {
-                if (collider.tag == "Player")
-                {
-                    Vector3 direction = transform.position - collider.transform.position;
-                    direction.y = 0f;
-                    fleeTarget = transform.position + direction.normalized * range * 5;
-                    fleeing = true;
-                    agent.speed = 3.5f;
-                    isWalking = false;
-                    isRunning = true;
+                    StartCoroutine(wait(animator));
+                    agent.SetDestination(point);
                 }
             }
         }
@@ -64,13 +79,12 @@ public class RandomMovement : MonoBehaviour
             agent.SetDestination(fleeTarget);
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
-                agent.speed = 1f;
+                agent.speed = NPCSpeed/2;
                 fleeing = false;
                 isWalking = false;
                 isRunning = false;
             }
         }
-        Animator animator = GetComponent<Animator>();
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isRunning", isRunning);
     }
