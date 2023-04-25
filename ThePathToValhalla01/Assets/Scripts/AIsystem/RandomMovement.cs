@@ -17,11 +17,14 @@ public class RandomMovement : MonoBehaviour
     private bool fleeing;
     private Vector3 fleeTarget;
 
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.transform.position = centrePoint.transform.position;
+        if(agent.transform.position == new Vector3(0, 0, 0))
+        {
+            agent.transform.position = centrePoint.transform.position;
+        }
+       
         isWalking = false;
         isRunning = false;
         fleeing = false;

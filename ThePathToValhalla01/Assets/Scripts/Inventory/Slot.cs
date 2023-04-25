@@ -79,12 +79,12 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        Debug.Log("item loading");
-        int value;
-        if (data.ItemsInSLots.TryGetValue(slotID, out value)) {
-            string[] loadItem  = AssetDatabase.FindAssets("" + value + " l:itemObj");
-            Debug.Log("item id " + loadItem);
-        }
+        //Debug.Log("item loading");
+        //int value;
+        //if (data.ItemsInSLots.TryGetValue(slotID, out value)) {
+        //string[] loadItem  = AssetDatabase.FindAssets("" + value + " l:itemObj");
+        //    Debug.Log("item id " + loadItem);
+        //}
     }
 
     public void SaveData(GameData data)

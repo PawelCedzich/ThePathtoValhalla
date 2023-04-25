@@ -12,10 +12,10 @@ public class InteractionPointFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 fixedPos = new Vector3(0, 1, 0);
-        this.transform.position = ParentTransform.transform.localPosition;
-        this.transform.position += fixedPos;
-        this.transform.rotation = ParentTransform.transform.rotation;
+        Vector3 fixedPos = new Vector3(0f, 0.2f, 0.2f);
+        //this.transform.position = ParentTransform.transform.localPosition;
+        //this.transform.position += fixedPos;
+        //this.transform.rotation = ParentTransform.transform.rotation;
         
     }
 }
