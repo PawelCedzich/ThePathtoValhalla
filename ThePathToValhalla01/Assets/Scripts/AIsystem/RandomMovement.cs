@@ -21,6 +21,7 @@ public class RandomMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        agent.transform.position = centrePoint.transform.position;
         isWalking = false;
         isRunning = false;
         fleeing = false;

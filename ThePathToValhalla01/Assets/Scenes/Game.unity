@@ -345,12 +345,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22837573}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.575428, y: -0.77511, z: -4.4559984}
+  m_LocalPosition: {x: -25.295427, y: 1.64, z: 15.074002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 277838280}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &38222438 stripped
 RectTransform:
@@ -1838,11 +1838,7 @@ Transform:
   m_LocalPosition: {x: -19.72, y: 1.99, z: 19.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 22837574}
-  - {fileID: 543450652941537381}
-  - {fileID: 1122204963}
-  - {fileID: 543450653667686929}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7753,12 +7749,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122204962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3522282, y: -0.77511, z: -2.43}
+  m_LocalPosition: {x: -21.072227, y: 1.59, z: 15.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 277838280}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1131108946
 GameObject:
@@ -7890,24 +7886,6 @@ NavMeshAgent:
   m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1152982571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149194465451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6fbb8b929a007d41afa1331a8daa955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 1152982569}
-  range: 3
-  centrePoint: {fileID: 1122204963}
-  playerDetectionRange: 1
-  stopTime: 2
-  NPCSpeed: 3
 --- !u!224 &1154145666 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7249055585040385000, guid: 0b6deb78adb627149bae3734420f9b33,
@@ -12970,14 +12948,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148738853599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.01, y: -1.15, z: -1.59}
+  m_LocalPosition: {x: -24.73, y: 0.84000003, z: 17.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7539683183961509899}
   - {fileID: 2975427001915732660}
-  m_Father: {fileID: 277838280}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450653667686929
 Transform:
@@ -12986,15 +12964,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149194465451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.68, y: -1.23, z: -2.99}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.039999, y: 0.76, z: 16.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4753011806347470548}
   - {fileID: 7827436291104142866}
-  m_Father: {fileID: 277838280}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558638520428756995
 GameObject:
@@ -13276,7 +13254,7 @@ GameObject:
   - component: {fileID: 1152982568}
   - component: {fileID: 1152982565}
   - component: {fileID: 1152982569}
-  - component: {fileID: 1152982571}
+  - component: {fileID: 5866666021874376813}
   - component: {fileID: 5866666021874376812}
   - component: {fileID: 5866666021874376811}
   m_Layer: 0
@@ -17255,6 +17233,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   isDead: 0
+--- !u!114 &5866666021874376813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149194465451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6fbb8b929a007d41afa1331a8daa955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1152982569}
+  range: 3
+  centrePoint: {fileID: 1122204963}
+  playerDetectionRange: 1
+  stopTime: 2
+  NPCSpeed: 3
 --- !u!114 &5885216829670671795
 MonoBehaviour:
   m_ObjectHideFlags: 0
