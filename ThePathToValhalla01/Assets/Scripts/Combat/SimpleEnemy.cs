@@ -13,8 +13,6 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
     private Canvas healthCanvas;
     [SerializeField]
     private Slider healthSlider;
-    [SerializeField]
-    private float _reduceSpeed = 2;
 
     private Camera _cam;
 
