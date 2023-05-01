@@ -91807,6 +91807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35d92cc723b67d479542b9e871a340c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractionSource: {fileID: 151632615}
   playerStats: {fileID: 1735099642}
   DamageAfterTime: 0.2
   StrongDamageAfterTime: 0.4

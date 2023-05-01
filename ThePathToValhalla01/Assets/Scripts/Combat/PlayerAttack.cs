@@ -14,6 +14,10 @@ public class PlayerAttack : MonoBehaviour
     private float staminaRegen = 0.8f;
     private int playerLvl;
     private int playerDamageRatio = 1;
+    private float range = 100f;
+    public Transform InteractionSource;
+    public GameObject objectToThrow;
+    public Transform dist_attakPoint;
 
     [SerializeField]
     private PlayerStats playerStats;
@@ -114,6 +118,53 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(Hit(true));
     }
 
+    public void OnDistanceAttack(InputValue value)
+    {
+        if (_isAttacking || Time.time - _lastAttackTime < 2.0f || Time.timeScale == 0f || playerStamina < 4) return;
+        playerStats.currentStamina -= 4;
+        _lastAttackTime = Time.time;
+
+        _animator.SetTrigger("DistanceAttack");
+        Invoke("DistanceAttack_action", 1);
+        //GameObject projectile = Instantiate(objectToThrow, dist_attakPoint.position, InteractionSource.rotation);
+        //Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+        //Vector3 forceToAdd = InteractionSource.transform.forward * 50 + transform.up * 0;
+        //projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
+
+        //_animator.SetTrigger("DistanceAttack");
+        //RaycastHit hit;
+        //if (Physics.Raycast(InteractionSource.position, InteractionSource.forward, out hit, range))
+        //{
+        //    Debug.Log(hit.transform.name);
+
+        //    SimpleEnemy target = hit.transform.GetComponent<SimpleEnemy>();
+        //    if (target != null)
+        //    {
+        //        target.Damage(10);
+        //    }
+        //}
+    }
+
+    public void DistanceAttack_action()
+    {
+        GameObject projectile = Instantiate(objectToThrow, dist_attakPoint.position, InteractionSource.rotation);
+        Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
+        Vector3 forceToAdd = InteractionSource.transform.forward * 50 + transform.up * 0;
+        projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
+
+        RaycastHit hit;
+        if (Physics.Raycast(InteractionSource.position, InteractionSource.forward, out hit, range))
+        {
+            Debug.Log(hit.transform.name);
+
+            SimpleEnemy target = hit.transform.GetComponent<SimpleEnemy>();
+            if (target != null)
+            {
+                target.Damage(10);
+            }
+        }
+    }
+
     private IEnumerator Hit(bool strong)
     {
         _isAttacking = true;
@@ -127,3 +178,4 @@ public class PlayerAttack : MonoBehaviour
         _isAttacking = false;
     }
 }
+

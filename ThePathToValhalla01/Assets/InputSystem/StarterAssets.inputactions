@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DistanceAttack",
+                    "type": "Button",
+                    "id": "4e9a9500-1fef-4bff-864a-e755d25dfbeb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -256,6 +265,17 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "StrongAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc028e1b-3721-406c-8891-c627cb1a8b2f",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "DistanceAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
