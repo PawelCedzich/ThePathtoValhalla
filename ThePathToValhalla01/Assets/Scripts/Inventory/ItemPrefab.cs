@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     static public GameObject ItemInSlot;
     static public bool IfDropped;
@@ -14,6 +16,7 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     Vector2 startPosition;
     Transform startParent;
 
+    public string Description;
     public int Damage = 0;
     public int healValue = 0;
     public int hungerValue = 0;
@@ -23,6 +26,7 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         Damage = item.ItemDamage;
     }
 
+    
     public void OnBeginDrag(PointerEventData eventData)
     {
         ItemInSlot = this.gameObject;
@@ -52,4 +56,13 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
 
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        ItemOnHover._Instance.ShowItemDesc(Description);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        ItemOnHover._Instance.HideItemDesc();
+    }
 }

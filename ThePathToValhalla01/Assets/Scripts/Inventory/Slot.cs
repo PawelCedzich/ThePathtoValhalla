@@ -97,4 +97,5 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             data.ItemsInSLots.Add(slotID, this.Instance.GetComponent<ItemPrefab>().item.ID);
         }
     }
+
 }
