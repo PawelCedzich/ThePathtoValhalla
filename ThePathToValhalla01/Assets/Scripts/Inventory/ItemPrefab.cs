@@ -11,6 +11,8 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     static public GameObject ItemInSlot;
     static public bool IfDropped;
     static public Item DraggedItem;
+    static public Slot FirstSlot;
+
 
     public Item item;
     Vector2 startPosition;
@@ -29,12 +31,14 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     
     public void OnBeginDrag(PointerEventData eventData)
     {
+        FirstSlot = gameObject.GetComponentInParent<Slot>();
         ItemInSlot = this.gameObject;
         DraggedItem = this.item;
         startPosition = transform.position;
         startParent = transform.parent;
         transform.SetParent(transform.parent.parent.parent.parent);
         IfDropped = false;
+        
         GetComponent<CanvasGroup>().blocksRaycasts = false; 
     }
 
@@ -58,7 +62,10 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        ItemOnHover._Instance.ShowItemDesc(Description);
+        if (DraggedItem == null) {
+
+            ItemOnHover._Instance.ShowItemDesc(Description, item.icon);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

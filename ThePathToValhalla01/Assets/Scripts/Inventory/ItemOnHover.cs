@@ -34,11 +34,13 @@ public class ItemOnHover : MonoBehaviour
         this.transform.position = Input.mousePosition;
     }
 
-    public void ShowItemDesc(string Description) 
+    public void ShowItemDesc(string Description, Sprite sprite) 
     {
         gameObject.SetActive(true);
-        ItemDesc.text = Description;   
-    
+        ItemDesc.text = Description;
+        this.transform.position = Input.mousePosition;
+        ItemImage.sprite = sprite; 
+
     }
 
     public void HideItemDesc()

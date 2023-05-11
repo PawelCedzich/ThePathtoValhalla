@@ -16,4 +16,5 @@ MonoBehaviour:
   itemName: bluePotion
   icon: {fileID: 21300000, guid: 9729c353cbe840e4e9b92f0bda310861, type: 3}
   itemType: 2
-  model: {fileID: 919132149155446097, guid: eddd0988d9a5a584ebdf3fd2dd77a2fc, type: 3}
+  model: {fileID: 919132149155446097, guid: 5e67c9aad948c9d419dd3798cb096ddd, type: 3}
+  ItemDamage: 0

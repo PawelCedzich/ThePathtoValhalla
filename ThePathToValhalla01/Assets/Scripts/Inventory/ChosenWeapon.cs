@@ -28,7 +28,7 @@ public class ChosenWeapon : MonoBehaviour
             if (currentChosenSlot.Instance != null) {
 
                 playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
-                //EquipItem();
+                EquipItem();
             }
 
         }
@@ -41,7 +41,7 @@ public class ChosenWeapon : MonoBehaviour
             if (currentChosenSlot.Instance != null)
             {
                 playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
-                //EquipItem();
+                EquipItem();
             }
         }
 
@@ -72,7 +72,15 @@ public class ChosenWeapon : MonoBehaviour
         GameObject weapon = Instantiate(currentChosenSlot.Instance.GetComponent<ItemPrefab>().item.model);
         weapon.transform.SetParent(HandPosition, true);
         weapon.transform.position = HandPosition.position;
-        weapon.transform.rotation = HandPosition.rotation;
+        Vector3 rotationVector = new Vector3(0, 0, -75);
+        Quaternion rotation = Quaternion.Euler(rotationVector);
+        weapon.transform.rotation = HandPosition.rotation * rotation ;
 
+       
+        //weapon.transform.rotation = rotation;
+
+        Vector3 scale = new Vector3(0.015f, 0.015f, 0.015f);
+        weapon.transform.localScale = scale;
+        
     }
 }

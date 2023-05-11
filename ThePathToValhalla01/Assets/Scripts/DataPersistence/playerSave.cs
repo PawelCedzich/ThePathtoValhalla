@@ -57,4 +57,5 @@ public class playerSave : MonoBehaviour, IDataPersistence
         data.isEnemy02Dead = this.enemy02.isDead;
         data.enemy02Position = this.enemy02.transform.position;
     }
+
 }

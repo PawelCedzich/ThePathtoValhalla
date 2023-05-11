@@ -22,6 +22,8 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
     public GameObject Instance;
     public GameObject PrefabItem;
     public int slotID = 0;
+    public ItemAtlas itemAtlas;
+    public GameObject FirstInstance;
 
     public SlotType slotType = SlotType.BackpackSlot;
 
@@ -52,6 +54,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
+                ItemPrefab.FirstSlot.Instance = null;
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
             }
@@ -59,6 +62,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
+                ItemPrefab.FirstSlot.Instance = null;
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 ChosenWeapon.CurrentItem(this);
             }
@@ -66,12 +70,14 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
+                ItemPrefab.FirstSlot.Instance = null;
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
             else if (this.slotType == SlotType.ArmorySlot && ItemPrefab.DraggedItem.itemType == ItemType.Armory)
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
+                ItemPrefab.FirstSlot.Instance = null;
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
         }
@@ -79,16 +85,21 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        //Debug.Log("item loading");
-        //int value;
-        //if (data.ItemsInSLots.TryGetValue(slotID, out value)) {
-        //string[] loadItem  = AssetDatabase.FindAssets("" + value + " l:itemObj");
-        //    Debug.Log("item id " + loadItem);
-        //}
+       
+        int value;
+        if (data.ItemsInSLots.TryGetValue(slotID, out value))
+        {
+            Debug.Log(value);
+            AddItemToSlot(itemAtlas.GetItemFromList(value));
+        }
     }
 
     public void SaveData(GameData data)
     {
+        if (this.Instance == null) {
+            data.ItemsInSLots.Remove(slotID);
+        }
+
         if (this.Instance != null) {
             if (data.ItemsInSLots.ContainsKey(slotID))
             {

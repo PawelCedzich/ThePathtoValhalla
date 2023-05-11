@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public Slot[] inventorySlots;
+    public  bool ActiveStart;
 
     public void Start() 
     {

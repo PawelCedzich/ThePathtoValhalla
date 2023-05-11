@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class InventoryPause : MonoBehaviour
-{
+{ 
     public GameObject Inventory;
     public GameObject Camera;
     public GameObject CameraMov;
@@ -12,7 +12,7 @@ public class InventoryPause : MonoBehaviour
 
     void Start()
     {
-        Inventory.gameObject.SetActive(false);
+        Inventory.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class InventoryPause : MonoBehaviour
             if (Paused == true)
             {
                 Time.timeScale = 1.0f;
-                Inventory.gameObject.SetActive(false);
+                Inventory.GetComponent<CanvasGroup>().alpha = 0;
                 Cursor.lockState = CursorLockMode.Locked;
                 CameraMov.gameObject.SetActive(true);
                 Cursor.visible = false;
@@ -31,12 +31,13 @@ public class InventoryPause : MonoBehaviour
             else
             {
                 Time.timeScale = 0.0f;
-                Inventory.gameObject.SetActive(true);
+                Inventory.GetComponent<CanvasGroup>().alpha = 1;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.lockState = CursorLockMode.None;
                 CameraMov.gameObject.SetActive(false);
                 Cursor.visible = true;
                 Paused = true;
+               
             }
         }
     }
@@ -48,4 +49,5 @@ public class InventoryPause : MonoBehaviour
         CameraMov.gameObject.SetActive(true);
         Cursor.visible = false;
     }
+
 }
