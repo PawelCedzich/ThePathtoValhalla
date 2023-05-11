@@ -13,12 +13,13 @@ public class EnemyMovement : MonoBehaviour
     public float NPCSpeed;
     public float maxDistanceFromCenter;
     public float attackRange;
-    public int damagePerSecond;
+    public int damagePerHit;
 
     private GameObject player;
     private PlayerStats playerStats;
     private bool isWalking;
     private bool isRunning;
+    private bool isAttacking = false;
     private bool chasing;
     private Vector3 centerPosition;
     private float lastAttackTime;
@@ -93,10 +94,25 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-            if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= 1f)
+            if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= 2f)
             {
-                playerStats.TakeDamage(damagePerSecond);
+                isWalking = false;
+                isRunning = false;
+                agent.isStopped = true;
+                isAttacking = true;
+                var hit = Random.Range(0.0f, 1.0f);
+                if (hit > 0.1f)
+                {
+                    playerStats.TakeDamage(damagePerHit);
+                }
                 lastAttackTime = Time.time;
+            }
+            else
+            {
+                isRunning = true;
+                isWalking = false;
+                agent.isStopped = false;
+                isAttacking = false;
             }
 
             agent.SetDestination(player.transform.position);
@@ -115,9 +131,11 @@ public class EnemyMovement : MonoBehaviour
             isWalking = false;
             isRunning = false;
             chasing = false;
+            isAttacking = false;
             StartCoroutine(wait(animator));
         }
 
+        animator.SetBool("setAttack", isAttacking);
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isRunning", isRunning);
     }
