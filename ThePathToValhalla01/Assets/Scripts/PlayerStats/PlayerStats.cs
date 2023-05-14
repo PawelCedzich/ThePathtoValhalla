@@ -162,6 +162,11 @@ public class PlayerStats : MonoBehaviour
         SetHealthBar();
     }
 
+    public void IncreaseXP(int XP)
+    {
+        currentXP += XP;
+    }
+
     IEnumerator FadeScreenEffect()
     {
         var tempColor = getDamageEffect.color;

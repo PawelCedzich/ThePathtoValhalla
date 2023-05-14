@@ -14,6 +14,9 @@ public class EnemyMovement : MonoBehaviour
     public float maxDistanceFromCenter;
     public float attackRange;
     public int damagePerHit;
+    public int attackSpeed;
+    public float chanceOfMiss;
+    public float timeToDMG;
 
     private GameObject player;
     private PlayerStats playerStats;
@@ -48,6 +51,12 @@ public class EnemyMovement : MonoBehaviour
         yield return new WaitForSeconds(stopTime);
         agent.isStopped = false;
         isWalking = true;
+    }
+
+    IEnumerator dealDamage(float time, int damage)
+    {
+        yield return new WaitForSeconds(time);
+        playerStats.TakeDamage(damage);
     }
 
     void Update()
@@ -94,16 +103,16 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
-            if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= 2f)
+            if (distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackSpeed)
             {
                 isWalking = false;
                 isRunning = false;
                 agent.isStopped = true;
                 isAttacking = true;
                 var hit = Random.Range(0.0f, 1.0f);
-                if (hit > 0.1f)
+                if (hit > chanceOfMiss)
                 {
-                    playerStats.TakeDamage(damagePerHit);
+                    StartCoroutine(dealDamage(timeToDMG, damagePerHit));
                 }
                 lastAttackTime = Time.time;
             }

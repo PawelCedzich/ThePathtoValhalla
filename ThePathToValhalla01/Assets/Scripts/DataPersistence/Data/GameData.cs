@@ -17,14 +17,16 @@ public class GameData
     public int currentHunger;
     public int currentStamina;
 
-    public bool isEnemy01Dead;
-    public Vector3 enemy01Position;
-    public bool isEnemy02Dead;
-    public Vector3 enemy02Position;
-    public bool isEnemy03Dead;
-    public Vector3 enemy03Position;
-    public bool isEnemy04Dead;
-    public Vector3 enemy04Position;
+    public bool isDear01Dead;
+    public Vector3 dear01Position;
+    public bool isBison01Dead;
+    public Vector3 bison01Position;
+    public bool isBear01Dead;
+    public Vector3 bear01Position;
+    public bool isGoblin01Dead;
+    public Vector3 goblin01Position;
+    public bool isJotun01Dead;
+    public Vector3 jotun01Position;
 
 
     public SerializableDictionery<int, int> ItemsInSLots;
@@ -39,9 +41,10 @@ public class GameData
         currentHunger = 10;
         currentStamina = 100;
 
-        isEnemy01Dead = false;
-        isEnemy02Dead = false;
-        isEnemy03Dead = false;
-        isEnemy04Dead = false;
+        isDear01Dead = false;
+        isBison01Dead = false;
+        isBear01Dead = false;
+        isGoblin01Dead = false;
+        isJotun01Dead = false;
     }
 }

@@ -13,6 +13,8 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
     private Canvas healthCanvas;
     [SerializeField]
     private Slider healthSlider;
+    [SerializeField]
+    private int valueXP;
 
     private Camera _cam;
 
@@ -21,6 +23,8 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
     private RandomMovement moving;
     private EnemyMovement moving2;
     private int maxHP;
+    private GameObject player;
+    private PlayerStats playerStats;
 
     private void Awake()
     {
@@ -29,6 +33,8 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerStats = player.GetComponentInChildren<PlayerStats>();
         _cam = Camera.main;
         maxHP = currentHealth;
         moving = GetComponent<RandomMovement>();
@@ -76,12 +82,14 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
                 moving.agent.isStopped = true;
                 Destroy(moving);
                 _animator.SetTrigger("setDead");
+                playerStats.IncreaseXP(valueXP);
             }
             if (moving2 != null)
             {
                 moving2.agent.isStopped = true;
                 Destroy(moving2);
                 _animator.SetTrigger("setDead");
+                playerStats.IncreaseXP(valueXP);
             }
         }
     }

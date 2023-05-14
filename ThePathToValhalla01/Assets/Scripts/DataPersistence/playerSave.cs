@@ -5,10 +5,12 @@ using UnityEngine;
 public class playerSave : MonoBehaviour, IDataPersistence
 {
     public PlayerStats playerStats;
-    public SimpleEnemy enemy01;
-    public SimpleEnemy enemy02;
-    public SimpleEnemy enemy03;
-    public SimpleEnemy enemy04;
+
+    public SimpleEnemy dear01;
+    public SimpleEnemy bison01;
+    public SimpleEnemy bear01;
+    public SimpleEnemy goblin01;
+    public SimpleEnemy jotun01;
 
     public void LoadData(GameData data)
     {
@@ -32,14 +34,20 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.playerStats.currentLevel = data.currentLevel;
         this.playerStats.currentXP = data.currentXP;
 
-        this.enemy01.isDead = data.isEnemy01Dead;
-        this.enemy01.transform.position = data.enemy01Position;
-        this.enemy02.isDead = data.isEnemy02Dead;
-        this.enemy02.transform.position = data.enemy02Position;
-        this.enemy03.isDead = data.isEnemy03Dead;
-        this.enemy03.transform.position = data.enemy03Position;
-        this.enemy04.isDead = data.isEnemy04Dead;
-        this.enemy04.transform.position = data.enemy04Position;
+        this.dear01.isDead = data.isDear01Dead;
+        this.dear01.transform.position = data.dear01Position;
+
+        this.bison01.isDead = data.isBison01Dead;
+        this.bison01.transform.position = data.bison01Position;
+
+        this.bear01.isDead = data.isBear01Dead;
+        this.bear01.transform.position = data.bear01Position;
+
+        this.goblin01.isDead = data.isGoblin01Dead;
+        this.goblin01.transform.position = data.goblin01Position;
+
+        this.jotun01.isDead = data.isJotun01Dead;
+        this.jotun01.transform.position = data.jotun01Position;
     }
 
     public void SaveData(GameData data)
@@ -58,14 +66,20 @@ public class playerSave : MonoBehaviour, IDataPersistence
         data.currentLevel = this.playerStats.currentLevel;
         data.currentXP = this.playerStats.currentXP;
 
-        data.isEnemy01Dead = this.enemy01.isDead;
-        data.enemy01Position = this.enemy01.transform.position;
-        data.isEnemy02Dead = this.enemy02.isDead;
-        data.enemy02Position = this.enemy02.transform.position;
-        data.isEnemy03Dead = this.enemy03.isDead;
-        data.enemy03Position = this.enemy03.transform.position;
-        data.isEnemy04Dead = this.enemy04.isDead;
-        data.enemy04Position = this.enemy04.transform.position;
+        data.isDear01Dead = this.dear01.isDead;
+        data.dear01Position = this.dear01.transform.position;
+
+        data.isBison01Dead = this.bison01.isDead;
+        data.bison01Position = this.bison01.transform.position;
+
+        data.isBear01Dead = this.bear01.isDead;
+        data.bear01Position = this.bear01.transform.position;
+        
+        data.isGoblin01Dead = this.goblin01.isDead;
+        data.goblin01Position = this.goblin01.transform.position;
+
+        data.isJotun01Dead = this.jotun01.isDead;
+        data.jotun01Position = this.jotun01.transform.position;
     }
 
 }
