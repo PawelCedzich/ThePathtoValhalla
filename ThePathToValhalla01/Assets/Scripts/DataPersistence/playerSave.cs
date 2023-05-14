@@ -7,6 +7,8 @@ public class playerSave : MonoBehaviour, IDataPersistence
     public PlayerStats playerStats;
     public SimpleEnemy enemy01;
     public SimpleEnemy enemy02;
+    public SimpleEnemy enemy03;
+    public SimpleEnemy enemy04;
 
     public void LoadData(GameData data)
     {
@@ -34,6 +36,10 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.enemy01.transform.position = data.enemy01Position;
         this.enemy02.isDead = data.isEnemy02Dead;
         this.enemy02.transform.position = data.enemy02Position;
+        this.enemy03.isDead = data.isEnemy03Dead;
+        this.enemy03.transform.position = data.enemy03Position;
+        this.enemy04.isDead = data.isEnemy04Dead;
+        this.enemy04.transform.position = data.enemy04Position;
     }
 
     public void SaveData(GameData data)
@@ -56,6 +62,10 @@ public class playerSave : MonoBehaviour, IDataPersistence
         data.enemy01Position = this.enemy01.transform.position;
         data.isEnemy02Dead = this.enemy02.isDead;
         data.enemy02Position = this.enemy02.transform.position;
+        data.isEnemy03Dead = this.enemy03.isDead;
+        data.enemy03Position = this.enemy03.transform.position;
+        data.isEnemy04Dead = this.enemy04.isDead;
+        data.enemy04Position = this.enemy04.transform.position;
     }
 
 }

@@ -21,6 +21,11 @@ public class GameData
     public Vector3 enemy01Position;
     public bool isEnemy02Dead;
     public Vector3 enemy02Position;
+    public bool isEnemy03Dead;
+    public Vector3 enemy03Position;
+    public bool isEnemy04Dead;
+    public Vector3 enemy04Position;
+
 
     public SerializableDictionery<int, int> ItemsInSLots;
 
@@ -36,5 +41,7 @@ public class GameData
 
         isEnemy01Dead = false;
         isEnemy02Dead = false;
+        isEnemy03Dead = false;
+        isEnemy04Dead = false;
     }
 }
