@@ -1,2 +1,6 @@
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.psd filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+git[[:space:]]add[[:space:]]gameReady_map.fbx
+git[[:space:]]config[[:space:]]--global[[:space:]]user.email[[:space:]]mojkero@gmail.com
+git[[:space:]]lfs[[:space:]]track[[:space:]]*.fbx filter=lfs diff=lfs merge=lfs -text
