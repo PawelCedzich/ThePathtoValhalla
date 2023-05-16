@@ -7,9 +7,12 @@ public class Anvil : MonoBehaviour, IInteractable
     public GameObject player;
     private ItemPrefab item;
     public GameObject canvas;
+    private int timer;
     public void Interact()
     {
-       canvas.SetActive(true);
+            canvas.SetActive(true);
+            timer = 360;
+        
     }
 
     public void StopInteracting()
@@ -21,5 +24,10 @@ public class Anvil : MonoBehaviour, IInteractable
             item.Damage += 5;
             Debug.Log(item.Damage);
         }
+    }
+
+    private void Update()
+    {
+        timer -= 1;
     }
 }
