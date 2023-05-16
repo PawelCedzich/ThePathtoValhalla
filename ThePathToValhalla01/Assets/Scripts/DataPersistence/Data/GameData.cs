@@ -27,6 +27,10 @@ public class GameData
     public Vector3 goblin01Position;
     public bool isJotun01Dead;
     public Vector3 jotun01Position;
+    public bool isNix01Dead;
+    public Vector3 nix01Position;
+
+
 
 
     public SerializableDictionery<int, int> ItemsInSLots;
@@ -46,5 +50,6 @@ public class GameData
         isBear01Dead = false;
         isGoblin01Dead = false;
         isJotun01Dead = false;
+        isNix01Dead = false;
     }
 }

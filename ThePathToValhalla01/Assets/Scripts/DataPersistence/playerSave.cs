@@ -11,6 +11,7 @@ public class playerSave : MonoBehaviour, IDataPersistence
     public SimpleEnemy bear01;
     public SimpleEnemy goblin01;
     public SimpleEnemy jotun01;
+    public SimpleEnemy nix01;
 
     public void LoadData(GameData data)
     {
@@ -48,6 +49,9 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         this.jotun01.isDead = data.isJotun01Dead;
         this.jotun01.transform.position = data.jotun01Position;
+
+        this.nix01.isDead = data.isNix01Dead;
+        this.nix01.transform.position = data.nix01Position;
     }
 
     public void SaveData(GameData data)
@@ -80,6 +84,9 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         data.isJotun01Dead = this.jotun01.isDead;
         data.jotun01Position = this.jotun01.transform.position;
+
+        data.isNix01Dead = this.nix01.isDead;
+        data.nix01Position = this.nix01.transform.position;
     }
 
 }
