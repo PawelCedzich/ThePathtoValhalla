@@ -38,7 +38,7 @@ public class RandomMovement : MonoBehaviour
         animator.SetBool("isRunning", false);
         yield return new WaitForSeconds(stopTime);
         agent.isStopped = false;
-        isWalking = true; // ustawienie isWalking na true po zakoñczeniu coroutine
+        isWalking = true;
     }
 
     void Update()
@@ -71,7 +71,7 @@ public class RandomMovement : MonoBehaviour
                 {
                     Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
                     agent.speed = NPCSpeed;
-                    isWalking = false; // ustawienie isWalking na false przed coroutine
+                    isWalking = false;
                     isRunning = false;
                     StartCoroutine(wait(animator));
                     agent.SetDestination(point);
@@ -80,7 +80,6 @@ public class RandomMovement : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Fucked AI - " + fleeTarget);
             agent.SetDestination(fleeTarget);
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
