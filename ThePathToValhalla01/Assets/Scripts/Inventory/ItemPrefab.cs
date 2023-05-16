@@ -26,6 +26,8 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     public void Start()
     {
         Damage = item.ItemDamage;
+        healValue = item.ItemHealthValue;
+        hungerValue = item.ItemHungerValue;
     }
 
     
@@ -64,7 +66,7 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     {
         if (DraggedItem == null) {
 
-            ItemOnHover._Instance.ShowItemDesc(Description, item.icon);
+            ItemOnHover._Instance.ShowItemDesc(Description, item.icon, Damage.ToString(), hungerValue.ToString(), healValue.ToString(), item.itemType);
         }
     }
 

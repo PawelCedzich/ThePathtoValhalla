@@ -17,7 +17,7 @@ public class InventoryPause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("e") && Time.timeScale != 0.0f)
+        if (Input.GetKeyDown("e"))
         {
             if (Paused == true)
             {

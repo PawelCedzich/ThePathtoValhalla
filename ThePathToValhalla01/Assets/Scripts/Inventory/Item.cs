@@ -12,6 +12,8 @@ public class Item : ScriptableObject
     public ItemType itemType = ItemType.Other;
     public GameObject model;
     public int ItemDamage;
+    public int ItemHungerValue;
+    public int ItemHealthValue;
 
 
     public enum ItemType
