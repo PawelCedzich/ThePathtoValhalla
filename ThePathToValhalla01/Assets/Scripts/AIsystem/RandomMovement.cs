@@ -16,6 +16,7 @@ public class RandomMovement : MonoBehaviour
     private bool isRunning;
     private bool fleeing;
     private Vector3 fleeTarget;
+    private float lastFleeTarget;
 
     void Start()
     {
@@ -88,6 +89,22 @@ public class RandomMovement : MonoBehaviour
                 isWalking = false;
                 isRunning = false;
             }
+
+            if (Time.time - lastFleeTarget >= 2f)
+            {
+                Collider[] colliders = Physics.OverlapSphere(transform.position, playerDetectionRange);
+                foreach (Collider collider in colliders)
+                {
+                    if (collider.tag == "Player")
+                    {
+                        Vector3 direction = transform.position - collider.transform.position;
+                        direction.y = 0f;
+                        fleeTarget = transform.position + direction.normalized * range * 5;
+                    }
+                }
+                lastFleeTarget = Time.time;
+            }
+            
         }
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isRunning", isRunning);
