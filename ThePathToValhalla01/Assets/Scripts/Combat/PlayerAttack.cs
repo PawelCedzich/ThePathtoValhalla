@@ -171,7 +171,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(strong ? StrongDamageAfterTime : DamageAfterTime);
         foreach (var attackAreaDamageable in _attackArea.Damageables)
         {
-            attackAreaDamageable.Damage(playerLvl * playerDamageRatio * (Damage + ItemDamage) * (strong ? 2 : 1));
+            attackAreaDamageable.Damage((playerLvl * playerDamageRatio * (Damage) * (strong ? 2 : 1)) + ItemDamage);
         }
 
         yield return new WaitForSeconds(strong ? StrongDamageAfterTime : DamageAfterTime);
