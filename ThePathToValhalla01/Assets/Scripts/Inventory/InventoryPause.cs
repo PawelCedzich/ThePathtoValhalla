@@ -28,7 +28,7 @@ public class InventoryPause : MonoBehaviour
                 Cursor.visible = false;
                 Paused = false;
             }
-            else
+            else if(Time.timeScale != 0.0f)
             {
                 Time.timeScale = 0.0f;
                 Inventory.GetComponent<CanvasGroup>().alpha = 1;

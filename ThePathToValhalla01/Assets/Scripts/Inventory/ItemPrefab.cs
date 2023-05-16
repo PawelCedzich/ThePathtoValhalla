@@ -38,7 +38,7 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         DraggedItem = this.item;
         startPosition = transform.position;
         startParent = transform.parent;
-        transform.SetParent(transform.parent.parent.parent.parent);
+        transform.SetParent(transform.parent.parent.parent.parent.parent);
         IfDropped = false;
         
         GetComponent<CanvasGroup>().blocksRaycasts = false; 
