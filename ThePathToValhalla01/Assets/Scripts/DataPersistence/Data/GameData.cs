@@ -29,6 +29,8 @@ public class GameData
     public Vector3 jotun01Position;
     public bool isNix01Dead;
     public Vector3 nix01Position;
+    public bool isChicken01Dead;
+    public Vector3 chicken01Position;
 
 
 
@@ -51,5 +53,6 @@ public class GameData
         isGoblin01Dead = false;
         isJotun01Dead = false;
         isNix01Dead = false;
+        isChicken01Dead = false;
     }
 }
