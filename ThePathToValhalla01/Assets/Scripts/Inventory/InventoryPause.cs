@@ -12,12 +12,12 @@ public class InventoryPause : MonoBehaviour
 
     void Start()
     {
-        Inventory.GetComponent<CanvasGroup>().alpha = 0;
+           Inventory.GetComponent<CanvasGroup>().alpha = 0;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && Time.timeScale != 0.0f)
         {
             if (Paused == true)
             {

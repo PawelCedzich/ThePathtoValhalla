@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,39 @@ using UnityEngine.UI;
 
 public class NpcQuest : MonoBehaviour, IInteractable
 {
-    public Quest quest; 
+    public Queue<Quest> quests; 
+
+
     public PlayerStats playerStats;
 
-    public GameObject QuestWindow;
 
+    public questtrigger questtrigger;
+
+    public GameObject QuestWindow;
     public Text QuestText;
     public Text QuestTitle;
     public Interactor interactor;
     public void Interact()
     {
+        if (!questtrigger.CheckQuests())
+        {
+
+
             QuestWindow.SetActive(true);
-            QuestTitle.text = quest.Tittle;
-            QuestText.text = quest.Description;
             Cursor.lockState = CursorLockMode.None;
+
+
+            questtrigger.TriggerQuest();
+        }
+        else {
+            CloseInteraction();
+        }
+    }
+
+    private void CloseInteraction()
+    {
+        StopInteracting();
+        interactor.StopInteraction();
     }
 
     public void StopInteracting()
@@ -30,9 +50,12 @@ public class NpcQuest : MonoBehaviour, IInteractable
     }
     public void AcceptQuest()
     {
-        playerStats.Quests.Add(quest);
-        StopInteracting();
-        interactor.StopInteraction();
+        questtrigger.DeleteQuest();
+
+        
+        //playerStats.Quests.Add(quests.Dequeue());
+        CloseInteraction(); 
     }
+
 }
 

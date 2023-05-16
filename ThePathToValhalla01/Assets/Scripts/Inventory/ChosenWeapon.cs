@@ -15,6 +15,11 @@ public class ChosenWeapon : MonoBehaviour
     {
         currentChosenSlot = inventory.inventorySlots[0];
         currentChosenSlot.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        if (currentChosenSlot.Instance != null)
+        {
+            playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
+            EquipItem();
+        }
     }
 
     void Update()
@@ -30,6 +35,13 @@ public class ChosenWeapon : MonoBehaviour
                 playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
                 EquipItem();
             }
+            else
+            {
+                if (HandPosition.transform.childCount > 0)
+                {
+                    Destroy(HandPosition.GetChild(0).gameObject);
+                }
+            }
 
         }
         else if (Input.GetKeyDown("q") && currentChosenSlot == inventory.inventorySlots[1])
@@ -42,6 +54,12 @@ public class ChosenWeapon : MonoBehaviour
             {
                 playerAttack.ItemDamage = currentChosenSlot.Instance.GetComponent<ItemPrefab>().Damage;
                 EquipItem();
+            }
+            else {
+                if (HandPosition.transform.childCount > 0)
+                {
+                    Destroy(HandPosition.GetChild(0).gameObject);
+                }
             }
         }
 
@@ -77,7 +95,6 @@ public class ChosenWeapon : MonoBehaviour
         weapon.transform.rotation = HandPosition.rotation * rotation ;
 
        
-        //weapon.transform.rotation = rotation;
 
         Vector3 scale = new Vector3(0.015f, 0.015f, 0.015f);
         weapon.transform.localScale = scale;

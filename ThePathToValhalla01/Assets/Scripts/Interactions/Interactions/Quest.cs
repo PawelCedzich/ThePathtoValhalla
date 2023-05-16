@@ -8,6 +8,8 @@ public class Quest
     public bool IsActive;
 
     public string Tittle;
-    public string Description;
+    
+    public Dialog dialog;
+
 
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour, IInteractable
 {
-    public InventoryManager playerInventory;
+    public GameObject playerInventory;
     public InventoryManager chestInventory;
    
 
@@ -12,7 +12,7 @@ public class Chest : MonoBehaviour, IInteractable
     public void Interact()
     {
         Time.timeScale = 0.0f;
-        playerInventory.gameObject.SetActive(true);
+        playerInventory.GetComponent<CanvasGroup>().alpha = 1;
         chestInventory.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -23,8 +23,8 @@ public class Chest : MonoBehaviour, IInteractable
     {
 
         Time.timeScale = 1.0f;
-        playerInventory.gameObject.SetActive(false);
         chestInventory.gameObject.SetActive(false);
+        playerInventory.GetComponent<CanvasGroup>().alpha = 0;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
