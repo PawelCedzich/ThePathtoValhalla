@@ -18,3 +18,5 @@ MonoBehaviour:
   itemType: 0
   model: {fileID: 919132149155446097, guid: a0a13e521b6a2544ebc58eca6cd61c0f, type: 3}
   ItemDamage: 0
+  ItemHungerValue: 0
+  ItemHealthValue: 15

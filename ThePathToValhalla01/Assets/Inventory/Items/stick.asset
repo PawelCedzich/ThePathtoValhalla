@@ -17,4 +17,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 68ba8dd854216cc4db47417f6c1a5226, type: 3}
   itemType: 1
   model: {fileID: 919132149155446097, guid: 95e8420acd4d8c14989c607f3470877e, type: 3}
-  ItemDamage: 0
+  ItemDamage: 50
+  ItemHungerValue: 0
+  ItemHealthValue: 0
