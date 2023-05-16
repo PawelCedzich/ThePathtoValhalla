@@ -66,4 +66,9 @@ public class QuestRigthManager : MonoBehaviour
     {
         Quests = new Queue<Quest>();
     }
+
+    public Quest AddQuest(QuestManager questManager)
+    {
+        return curentQuest;
+    }
 }

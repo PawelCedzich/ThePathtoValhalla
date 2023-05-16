@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class NpcQuest : MonoBehaviour, IInteractable
 {
-    public Queue<Quest> quests; 
-
 
     public PlayerStats playerStats;
 
@@ -53,7 +51,7 @@ public class NpcQuest : MonoBehaviour, IInteractable
         questtrigger.DeleteQuest();
 
         
-        //playerStats.Quests.Add(quests.Dequeue());
+        playerStats.Quests.Add(questtrigger.AddQuest());
         CloseInteraction(); 
     }
 

@@ -20,4 +20,9 @@ public class questtrigger : MonoBehaviour
     public void DeleteQuest() {
         FindAnyObjectByType<QuestRigthManager>().DeleteQuest(QuestManager);
     }
+    public Quest AddQuest()
+    {
+
+        return FindAnyObjectByType<QuestRigthManager>().AddQuest(QuestManager);
+    }
 }
