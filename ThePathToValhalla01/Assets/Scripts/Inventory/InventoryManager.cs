@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
         {
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (inventorySlots[i].Instance != null && item == inventorySlots[i].GetCurrentITem() && inventorySlots[i].Instance.GetComponent<ItemPrefab>().Amount != 15)
+                if (inventorySlots[i].Instance != null && item == inventorySlots[i].GetCurrentITem() && inventorySlots[i].Instance.GetComponent<ItemPrefab>().Amount != 16)
                 {
                     inventorySlots[i].StackItem(1);
                     return;

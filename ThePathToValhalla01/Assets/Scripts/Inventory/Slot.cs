@@ -87,7 +87,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             }
         }
         else if (ItemPrefab.DraggedItem.item == Instance.GetComponent<ItemPrefab>().item) {
-            if (Instance.GetComponent<ItemPrefab>().Amount + ItemPrefab.DraggedItem.Amount > 15) {
+            if (Instance.GetComponent<ItemPrefab>().Amount + ItemPrefab.DraggedItem.Amount > 16) {
                 return;
             }
             StackItem(ItemPrefab.DraggedItem.Amount);
