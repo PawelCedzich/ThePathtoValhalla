@@ -11,6 +11,9 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public ItemType itemType = ItemType.Other;
     public GameObject model;
+
+    public bool IsStackable= false;
+    public int Amount = 1;
     public int ItemDamage;
     public int ItemHungerValue;
     public int ItemHealthValue;

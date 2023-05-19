@@ -16,19 +16,33 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Item item)
     {
+        if (item.IsStackable == true)
+        {
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                if (inventorySlots[i].Instance != null && item == inventorySlots[i].GetCurrentITem())
+                {
+                    inventorySlots[i].StackItem();
+                    return;
+                }
+            }
+        }
         for (int i = 0; i < inventorySlots.Length; i++)
         {
+
             if (inventorySlots[i].ItemInSlot == null)
             {
-                //add Item 
                 inventorySlots[i].AddItemToSlot(item);
                 break;
             }
 
-            if (i == inventorySlots.Length - 1) {
+            if (i == inventorySlots.Length - 1)
+            {
                 Debug.Log("Inventory is full");
             }
+       
         }
+        
     }
 
 }

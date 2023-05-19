@@ -21,6 +21,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 
     public GameObject Instance;
     public GameObject PrefabItem;
+    
     public int slotID = 0;
     public ItemAtlas itemAtlas;
     public GameObject FirstInstance;
@@ -42,6 +43,10 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         newItem.GetComponent<ItemPrefab>().item = item;
         newItem.GetComponent<Image>().sprite = item.icon;
         Instance = newItem;
+    }
+
+    public Item GetCurrentITem() { 
+        return Instance.GetComponent<ItemPrefab>().item;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -83,6 +88,17 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         }
     }
 
+    public void StackItem() {
+
+        string amount = Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text;
+        if (amount == "")
+        {
+            amount = "1";
+        }
+        Instance.GetComponent<ItemPrefab>().Amount += 1;
+        int temp = int.Parse(amount) + 1;
+        Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text = temp.ToString();
+    }
     public void LoadData(GameData data)
     {
        

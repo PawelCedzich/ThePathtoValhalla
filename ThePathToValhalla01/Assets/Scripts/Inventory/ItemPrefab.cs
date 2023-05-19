@@ -22,12 +22,14 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     public int Damage = 0;
     public int healValue = 0;
     public int hungerValue = 0;
+    public int Amount = 0;
 
     public void Start()
     {
         Damage = item.ItemDamage;
         healValue = item.ItemHealthValue;
         hungerValue = item.ItemHungerValue;
+        Amount = item.Amount;
     }
 
     
