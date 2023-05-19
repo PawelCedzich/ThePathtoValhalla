@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,9 +21,9 @@ public class InventoryManager : MonoBehaviour
         {
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (inventorySlots[i].Instance != null && item == inventorySlots[i].GetCurrentITem())
+                if (inventorySlots[i].Instance != null && item == inventorySlots[i].GetCurrentITem() && inventorySlots[i].Instance.GetComponent<ItemPrefab>().Amount != 15)
                 {
-                    inventorySlots[i].StackItem();
+                    inventorySlots[i].StackItem(1);
                     return;
                 }
             }

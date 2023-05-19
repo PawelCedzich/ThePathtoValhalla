@@ -63,7 +63,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
 
             }
-            else if (this.slotType == SlotType.WeaponSlot && ItemPrefab.DraggedItem.itemType == ItemType.Weapon)
+            else if (this.slotType == SlotType.WeaponSlot && ItemPrefab.DraggedItem.item.itemType == ItemType.Weapon)
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
@@ -71,14 +71,14 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 ChosenWeapon.CurrentItem(this);
             }
-            else if (this.slotType == SlotType.UsableSlot && ItemPrefab.DraggedItem.itemType == ItemType.Food)
+            else if (this.slotType == SlotType.UsableSlot && ItemPrefab.DraggedItem.item.itemType == ItemType.Food)
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
                 ItemPrefab.FirstSlot.Instance = null;
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
-            else if (this.slotType == SlotType.ArmorySlot && ItemPrefab.DraggedItem.itemType == ItemType.Armory)
+            else if (this.slotType == SlotType.ArmorySlot && ItemPrefab.DraggedItem.item.itemType == ItemType.Armory)
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
@@ -86,9 +86,17 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
         }
+        else if (ItemPrefab.DraggedItem.item == Instance.GetComponent<ItemPrefab>().item) {
+            if (Instance.GetComponent<ItemPrefab>().Amount + ItemPrefab.DraggedItem.Amount > 15) {
+                return;
+            }
+            StackItem(ItemPrefab.DraggedItem.Amount);
+            ItemPrefab.Destroy(ItemPrefab.ItemInSlot);
+            ItemPrefab.IfDropped = true;
+        }
     }
 
-    public void StackItem() {
+    public void StackItem(int itemAmount) {
 
         string amount = Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text;
         if (amount == "")
@@ -96,7 +104,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             amount = "1";
         }
         Instance.GetComponent<ItemPrefab>().Amount += 1;
-        int temp = int.Parse(amount) + 1;
+        int temp = int.Parse(amount) + itemAmount;
         Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text = temp.ToString();
     }
     public void LoadData(GameData data)

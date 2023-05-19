@@ -14,6 +14,7 @@ public class Item : ScriptableObject
 
     public bool IsStackable= false;
     public int Amount = 1;
+    
     public int ItemDamage;
     public int ItemHungerValue;
     public int ItemHealthValue;
