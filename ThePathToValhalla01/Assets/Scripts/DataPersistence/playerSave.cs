@@ -81,10 +81,8 @@ public class playerSave : MonoBehaviour, IDataPersistence
         // JELENIE
         this.dear01.isDead = data.isDear01Dead;
         this.dear01.transform.position = data.dear01Position;
-
         this.dear02.isDead = data.isDear02Dead;
         this.dear02.transform.position = data.dear02Position;
-
         this.dear03.isDead = data.isDear03Dead;
         this.dear03.transform.position = data.dear03Position;
         this.dear04.isDead = data.isDear04Dead;
@@ -132,11 +130,11 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.dear25.isDead = data.isDear25Dead;
         this.dear25.transform.position = data.dear25Position;
         this.dear26.isDead = data.isDear26Dead;
-        this.dear26.transform.position = data.dear27Position;
+        this.dear26.transform.position = data.dear26Position;
         this.dear27.isDead = data.isDear27Dead;
-        this.dear27.transform.position = data.dear28Position;
+        this.dear27.transform.position = data.dear27Position;
         this.dear28.isDead = data.isDear28Dead;
-        this.dear28.transform.position = data.dear29Position;
+        this.dear28.transform.position = data.dear28Position;
         this.dear29.isDead = data.isDear29Dead;
         this.dear29.transform.position = data.dear29Position;
         this.dear30.isDead = data.isDear30Dead;
@@ -186,10 +184,8 @@ public class playerSave : MonoBehaviour, IDataPersistence
         // JELENIE
         data.isDear01Dead = this.dear01.isDead;
         data.dear01Position = this.dear01.transform.position;
-
         data.isDear02Dead = this.dear02.isDead;
         data.dear02Position = this.dear02.transform.position;
-
         data.isDear03Dead = this.dear03.isDead;
         data.dear03Position = this.dear03.transform.position;
         data.isDear04Dead = this.dear04.isDead;
