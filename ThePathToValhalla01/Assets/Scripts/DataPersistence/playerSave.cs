@@ -42,6 +42,26 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
     // BIZONY
     public SimpleEnemy bison01;
+    public SimpleEnemy bison02;
+    public SimpleEnemy bison03;
+    public SimpleEnemy bison04;
+    public SimpleEnemy bison05;
+    public SimpleEnemy bison06;
+    public SimpleEnemy bison07;
+    public SimpleEnemy bison08;
+    public SimpleEnemy bison09;
+    public SimpleEnemy bison10;
+    public SimpleEnemy bison11;
+    public SimpleEnemy bison12;
+    public SimpleEnemy bison13;
+    public SimpleEnemy bison14;
+    public SimpleEnemy bison15;
+    public SimpleEnemy bison16;
+    public SimpleEnemy bison17;
+    public SimpleEnemy bison18;
+    public SimpleEnemy bison19;
+    public SimpleEnemy bison20;
+    public SimpleEnemy bison21;
 
     // BOSSY
     public SimpleEnemy bear01;
@@ -148,6 +168,48 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         this.bison01.isDead = data.isBison01Dead;
         this.bison01.transform.position = data.bison01Position;
+        this.bison02.isDead = data.isBison02Dead;
+        this.bison02.transform.position = data.bison02Position;
+        this.bison03.isDead = data.isBison03Dead;
+        this.bison03.transform.position = data.bison03Position;
+        this.bison04.isDead = data.isBison04Dead;
+        this.bison04.transform.position = data.bison04Position;
+        this.bison05.isDead = data.isBison05Dead;
+        this.bison05.transform.position = data.bison05Position;
+        this.bison06.isDead = data.isBison06Dead;
+        this.bison06.transform.position = data.bison06Position;
+        this.bison07.isDead = data.isBison07Dead;
+        this.bison07.transform.position = data.bison07Position;
+        this.bison08.isDead = data.isBison08Dead;
+        this.bison08.transform.position = data.bison08Position;
+        this.bison09.isDead = data.isBison09Dead;
+        this.bison09.transform.position = data.bison09Position;
+        this.bison10.isDead = data.isBison10Dead;
+        this.bison10.transform.position = data.bison10Position;
+        this.bison11.isDead = data.isBison11Dead;
+        this.bison11.transform.position = data.bison11Position;
+        this.bison12.isDead = data.isBison12Dead;
+        this.bison12.transform.position = data.bison12Position;
+        this.bison13.isDead = data.isBison13Dead;
+        this.bison13.transform.position = data.bison13Position;
+        this.bison14.isDead = data.isBison14Dead;
+        this.bison14.transform.position = data.bison14Position;
+        this.bison15.isDead = data.isBison15Dead;
+        this.bison15.transform.position = data.bison15Position;
+        this.bison16.isDead = data.isBison16Dead;
+        this.bison16.transform.position = data.bison16Position;
+        this.bison17.isDead = data.isBison17Dead;
+        this.bison17.transform.position = data.bison17Position;
+        this.bison18.isDead = data.isBison18Dead;
+        this.bison18.transform.position = data.bison18Position;
+        this.bison19.isDead = data.isBison19Dead;
+        this.bison19.transform.position = data.bison19Position;
+        this.bison20.isDead = data.isBison20Dead;
+        this.bison20.transform.position = data.bison20Position;
+        this.bison21.isDead = data.isBison21Dead;
+        this.bison21.transform.position = data.bison21Position;
+
+
 
         this.bear01.isDead = data.isBear01Dead;
         this.bear01.transform.position = data.bear01Position;
@@ -251,6 +313,48 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         data.isBison01Dead = this.bison01.isDead;
         data.bison01Position = this.bison01.transform.position;
+        data.isBison02Dead = this.bison02.isDead;
+        data.bison02Position = this.bison02.transform.position;
+        data.isBison03Dead = this.bison03.isDead;
+        data.bison03Position = this.bison03.transform.position;
+        data.isBison04Dead = this.bison04.isDead;
+        data.bison04Position = this.bison04.transform.position;
+        data.isBison05Dead = this.bison05.isDead;
+        data.bison05Position = this.bison05.transform.position;
+        data.isBison06Dead = this.bison06.isDead;
+        data.bison06Position = this.bison06.transform.position;
+        data.isBison07Dead = this.bison07.isDead;
+        data.bison07Position = this.bison07.transform.position;
+        data.isBison08Dead = this.bison08.isDead;
+        data.bison08Position = this.bison08.transform.position;
+        data.isBison09Dead = this.bison09.isDead;
+        data.bison09Position = this.bison09.transform.position;
+        data.isBison10Dead = this.bison10.isDead;
+        data.bison10Position = this.bison10.transform.position;
+        data.isBison11Dead = this.bison11.isDead;
+        data.bison11Position = this.bison11.transform.position;
+        data.isBison12Dead = this.bison12.isDead;
+        data.bison12Position = this.bison12.transform.position;
+        data.isBison13Dead = this.bison13.isDead;
+        data.bison13Position = this.bison13.transform.position;
+        data.isBison14Dead = this.bison14.isDead;
+        data.bison14Position = this.bison14.transform.position;
+        data.isBison15Dead = this.bison15.isDead;
+        data.bison15Position = this.bison15.transform.position;
+        data.isBison16Dead = this.bison16.isDead;
+        data.bison16Position = this.bison16.transform.position;
+        data.isBison17Dead = this.bison17.isDead;
+        data.bison17Position = this.bison17.transform.position;
+        data.isBison18Dead = this.bison18.isDead;
+        data.bison18Position = this.bison18.transform.position;
+        data.isBison19Dead = this.bison19.isDead;
+        data.bison19Position = this.bison19.transform.position;
+        data.isBison20Dead = this.bison20.isDead;
+        data.bison20Position = this.bison20.transform.position;
+        data.isBison21Dead = this.bison21.isDead;
+        data.bison21Position = this.bison21.transform.position;
+
+
 
         data.isBear01Dead = this.bear01.isDead;
         data.bear01Position = this.bear01.transform.position;

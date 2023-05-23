@@ -86,6 +86,47 @@ public class GameData
     // BIZONY
     public bool isBison01Dead;
     public Vector3 bison01Position;
+    public bool isBison02Dead;
+    public Vector3 bison02Position;
+    public bool isBison03Dead;
+    public Vector3 bison03Position;
+    public bool isBison04Dead;
+    public Vector3 bison04Position;
+    public bool isBison05Dead;
+    public Vector3 bison05Position;
+    public bool isBison06Dead;
+    public Vector3 bison06Position;
+    public bool isBison07Dead;
+    public Vector3 bison07Position;
+    public bool isBison08Dead;
+    public Vector3 bison08Position;
+    public bool isBison09Dead;
+    public Vector3 bison09Position;
+    public bool isBison10Dead;
+    public Vector3 bison10Position;
+    public bool isBison11Dead;
+    public Vector3 bison11Position;
+    public bool isBison12Dead;
+    public Vector3 bison12Position;
+    public bool isBison13Dead;
+    public Vector3 bison13Position;
+    public bool isBison14Dead;
+    public Vector3 bison14Position;
+    public bool isBison15Dead;
+    public Vector3 bison15Position;
+    public bool isBison16Dead;
+    public Vector3 bison16Position;
+    public bool isBison17Dead;
+    public Vector3 bison17Position;
+    public bool isBison18Dead;
+    public Vector3 bison18Position;
+    public bool isBison19Dead;
+    public Vector3 bison19Position;
+    public bool isBison20Dead;
+    public Vector3 bison20Position;
+    public bool isBison21Dead;
+    public Vector3 bison21Position;
+
 
 
     // BOSSY
@@ -157,6 +198,26 @@ public class GameData
 
         // BIZONY
         isBison01Dead = false;
+        isBison02Dead = false;
+        isBison03Dead = false;
+        isBison04Dead = false;
+        isBison05Dead = false;
+        isBison06Dead = false;
+        isBison07Dead = false;
+        isBison08Dead = false;
+        isBison09Dead = false;
+        isBison10Dead = false;
+        isBison11Dead = false;
+        isBison12Dead = false;
+        isBison13Dead = false;
+        isBison14Dead = false;
+        isBison15Dead = false;
+        isBison16Dead = false;
+        isBison17Dead = false;
+        isBison18Dead = false;
+        isBison19Dead = false;
+        isBison20Dead = false;
+        isBison21Dead = false;
 
         // BOSSY
         isBear01Dead = false;
