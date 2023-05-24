@@ -93,9 +93,36 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
     // NIXY
     public SimpleEnemy nix01;
+    public SimpleEnemy nix02;
+    public SimpleEnemy nix03;
+    public SimpleEnemy nix04;
+    public SimpleEnemy nix05;
+    public SimpleEnemy nix06;
+    public SimpleEnemy nix07;
+    public SimpleEnemy nix08;
+    public SimpleEnemy nix09;
+    public SimpleEnemy nix10;
+    public SimpleEnemy nix11;
+    public SimpleEnemy nix12;
+    public SimpleEnemy nix13;
+    public SimpleEnemy nix14;
 
     // KUCIAKI
     public SimpleEnemy chicken01;
+    public SimpleEnemy chicken02;
+    public SimpleEnemy chicken03;
+    public SimpleEnemy chicken04;
+    public SimpleEnemy chicken05;
+    public SimpleEnemy chicken06;
+    public SimpleEnemy chicken07;
+    public SimpleEnemy chicken08;
+    public SimpleEnemy chicken09;
+    public SimpleEnemy chicken10;
+    public SimpleEnemy chicken11;
+    public SimpleEnemy chicken12;
+    public SimpleEnemy chicken13;
+    public SimpleEnemy chicken14;
+    public SimpleEnemy chicken15;
 
     public void LoadData(GameData data)
     {
@@ -286,9 +313,64 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         this.nix01.isDead = data.isNix01Dead;
         this.nix01.transform.position = data.nix01Position;
+        this.nix02.isDead = data.isNix02Dead;
+        this.nix02.transform.position = data.nix02Position;
+        this.nix03.isDead = data.isNix03Dead;
+        this.nix03.transform.position = data.nix03Position;
+        this.nix04.isDead = data.isNix04Dead;
+        this.nix04.transform.position = data.nix04Position;
+        this.nix05.isDead = data.isNix05Dead;
+        this.nix05.transform.position = data.nix05Position;
+        this.nix06.isDead = data.isNix06Dead;
+        this.nix06.transform.position = data.nix06Position;
+        this.nix07.isDead = data.isNix07Dead;
+        this.nix07.transform.position = data.nix07Position;
+        this.nix08.isDead = data.isNix08Dead;
+        this.nix08.transform.position = data.nix08Position;
+        this.nix09.isDead = data.isNix09Dead;
+        this.nix09.transform.position = data.nix09Position;
+        this.nix10.isDead = data.isNix10Dead;
+        this.nix10.transform.position = data.nix10Position;
+        this.nix11.isDead = data.isNix11Dead;
+        this.nix11.transform.position = data.nix11Position;
+        this.nix12.isDead = data.isNix12Dead;
+        this.nix12.transform.position = data.nix12Position;
+        this.nix13.isDead = data.isNix13Dead;
+        this.nix13.transform.position = data.nix13Position;
+        this.nix14.isDead = data.isNix14Dead;
+        this.nix14.transform.position = data.nix14Position;
 
         this.chicken01.isDead = data.isChicken01Dead;
         this.chicken01.transform.position = data.chicken01Position;
+        this.chicken02.isDead = data.isChicken02Dead;
+        this.chicken02.transform.position = data.chicken02Position;
+        this.chicken03.isDead = data.isChicken03Dead;
+        this.chicken03.transform.position = data.chicken03Position;
+        this.chicken04.isDead = data.isChicken04Dead;
+        this.chicken04.transform.position = data.chicken04Position;
+        this.chicken05.isDead = data.isChicken05Dead;
+        this.chicken05.transform.position = data.chicken05Position;
+        this.chicken06.isDead = data.isChicken06Dead;
+        this.chicken06.transform.position = data.chicken06Position;
+        this.chicken07.isDead = data.isChicken07Dead;
+        this.chicken07.transform.position = data.chicken07Position;
+        this.chicken08.isDead = data.isChicken08Dead;
+        this.chicken08.transform.position = data.chicken08Position;
+        this.chicken09.isDead = data.isChicken09Dead;
+        this.chicken09.transform.position = data.chicken09Position;
+        this.chicken10.isDead = data.isChicken10Dead;
+        this.chicken10.transform.position = data.chicken10Position;
+        this.chicken11.isDead = data.isChicken11Dead;
+        this.chicken11.transform.position = data.chicken11Position;
+        this.chicken12.isDead = data.isChicken12Dead;
+        this.chicken12.transform.position = data.chicken12Position;
+        this.chicken13.isDead = data.isChicken13Dead;
+        this.chicken13.transform.position = data.chicken13Position;
+        this.chicken14.isDead = data.isChicken14Dead;
+        this.chicken14.transform.position = data.chicken14Position;
+        this.chicken15.isDead = data.isChicken15Dead;
+        this.chicken15.transform.position = data.chicken15Position;
+
     }
 
     public void SaveData(GameData data)
@@ -474,9 +556,64 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         data.isNix01Dead = this.nix01.isDead;
         data.nix01Position = this.nix01.transform.position;
+        data.isNix02Dead = this.nix02.isDead;
+        data.nix02Position = this.nix02.transform.position;
+        data.isNix03Dead = this.nix03.isDead;
+        data.nix03Position = this.nix03.transform.position;
+        data.isNix04Dead = this.nix04.isDead;
+        data.nix04Position = this.nix04.transform.position;
+        data.isNix05Dead = this.nix05.isDead;
+        data.nix05Position = this.nix05.transform.position;
+        data.isNix06Dead = this.nix06.isDead;
+        data.nix06Position = this.nix06.transform.position;
+        data.isNix07Dead = this.nix07.isDead;
+        data.nix07Position = this.nix07.transform.position;
+        data.isNix08Dead = this.nix08.isDead;
+        data.nix08Position = this.nix08.transform.position;
+        data.isNix09Dead = this.nix09.isDead;
+        data.nix09Position = this.nix09.transform.position;
+        data.isNix10Dead = this.nix10.isDead;
+        data.nix10Position = this.nix10.transform.position;
+        data.isNix11Dead = this.nix11.isDead;
+        data.nix11Position = this.nix11.transform.position;
+        data.isNix12Dead = this.nix12.isDead;
+        data.nix12Position = this.nix12.transform.position;
+        data.isNix13Dead = this.nix13.isDead;
+        data.nix13Position = this.nix13.transform.position;
+        data.isNix14Dead = this.nix14.isDead;
+        data.nix14Position = this.nix14.transform.position;
 
         data.isChicken01Dead = this.chicken01.isDead;
         data.chicken01Position = this.chicken01.transform.position;
+        data.isChicken02Dead = this.chicken02.isDead;
+        data.chicken02Position = this.chicken02.transform.position;
+        data.isChicken03Dead = this.chicken03.isDead;
+        data.chicken03Position = this.chicken03.transform.position;
+        data.isChicken04Dead = this.chicken04.isDead;
+        data.chicken04Position = this.chicken04.transform.position;
+        data.isChicken05Dead = this.chicken05.isDead;
+        data.chicken05Position = this.chicken05.transform.position;
+        data.isChicken06Dead = this.chicken06.isDead;
+        data.chicken06Position = this.chicken06.transform.position;
+        data.isChicken07Dead = this.chicken07.isDead;
+        data.chicken07Position = this.chicken07.transform.position;
+        data.isChicken08Dead = this.chicken08.isDead;
+        data.chicken08Position = this.chicken08.transform.position;
+        data.isChicken09Dead = this.chicken09.isDead;
+        data.chicken09Position = this.chicken09.transform.position;
+        data.isChicken10Dead = this.chicken10.isDead;
+        data.chicken10Position = this.chicken10.transform.position;
+        data.isChicken11Dead = this.chicken11.isDead;
+        data.chicken11Position = this.chicken11.transform.position;
+        data.isChicken12Dead = this.chicken12.isDead;
+        data.chicken12Position = this.chicken12.transform.position;
+        data.isChicken13Dead = this.chicken13.isDead;
+        data.chicken13Position = this.chicken13.transform.position;
+        data.isChicken14Dead = this.chicken14.isDead;
+        data.chicken14Position = this.chicken14.transform.position;
+        data.isChicken15Dead = this.chicken15.isDead;
+        data.chicken15Position = this.chicken15.transform.position;
+
     }
 
 }

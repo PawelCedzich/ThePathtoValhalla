@@ -185,10 +185,65 @@ public class GameData
     // NIXY
     public bool isNix01Dead;
     public Vector3 nix01Position;
+    public bool isNix02Dead;
+    public Vector3 nix02Position;
+    public bool isNix03Dead;
+    public Vector3 nix03Position;
+    public bool isNix04Dead;
+    public Vector3 nix04Position;
+    public bool isNix05Dead;
+    public Vector3 nix05Position;
+    public bool isNix06Dead;
+    public Vector3 nix06Position;
+    public bool isNix07Dead;
+    public Vector3 nix07Position;
+    public bool isNix08Dead;
+    public Vector3 nix08Position;
+    public bool isNix09Dead;
+    public Vector3 nix09Position;
+    public bool isNix10Dead;
+    public Vector3 nix10Position;
+    public bool isNix11Dead;
+    public Vector3 nix11Position;
+    public bool isNix12Dead;
+    public Vector3 nix12Position;
+    public bool isNix13Dead;
+    public Vector3 nix13Position;
+    public bool isNix14Dead;
+    public Vector3 nix14Position;
+
 
     // KUCIAKI
     public bool isChicken01Dead;
     public Vector3 chicken01Position;
+    public bool isChicken02Dead;
+    public Vector3 chicken02Position;
+    public bool isChicken03Dead;
+    public Vector3 chicken03Position;
+    public bool isChicken04Dead;
+    public Vector3 chicken04Position;
+    public bool isChicken05Dead;
+    public Vector3 chicken05Position;
+    public bool isChicken06Dead;
+    public Vector3 chicken06Position;
+    public bool isChicken07Dead;
+    public Vector3 chicken07Position;
+    public bool isChicken08Dead;
+    public Vector3 chicken08Position;
+    public bool isChicken09Dead;
+    public Vector3 chicken09Position;
+    public bool isChicken10Dead;
+    public Vector3 chicken10Position;
+    public bool isChicken11Dead;
+    public Vector3 chicken11Position;
+    public bool isChicken12Dead;
+    public Vector3 chicken12Position;
+    public bool isChicken13Dead;
+    public Vector3 chicken13Position;
+    public bool isChicken14Dead;
+    public Vector3 chicken14Position;
+    public bool isChicken15Dead;
+    public Vector3 chicken15Position;
 
 
 
@@ -292,8 +347,35 @@ public class GameData
 
         // NIXY
         isNix01Dead = false;
+        isNix02Dead = false;
+        isNix03Dead = false;
+        isNix04Dead = false;
+        isNix05Dead = false;
+        isNix06Dead = false;
+        isNix07Dead = false;
+        isNix08Dead = false;
+        isNix09Dead = false;
+        isNix10Dead = false;
+        isNix11Dead = false;
+        isNix12Dead = false;
+        isNix13Dead = false;
+        isNix14Dead = false;
 
         // KUCIAKI
         isChicken01Dead = false;
+        isChicken02Dead = false;
+        isChicken03Dead = false;
+        isChicken04Dead = false;
+        isChicken05Dead = false;
+        isChicken06Dead = false;
+        isChicken07Dead = false;
+        isChicken08Dead = false;
+        isChicken09Dead = false;
+        isChicken10Dead = false;
+        isChicken11Dead = false;
+        isChicken12Dead = false;
+        isChicken13Dead = false;
+        isChicken14Dead = false;
+        isChicken15Dead = false;
     }
 }
