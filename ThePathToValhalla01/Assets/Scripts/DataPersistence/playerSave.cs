@@ -66,9 +66,30 @@ public class playerSave : MonoBehaviour, IDataPersistence
     // BOSSY
     public SimpleEnemy bear01;
     public SimpleEnemy jotun01;
+    public SimpleEnemy jotun02;
+    public SimpleEnemy jotun03;
 
     // GOBLINY
     public SimpleEnemy goblin01;
+    public SimpleEnemy goblin02;
+    public SimpleEnemy goblin03;
+    public SimpleEnemy goblin04;
+    public SimpleEnemy goblin05;
+    public SimpleEnemy goblin06;
+    public SimpleEnemy goblin07;
+    public SimpleEnemy goblin08;
+    public SimpleEnemy goblin09;
+    public SimpleEnemy goblin10;
+    public SimpleEnemy goblin11;
+    public SimpleEnemy goblin12;
+    public SimpleEnemy goblin13;
+    public SimpleEnemy goblin14;
+    public SimpleEnemy goblin15;
+    public SimpleEnemy goblin16;
+    public SimpleEnemy goblin17;
+    public SimpleEnemy goblin18;
+    public SimpleEnemy goblin19;
+    public SimpleEnemy goblin20;
 
     // NIXY
     public SimpleEnemy nix01;
@@ -216,9 +237,52 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         this.goblin01.isDead = data.isGoblin01Dead;
         this.goblin01.transform.position = data.goblin01Position;
+        this.goblin02.isDead = data.isGoblin02Dead;
+        this.goblin02.transform.position = data.goblin02Position;
+        this.goblin03.isDead = data.isGoblin03Dead;
+        this.goblin03.transform.position = data.goblin03Position;
+        this.goblin04.isDead = data.isGoblin04Dead;
+        this.goblin04.transform.position = data.goblin04Position;
+        this.goblin05.isDead = data.isGoblin05Dead;
+        this.goblin05.transform.position = data.goblin05Position;
+        this.goblin06.isDead = data.isGoblin06Dead;
+        this.goblin06.transform.position = data.goblin06Position;
+        this.goblin07.isDead = data.isGoblin07Dead;
+        this.goblin07.transform.position = data.goblin07Position;
+        this.goblin08.isDead = data.isGoblin08Dead;
+        this.goblin08.transform.position = data.goblin08Position;
+        this.goblin09.isDead = data.isGoblin09Dead;
+        this.goblin09.transform.position = data.goblin09Position;
+        this.goblin10.isDead = data.isGoblin10Dead;
+        this.goblin10.transform.position = data.goblin10Position;
+        this.goblin11.isDead = data.isGoblin11Dead;
+        this.goblin11.transform.position = data.goblin11Position;
+        this.goblin12.isDead = data.isGoblin12Dead;
+        this.goblin12.transform.position = data.goblin12Position;
+        this.goblin13.isDead = data.isGoblin13Dead;
+        this.goblin13.transform.position = data.goblin13Position;
+        this.goblin14.isDead = data.isGoblin14Dead;
+        this.goblin14.transform.position = data.goblin14Position;
+        this.goblin15.isDead = data.isGoblin15Dead;
+        this.goblin15.transform.position = data.goblin15Position;
+        this.goblin16.isDead = data.isGoblin16Dead;
+        this.goblin16.transform.position = data.goblin16Position;
+        this.goblin17.isDead = data.isGoblin17Dead;
+        this.goblin17.transform.position = data.goblin17Position;
+        this.goblin18.isDead = data.isGoblin18Dead;
+        this.goblin18.transform.position = data.goblin18Position;
+        this.goblin19.isDead = data.isGoblin19Dead;
+        this.goblin19.transform.position = data.goblin19Position;
+        this.goblin20.isDead = data.isGoblin20Dead;
+        this.goblin20.transform.position = data.goblin20Position;
+
 
         this.jotun01.isDead = data.isJotun01Dead;
         this.jotun01.transform.position = data.jotun01Position;
+        this.jotun02.isDead = data.isJotun02Dead;
+        this.jotun02.transform.position = data.jotun02Position;
+        this.jotun03.isDead = data.isJotun03Dead;
+        this.jotun03.transform.position = data.jotun03Position;
 
         this.nix01.isDead = data.isNix01Dead;
         this.nix01.transform.position = data.nix01Position;
@@ -361,9 +425,52 @@ public class playerSave : MonoBehaviour, IDataPersistence
         
         data.isGoblin01Dead = this.goblin01.isDead;
         data.goblin01Position = this.goblin01.transform.position;
+        data.isGoblin02Dead = this.goblin02.isDead;
+        data.goblin02Position = this.goblin02.transform.position;
+        data.isGoblin03Dead = this.goblin03.isDead;
+        data.goblin03Position = this.goblin03.transform.position;
+        data.isGoblin04Dead = this.goblin04.isDead;
+        data.goblin04Position = this.goblin04.transform.position;
+        data.isGoblin05Dead = this.goblin05.isDead;
+        data.goblin05Position = this.goblin05.transform.position;
+        data.isGoblin06Dead = this.goblin06.isDead;
+        data.goblin06Position = this.goblin06.transform.position;
+        data.isGoblin07Dead = this.goblin07.isDead;
+        data.goblin07Position = this.goblin07.transform.position;
+        data.isGoblin08Dead = this.goblin08.isDead;
+        data.goblin08Position = this.goblin08.transform.position;
+        data.isGoblin09Dead = this.goblin09.isDead;
+        data.goblin09Position = this.goblin09.transform.position;
+        data.isGoblin10Dead = this.goblin10.isDead;
+        data.goblin10Position = this.goblin10.transform.position;
+        data.isGoblin11Dead = this.goblin11.isDead;
+        data.goblin11Position = this.goblin11.transform.position;
+        data.isGoblin12Dead = this.goblin12.isDead;
+        data.goblin12Position = this.goblin12.transform.position;
+        data.isGoblin13Dead = this.goblin13.isDead;
+        data.goblin13Position = this.goblin13.transform.position;
+        data.isGoblin14Dead = this.goblin14.isDead;
+        data.goblin14Position = this.goblin14.transform.position;
+        data.isGoblin15Dead = this.goblin15.isDead;
+        data.goblin15Position = this.goblin15.transform.position;
+        data.isGoblin16Dead = this.goblin16.isDead;
+        data.goblin16Position = this.goblin16.transform.position;
+        data.isGoblin17Dead = this.goblin17.isDead;
+        data.goblin17Position = this.goblin17.transform.position;
+        data.isGoblin18Dead = this.goblin18.isDead;
+        data.goblin18Position = this.goblin18.transform.position;
+        data.isGoblin19Dead = this.goblin19.isDead;
+        data.goblin19Position = this.goblin19.transform.position;
+        data.isGoblin20Dead = this.goblin20.isDead;
+        data.goblin20Position = this.goblin20.transform.position;
+
 
         data.isJotun01Dead = this.jotun01.isDead;
         data.jotun01Position = this.jotun01.transform.position;
+        data.isJotun02Dead = this.jotun02.isDead;
+        data.jotun02Position = this.jotun02.transform.position;
+        data.isJotun03Dead = this.jotun03.isDead;
+        data.jotun03Position = this.jotun03.transform.position;
 
         data.isNix01Dead = this.nix01.isDead;
         data.nix01Position = this.nix01.transform.position;

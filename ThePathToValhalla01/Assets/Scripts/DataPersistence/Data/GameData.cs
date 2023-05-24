@@ -134,10 +134,53 @@ public class GameData
     public Vector3 bear01Position;
     public bool isJotun01Dead;
     public Vector3 jotun01Position;
+    public bool isJotun02Dead;
+    public Vector3 jotun02Position;
+    public bool isJotun03Dead;
+    public Vector3 jotun03Position;
 
     // GOBLINY
     public bool isGoblin01Dead;
     public Vector3 goblin01Position;
+    public bool isGoblin02Dead;
+    public Vector3 goblin02Position;
+    public bool isGoblin03Dead;
+    public Vector3 goblin03Position;
+    public bool isGoblin04Dead;
+    public Vector3 goblin04Position;
+    public bool isGoblin05Dead;
+    public Vector3 goblin05Position;
+    public bool isGoblin06Dead;
+    public Vector3 goblin06Position;
+    public bool isGoblin07Dead;
+    public Vector3 goblin07Position;
+    public bool isGoblin08Dead;
+    public Vector3 goblin08Position;
+    public bool isGoblin09Dead;
+    public Vector3 goblin09Position;
+    public bool isGoblin10Dead;
+    public Vector3 goblin10Position;
+    public bool isGoblin11Dead;
+    public Vector3 goblin11Position;
+    public bool isGoblin12Dead;
+    public Vector3 goblin12Position;
+    public bool isGoblin13Dead;
+    public Vector3 goblin13Position;
+    public bool isGoblin14Dead;
+    public Vector3 goblin14Position;
+    public bool isGoblin15Dead;
+    public Vector3 goblin15Position;
+    public bool isGoblin16Dead;
+    public Vector3 goblin16Position;
+    public bool isGoblin17Dead;
+    public Vector3 goblin17Position;
+    public bool isGoblin18Dead;
+    public Vector3 goblin18Position;
+    public bool isGoblin19Dead;
+    public Vector3 goblin19Position;
+    public bool isGoblin20Dead;
+    public Vector3 goblin20Position;
+
 
     // NIXY
     public bool isNix01Dead;
@@ -222,9 +265,30 @@ public class GameData
         // BOSSY
         isBear01Dead = false;
         isJotun01Dead = false;
+        isJotun02Dead = false;
+        isJotun03Dead = false;
 
         // GOBLINY
         isGoblin01Dead = false;
+        isGoblin02Dead = false;
+        isGoblin03Dead = false;
+        isGoblin04Dead = false;
+        isGoblin05Dead = false;
+        isGoblin06Dead = false;
+        isGoblin07Dead = false;
+        isGoblin08Dead = false;
+        isGoblin09Dead = false;
+        isGoblin10Dead = false;
+        isGoblin11Dead = false;
+        isGoblin12Dead = false;
+        isGoblin13Dead = false;
+        isGoblin14Dead = false;
+        isGoblin15Dead = false;
+        isGoblin16Dead = false;
+        isGoblin17Dead = false;
+        isGoblin18Dead = false;
+        isGoblin19Dead = false;
+        isGoblin20Dead = false;
 
         // NIXY
         isNix01Dead = false;
