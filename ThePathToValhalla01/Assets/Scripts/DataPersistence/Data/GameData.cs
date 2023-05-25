@@ -245,7 +245,9 @@ public class GameData
     public bool isChicken15Dead;
     public Vector3 chicken15Position;
 
-
+    // WILKI
+    public bool isWolf01Dead;
+    public Vector3 wolf01Position;
 
 
     public SerializableDictionery<int, int> ItemsInSLots;
@@ -377,5 +379,8 @@ public class GameData
         isChicken13Dead = false;
         isChicken14Dead = false;
         isChicken15Dead = false;
+
+        //WILKI
+        isWolf01Dead = false;
     }
 }

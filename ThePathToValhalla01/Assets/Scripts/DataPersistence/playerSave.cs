@@ -124,6 +124,9 @@ public class playerSave : MonoBehaviour, IDataPersistence
     public SimpleEnemy chicken14;
     public SimpleEnemy chicken15;
 
+    // WILKI
+    public SimpleEnemy wolf01;
+
     public void LoadData(GameData data)
     {
 
@@ -371,6 +374,9 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.chicken15.isDead = data.isChicken15Dead;
         this.chicken15.transform.position = data.chicken15Position;
 
+        this.wolf01.isDead = data.isWolf01Dead;
+        this.wolf01.transform.position = data.wolf01Position;
+
     }
 
     public void SaveData(GameData data)
@@ -614,6 +620,8 @@ public class playerSave : MonoBehaviour, IDataPersistence
         data.isChicken15Dead = this.chicken15.isDead;
         data.chicken15Position = this.chicken15.transform.position;
 
+        data.isWolf01Dead = this.wolf01.isDead;
+        data.wolf01Position = this.wolf01.transform.position;
     }
 
 }
