@@ -37,6 +37,10 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
         playerStats = player.GetComponentInChildren<PlayerStats>();
         _cam = Camera.main;
         maxHP = currentHealth;
+    }
+
+    void Update()
+    {
         moving = GetComponent<RandomMovement>();
         moving2 = GetComponent<EnemyMovement>();
         if (isDead)
@@ -58,10 +62,7 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
                 Destroy(moving2);
             }
         }
-    }
 
-    void Update()
-    {
         healthCanvas.transform.rotation = Quaternion.LookRotation(healthCanvas.transform.position - _cam.transform.position);
     }
 
