@@ -8,7 +8,8 @@ public class EndCredits : MonoBehaviour
     [SerializeField]
     private int counter;
 
-    private int time = 25;
+    [SerializeField]
+    private int time = 50;
     IEnumerator credits()
     {
         StartCoroutine(countTime());
