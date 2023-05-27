@@ -47,6 +47,12 @@ public class NpcQuest : MonoBehaviour, IInteractable
     }
     public void AcceptQuest()
     {
+        foreach (Quest quest in playerStats.Quests)
+        {
+            if (quest == questtrigger.AddQuest()) {
+                return;
+            }
+        }
         questtrigger.DeleteQuest();
 
 
