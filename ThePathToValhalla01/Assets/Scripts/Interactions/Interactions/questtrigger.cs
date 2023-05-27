@@ -7,7 +7,7 @@ using UnityEngine;
 public class questtrigger : MonoBehaviour
 {
     public QuestManager QuestManager;
-    private int iterator;
+    public int iterator;
 
     public void TriggerQuest()
     {

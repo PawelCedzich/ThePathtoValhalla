@@ -47,14 +47,18 @@ public class NpcQuest : MonoBehaviour, IInteractable
     }
     public void AcceptQuest()
     {
+        questtrigger.DeleteQuest();
+
+        if (questtrigger.AddQuest().goal.goalType == Goal.GoalType.FindPerson) {
+            questtrigger.ActivateNextQuest();
+            questtrigger.QuestManager.quests[questtrigger.iterator-1].goal.goalGameObject.ActivateNextQuest();
+        }
         foreach (Quest quest in playerStats.Quests)
         {
             if (quest == questtrigger.AddQuest()) {
                 return;
             }
         }
-        questtrigger.DeleteQuest();
-
 
         playerStats.Quests.Add(questtrigger.AddQuest());
         CloseInteraction(); 
