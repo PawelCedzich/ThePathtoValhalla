@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -46,4 +47,19 @@ public class InventoryManager : MonoBehaviour
         
     }
 
+    public ItemPrefab searchForItem(Item item)
+    {
+        foreach (Slot slot in inventorySlots)
+        {
+            if (slot.Instance != null)
+            {
+                if (slot.GetCurrentITem() == item)
+                {
+                    return slot.Instance.GetComponent<ItemPrefab>(); ;
+                }
+            }
+        }
+        return null;
+
+    }
 }

@@ -46,7 +46,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
     }
 
     public Item GetCurrentITem() { 
-        return Instance.GetComponent<ItemPrefab>().item;
+        return this.Instance.GetComponent<ItemPrefab>().item;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -107,6 +107,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         int temp = int.Parse(amount) + itemAmount;
         Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text = temp.ToString();
     }
+    
     public void LoadData(GameData data)
     {
        

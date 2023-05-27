@@ -78,4 +78,23 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     {
         ItemOnHover._Instance.HideItemDesc();
     }
+    public void SubtractItemAmount(int subtractAmount)
+    {
+        string amount = GetComponentInChildren<Text>().text;
+        GetComponent<ItemPrefab>().Amount -= subtractAmount;
+        int temp = int.Parse(amount) - subtractAmount;
+        string temps;
+        if (temp == 1)
+        {
+            temps = "";
+        }else if (temp <= 0) {
+            Debug.Log("destroyed " + this);
+            Destroy(this.gameObject);
+            return;
+        }else
+        {
+            temps = temp.ToString();
+        }
+        GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text = temp.ToString();
+    }
 }

@@ -5,12 +5,13 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class NpcQuest : MonoBehaviour, IInteractable
 {
 
     public PlayerStats playerStats;
-
+    public InventoryManager inventoryManager;
 
     public questtrigger questtrigger;
 
@@ -22,8 +23,6 @@ public class NpcQuest : MonoBehaviour, IInteractable
     {
         if (!questtrigger.CheckQuests())
         {
-
-
             QuestWindow.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
 
@@ -50,10 +49,30 @@ public class NpcQuest : MonoBehaviour, IInteractable
     {
         questtrigger.DeleteQuest();
 
-        
+
         playerStats.Quests.Add(questtrigger.AddQuest());
         CloseInteraction(); 
     }
+
+    public void CompleteQuest() {
+        foreach (Quest quest in playerStats.Quests)
+        {
+
+            if (inventoryManager.searchForItem(quest.goal.GoalItem) != null)
+            {
+                ItemPrefab item = inventoryManager.searchForItem(quest.goal.GoalItem);
+                if (item.Amount >= quest.goal.GoalAmount)
+                {
+                    item.SubtractItemAmount(quest.goal.GoalAmount);
+                    questtrigger.ActivateNextQuest();
+                    CloseInteraction();
+                }
+            }
+        }
+
+
+    }
+
 
 }
 

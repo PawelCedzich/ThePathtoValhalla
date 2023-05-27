@@ -11,5 +11,7 @@ public class Quest
     
     public Dialog dialog;
 
+    public Goal goal;
+
 
 }

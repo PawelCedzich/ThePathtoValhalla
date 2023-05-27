@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class QuestRigthManager : MonoBehaviour
 {
-    private bool NoMoreQuests = false;
     public DialogManager dialogManager;
 
-    private Queue<Quest> Quests;
+    public Queue<Quest> Quests;
     public Text QuestTittle;
     public Quest curentQuest;
     public void ShowQuest(QuestManager questManager)
@@ -30,7 +29,6 @@ public class QuestRigthManager : MonoBehaviour
     {
         if (Quests.Count == 0)
         {
-            EndQuests();
             return;
         }
 
@@ -43,20 +41,7 @@ public class QuestRigthManager : MonoBehaviour
         dialogManager.StartDialog(quest.dialog);
 
     }
-    private void EndQuests()
-    {
-        NoMoreQuests = true;
-    }
 
-    public bool CheckAvailibleQuests(QuestManager questManager)
-    {
-        if (NoMoreQuests == true) {
-            return true;
-        }
-        else { 
-            return false; 
-        }
-    }
 
     public void DeleteQuest(QuestManager questManager) {
         curentQuest.IsActive = false;
@@ -70,5 +55,11 @@ public class QuestRigthManager : MonoBehaviour
     public Quest AddQuest(QuestManager questManager)
     {
         return curentQuest;
+    }
+
+    public void ActivateNextQuest(Quest quest)
+    {
+        Quests.Enqueue(quest);
+
     }
 }
