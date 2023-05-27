@@ -17,7 +17,7 @@ public class QuestRigthManager : MonoBehaviour
 
         foreach (Quest quest in questManager.quests)
         {
-            if (quest.IsActive == true) {
+            if (quest.isCompleted == false) {
                 Quests.Enqueue(quest);
             }
         }

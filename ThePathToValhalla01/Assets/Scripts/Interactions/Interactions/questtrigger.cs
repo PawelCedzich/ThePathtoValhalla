@@ -37,6 +37,13 @@ public class questtrigger : MonoBehaviour
 
     public void ActivateNextQuest()
     {
+        //foreach (Quest quest in QuestManager.quests)
+        //{
+        //    if (quest.isCompleted == false && quest.IsActive == false) { 
+        //        quest.IsActive = true; 
+        //        FindAnyObjectByType<QuestRigthManager>().ActivateNextQuest(quest);
+        //    }
+        //}
         iterator++;
         if(iterator < QuestManager.quests.Count())
         {
