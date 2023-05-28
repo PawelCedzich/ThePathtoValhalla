@@ -7,16 +7,15 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour
 {
 
-    private Queue<string> Sentences;
+    private Queue<Sentence> Sentences;
     public Text QuestDialogField;
     public Text NpcName;
 
     public void StartDialog(Dialog dialog)
     {
         Sentences.Clear();
-        NpcName.text = dialog.name;
 
-        foreach (string sentence in dialog.sentences)
+        foreach (Sentence sentence in dialog.sentences)
         {
             Sentences.Enqueue(sentence);
         }
@@ -26,25 +25,22 @@ public class DialogManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        string sentence = "";
-        QuestDialogField.text = sentence;
-        if (Sentences.Count == 0) {
-            EndDialog();
+        Sentence sentence;
+        if (Sentences.Count == 0)
+        {
             return;
         }
 
         sentence = Sentences.Dequeue();
-        QuestDialogField.text = sentence;
+        QuestDialogField.text = sentence.sentenceText;
+        NpcName.text = sentence.Name;
 
     }
 
-    private void EndDialog()
-    {
-    }
 
     void Start()
     {
-        Sentences = new Queue<string>();
+        Sentences = new Queue<Sentence>();
     }
 
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[System.Serializable]
 public class questtrigger : MonoBehaviour
 {
     public QuestManager QuestManager;
@@ -37,19 +38,13 @@ public class questtrigger : MonoBehaviour
 
     public void ActivateNextQuest()
     {
-        //foreach (Quest quest in QuestManager.quests)
-        //{
-        //    if (quest.isCompleted == false && quest.IsActive == false) { 
-        //        quest.IsActive = true; 
-        //        FindAnyObjectByType<QuestRigthManager>().ActivateNextQuest(quest);
-        //    }
-        //}
-        iterator++;
-        if(iterator < QuestManager.quests.Count())
+        foreach (Quest quest in QuestManager.quests)
         {
-            QuestManager.quests[iterator].IsActive = true;
-            FindAnyObjectByType<QuestRigthManager>().ActivateNextQuest(QuestManager.quests[iterator]);
+            if (quest.isCompleted == false && quest.IsActive == false)
+            {
+                quest.IsActive = true;
+                FindAnyObjectByType<QuestRigthManager>().ActivateNextQuest(quest);
+            }
         }
-
     }
 }
