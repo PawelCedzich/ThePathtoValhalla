@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(5);
         DataPersistenceManager.instance.NewGame();
     }
     public void ContinueGame()
