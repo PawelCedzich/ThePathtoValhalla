@@ -25,13 +25,5 @@ public class AddItem : MonoBehaviour
         {
             PickUpItem(weapon);
         }
-        if (Input.GetKeyDown("3"))
-        {
-            PickUpItem(other);
-        }
-        if (Input.GetKeyDown("4"))
-        {
-            PickUpItem(armory);
-        }
     }
 }

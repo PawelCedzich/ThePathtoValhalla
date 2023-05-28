@@ -103,7 +103,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         {
             amount = "1";
         }
-        Instance.GetComponent<ItemPrefab>().Amount += 1;
+        Instance.GetComponent<ItemPrefab>().Amount += itemAmount;
         int temp = int.Parse(amount) + itemAmount;
         Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text = temp.ToString();
     }
@@ -131,6 +131,12 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
                 data.ItemsInSLots.Remove(slotID);
             }
             data.ItemsInSLots.Add(slotID, this.Instance.GetComponent<ItemPrefab>().item.ID);
+        }
+    }
+
+    public void UseItem(PlayerStats p) {
+        if (Instance.GetComponent<ItemPrefab>() != null && Instance.GetComponent<ItemPrefab>().item.itemType == ItemType.Food) {
+            p.IncreaseHunger(Instance.GetComponent<ItemPrefab>().hungerValue);
         }
     }
 
