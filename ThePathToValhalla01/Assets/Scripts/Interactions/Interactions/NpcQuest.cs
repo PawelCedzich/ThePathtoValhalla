@@ -79,6 +79,7 @@ public class NpcQuest : MonoBehaviour, IInteractable
                 {
                     questtrigger.iterator++;
                     item.SubtractItemAmount(quest.goal.GoalAmount);
+                    playerStats.IncreaseXP(quest.XPAmount);
                     questtrigger.FindAnyObjectByType<QuestRigthManager>().AddQuest(questtrigger.QuestManager).isCompleted = true;
                     questtrigger.ActivateNextQuest();
                     CloseInteraction();
