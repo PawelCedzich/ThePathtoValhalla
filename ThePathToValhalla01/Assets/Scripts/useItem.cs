@@ -14,5 +14,17 @@ public class useItem : MonoBehaviour
             inventoryManager.inventorySlots[2].Instance.GetComponent<ItemPrefab>().SubtractItemAmount(1);
 
         }
+        if (Input.GetKeyDown("4") && inventoryManager.inventorySlots[3].Instance != null)
+        {
+            inventoryManager.inventorySlots[3].UseItem(playerStats);
+            inventoryManager.inventorySlots[3].Instance.GetComponent<ItemPrefab>().SubtractItemAmount(1);
+
+        }
+        if (Input.GetKeyDown("5") && inventoryManager.inventorySlots[4].Instance != null)
+        {
+            inventoryManager.inventorySlots[4].UseItem(playerStats);
+            inventoryManager.inventorySlots[4].Instance.GetComponent<ItemPrefab>().SubtractItemAmount(1);
+
+        }
     }
 }
