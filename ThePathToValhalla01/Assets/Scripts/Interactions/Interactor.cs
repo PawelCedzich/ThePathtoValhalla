@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 interface IInteractable {
     public void Interact();
@@ -25,14 +26,12 @@ public class Interactor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        int layerMask = 10;
+        LayerMask layer_mask = (1 << 10);
         if (Input.GetKeyDown(KeyCode.F)) {
 
             if(isInteracting == false){
                 Ray r = new Ray(InteractionSource.position, InteractionSource.forward);
-                Debug.DrawRay(InteractionSource.position, InteractionSource.forward, Color.yellow, layerMask);
-                if (Physics.Raycast(r, out RaycastHit hitInfo, InteractionRange))
+                if (Physics.Raycast(r, out RaycastHit hitInfo, InteractionRange, layer_mask))
                 {
                     if (hitInfo.collider.gameObject.TryGetComponent(out interactObj))
                     {

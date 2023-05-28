@@ -77,6 +77,9 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
             healthSlider.value = 0;
             currentHealth = 0;
             isDead = true;
+
+            gameObject.layer = 10;
+
             healthCanvas.enabled = false;
             if (moving != null)
             {
