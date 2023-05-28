@@ -10,6 +10,8 @@ public class QuestRigthManager : MonoBehaviour
 
     public Queue<Quest> Quests;
     public Text QuestTittle;
+    public Text QuestGoal;
+
     public Quest curentQuest;
     public void ShowQuest(QuestManager questManager)
     {
@@ -36,6 +38,16 @@ public class QuestRigthManager : MonoBehaviour
         quest = Quests.Dequeue();
         curentQuest = quest;
         QuestTittle.text = quest.Tittle;
+
+        string str= "";
+        if (quest.goal.goalType == Goal.GoalType.CollectItem && quest.goal.GoalItem != null)
+        {
+            str = "Zdobπdü: " + quest.goal.GoalItem.itemName + " x " + quest.goal.GoalAmount;
+        }
+        else if(quest.goal.goalGameObject != null) {
+            str = "Znajdü: " + quest.goal.goalGameObject.name;
+        }
+        QuestGoal.text = str;
 
 
         dialogManager.StartDialog(quest.dialog);
