@@ -22,9 +22,8 @@ public class NpcQuest : MonoBehaviour, IInteractable
     {
         if (!questtrigger.CheckQuests())
         {
-            QuestWindow.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-
+            QuestWindow.SetActive(true);
 
             questtrigger.TriggerQuest();
         }

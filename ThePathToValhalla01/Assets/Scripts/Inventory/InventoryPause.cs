@@ -32,7 +32,6 @@ public class InventoryPause : MonoBehaviour
             {
                 Time.timeScale = 0.0f;
                 Inventory.GetComponent<CanvasGroup>().alpha = 1;
-                Cursor.lockState = CursorLockMode.Locked;
                 Cursor.lockState = CursorLockMode.None;
                 CameraMov.gameObject.SetActive(false);
                 Cursor.visible = true;
