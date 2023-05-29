@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
+  m_Name: wolfSkin
+  m_EditorClassIdentifier: 
+  ID: 0
+  itemName: NewItem
+  icon: {fileID: 0}
+  itemType: 6
+  model: {fileID: 0}
+  IsStackable: 0
+  Amount: 1
+  ItemDamage: 0
+  ItemHungerValue: 0
+  ItemHealthValue: 0
+  StaminaValue: 0
+  SpeedValue: 0
+  DmgAddValue: 0
