@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 [System.Serializable]
 public class questtrigger : MonoBehaviour
 {
     public QuestManager QuestManager;
     public int iterator;
+    public int QuestTriggerId;
 
     public void TriggerQuest()
     {
@@ -47,4 +49,6 @@ public class questtrigger : MonoBehaviour
             }
         }
     }
+
+
 }

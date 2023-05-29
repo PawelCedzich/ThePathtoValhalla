@@ -343,6 +343,11 @@ public class GameData
 
     public SerializableDictionery<int, int> ItemsInSLots;
 
+    public SerializableDictionery<int, bool> NpcQuestActive;
+    public SerializableDictionery<int, bool> NpcQuestCompleted;
+    public SerializableDictionery<int, bool> NpcQuestPlayerCollected;
+    public SerializableDictionery<int, int> NpcQuestTriggerID;
+
     public GameData() {
         playerPosition = Vector3.zero;
         playerRotation = Quaternion.identity;

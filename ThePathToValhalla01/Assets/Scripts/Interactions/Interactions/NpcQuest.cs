@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NpcQuest : MonoBehaviour, IInteractable
+public class NpcQuest : MonoBehaviour, IInteractable, IDataPersistence
 {
 
     public PlayerStats playerStats;
@@ -61,7 +61,7 @@ public class NpcQuest : MonoBehaviour, IInteractable
                 return;
             }
         }
-        
+        questtrigger.AddQuest().isColected = true;
         playerStats.Quests.Add(questtrigger.AddQuest());
         CloseInteraction(); 
     }
@@ -89,6 +89,70 @@ public class NpcQuest : MonoBehaviour, IInteractable
 
     }
 
+    public void LoadData(GameData data)
+    {
+        bool value;
+        int valueID;
+
+        if (data.NpcQuestTriggerID.TryGetValue(questtrigger.QuestTriggerId, out valueID))
+        {
+            questtrigger.QuestTriggerId = valueID;
+        }
+
+        foreach (Quest quest in questtrigger.QuestManager.quests)
+        {
+            if (data.NpcQuestActive.TryGetValue(quest.QuestID, out value))
+            {
+                quest.IsActive = value;
+            }
+
+            if (data.NpcQuestCompleted.TryGetValue(quest.QuestID, out value))
+            {
+                quest.isCompleted = value;
+
+            }
+
+            if (data.NpcQuestPlayerCollected.TryGetValue(quest.QuestID, out value))
+            {
+                quest.isColected = value;
+                if (quest.isColected == true) {
+                    playerStats.Quests.Add(quest);
+                }
+            }
+        }
+    }
+
+    public void SaveData(GameData data)
+    {
+        if (data.NpcQuestTriggerID.ContainsKey(questtrigger.QuestTriggerId))
+        {
+            data.NpcQuestTriggerID.Remove(questtrigger.QuestTriggerId);
+        }
+        data.NpcQuestTriggerID.Add(questtrigger.QuestTriggerId, questtrigger.iterator);
+
+        foreach (Quest quest in questtrigger.QuestManager.quests)
+        {
+            if (data.NpcQuestActive.ContainsKey(quest.QuestID))
+            {
+                data.NpcQuestActive.Remove(quest.QuestID);
+            }
+            data.NpcQuestActive.Add(quest.QuestID, quest.IsActive);
+
+
+            if (data.NpcQuestCompleted.ContainsKey(quest.QuestID))
+            {
+                data.NpcQuestCompleted.Remove(quest.QuestID);
+            }
+            data.NpcQuestCompleted.Add(quest.QuestID, quest.isCompleted);
+
+
+            if (data.NpcQuestPlayerCollected.ContainsKey(quest.QuestID))
+            {
+                data.NpcQuestPlayerCollected.Remove(quest.QuestID);
+            }
+            data.NpcQuestPlayerCollected.Add(quest.QuestID, quest.isColected);
+        }
+    }
 
 }
 
