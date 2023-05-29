@@ -341,7 +341,7 @@ public class GameData
 
     public bool isBanditC01Dead;
     public Vector3 banditC01Position;
-    public bool isBanditC021Dead;
+    public bool isBanditC02Dead;
     public Vector3 banditC02Position;
     public bool isBanditC03Dead;
     public Vector3 banditC03Position;
