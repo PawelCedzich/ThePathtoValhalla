@@ -30,6 +30,7 @@ public class Anvil : MonoBehaviour, IInteractable
         {
             item = ChosenWeapon.GetCurrentSlot().Instance.GetComponent<ItemPrefab>();
             item.Damage += 5;
+            item.WasUpgraded = true;
             timer = 3600;
             upgradedWeapon = true;
         }

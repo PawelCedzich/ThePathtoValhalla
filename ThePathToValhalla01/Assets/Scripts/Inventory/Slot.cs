@@ -58,33 +58,20 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
             Instance = ItemPrefab.ItemInSlot;
             if (this.slotType == SlotType.BackpackSlot)
             {
-                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
-                ItemPrefab.IfDropped = true;
-                ItemPrefab.FirstSlot.Instance = null;
-                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
-
+                DropItem();
             }
             else if (this.slotType == SlotType.WeaponSlot && ItemPrefab.DraggedItem.item.itemType == ItemType.Weapon)
             {
-                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
-                ItemPrefab.IfDropped = true;
-                ItemPrefab.FirstSlot.Instance = null;
-                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                DropItem();
                 ChosenWeapon.CurrentItem(this);
             }
             else if (this.slotType == SlotType.UsableSlot && (ItemPrefab.DraggedItem.item.itemType == ItemType.Food || ItemPrefab.DraggedItem.item.itemType == ItemType.HealPotion || ItemPrefab.DraggedItem.item.itemType == ItemType.ConditionPotion || ItemPrefab.DraggedItem.item.itemType == ItemType.DamagePotion || ItemPrefab.DraggedItem.item.itemType == ItemType.SpeedPotion))
             {
-                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
-                ItemPrefab.IfDropped = true;
-                ItemPrefab.FirstSlot.Instance = null;
-                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                DropItem();
             }
             else if (this.slotType == SlotType.ArmorySlot && ItemPrefab.DraggedItem.item.itemType == ItemType.Armory)
             {
-                ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
-                ItemPrefab.IfDropped = true;
-                ItemPrefab.FirstSlot.Instance = null;
-                ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+                DropItem();
             }
         }
         else if (ItemPrefab.DraggedItem.item == Instance.GetComponent<ItemPrefab>().item) {
@@ -97,6 +84,13 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         }
     }
 
+    public void DropItem()
+    {
+        ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
+        ItemPrefab.IfDropped = true;
+        ItemPrefab.FirstSlot.Instance = null;
+        ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
+    }
     public void StackItem(int itemAmount) {
 
         string amount = Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text;

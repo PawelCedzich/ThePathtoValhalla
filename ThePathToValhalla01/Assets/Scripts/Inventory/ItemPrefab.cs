@@ -27,6 +27,10 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     public int DmgAddValue = 0;
     public int Amount = 0;
 
+    public int UpgradeTime = 3600;
+    private int UpgradeTimer;
+    public bool WasUpgraded = false;
+
     public void Start()
     {
         Damage = item.ItemDamage;
@@ -36,9 +40,24 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         StaminaValue = item.StaminaValue;
         SpeedValue = item.SpeedValue;
         DmgAddValue = item.DmgAddValue;
+
+        UpgradeTimer = UpgradeTime;
     }
 
-    
+    public void Update()
+    {
+        if (WasUpgraded == true) {
+            UpgradeTimer--;
+            if (UpgradeTimer <= 0) {
+                WasUpgraded = false;
+                Damage -= 5;
+                UpgradeTimer = UpgradeTime;
+            }
+        }
+        
+    }
+
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         FirstSlot = gameObject.GetComponentInParent<Slot>();

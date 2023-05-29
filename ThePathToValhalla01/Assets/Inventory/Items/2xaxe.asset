@@ -15,6 +15,13 @@ MonoBehaviour:
   ID: 1
   itemName: 2xaxe
   icon: {fileID: 21300000, guid: 954361a08423ec842af8e1edfbe4e630, type: 3}
-  itemType: 1
+  itemType: 5
   model: {fileID: 919132149155446097, guid: c0e9b6a2247908c49a95e5458f076fdc, type: 3}
+  IsStackable: 0
+  Amount: 1
   ItemDamage: 10
+  ItemHungerValue: 0
+  ItemHealthValue: 0
+  StaminaValue: 0
+  SpeedValue: 0
+  DmgAddValue: 0
