@@ -162,6 +162,15 @@ public class playerSave : MonoBehaviour, IDataPersistence
     public SimpleEnemy wolf35;
     public SimpleEnemy wolf36;
 
+    //bandyci A
+    public SimpleEnemy banditA01;
+    //bandyci B
+    public SimpleEnemy banditB01;
+    //bandyci C
+    public SimpleEnemy banditC01;
+    //bandyci D
+    public SimpleEnemy banditD01;
+
     public void LoadData(GameData data)
     {
 
@@ -482,6 +491,18 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.wolf36.isDead = data.isWolf36Dead;
         this.wolf36.transform.position = data.wolf36Position;
 
+        this.banditA01.isDead = data.isBanditA01Dead;
+        this.banditA01.transform.position = data.banditA01Position;
+
+        this.banditB01.isDead = data.isBanditB01Dead;
+        this.banditB01.transform.position = data.banditB01Position;
+
+        this.banditC01.isDead = data.isBanditC01Dead;
+        this.banditC01.transform.position = data.banditC01Position;
+
+        this.banditD01.isDead = data.isBanditD01Dead;
+        this.banditD01.transform.position = data.banditD01Position;
+
 
     }
 
@@ -799,6 +820,17 @@ public class playerSave : MonoBehaviour, IDataPersistence
         data.isWolf36Dead = this.wolf36.isDead;
         data.wolf36Position = this.wolf36.transform.position;
 
+        data.isBanditA01Dead = this.banditA01.isDead;
+        data.banditA01Position = this.banditA01.transform.position;
+        
+        data.isBanditB01Dead = this.banditB01.isDead;
+        data.banditB01Position = this.banditB01.transform.position;
+
+        data.isBanditC01Dead = this.banditC01.isDead;
+        data.banditC01Position = this.banditC01.transform.position;
+
+        data.isBanditD01Dead = this.banditD01.isDead;
+        data.banditD01Position = this.banditD01.transform.position;
     }
 
 }

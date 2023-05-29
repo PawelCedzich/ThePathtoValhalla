@@ -319,6 +319,26 @@ public class GameData
     public bool isWolf36Dead;
     public Vector3 wolf36Position;
 
+    // bandyci A
+
+    public bool isBanditA01Dead;
+    public Vector3 banditA01Position;
+
+    // bandyci B
+
+    public bool isBanditB01Dead;
+    public Vector3 banditB01Position;
+    
+    // bandyci C
+
+    public bool isBanditC01Dead;
+    public Vector3 banditC01Position;
+    
+    // bandyci D
+
+    public bool isBanditD01Dead;
+    public Vector3 banditD01Position;
+
 
 
     public SerializableDictionery<int, int> ItemsInSLots;
@@ -488,5 +508,14 @@ public class GameData
         isWolf34Dead = false;
         isWolf35Dead = false;
         isWolf36Dead = false;
+
+        //BANDYCI A
+        isBanditA01Dead = false;
+        //BANDYCI B
+        isBanditB01Dead = false;
+        //BANDYCI C
+        isBanditC01Dead = false;
+        //BANDYCI D
+        isBanditD01Dead = false;
     }
 }

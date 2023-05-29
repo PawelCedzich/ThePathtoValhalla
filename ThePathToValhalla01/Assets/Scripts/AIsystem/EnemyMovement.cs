@@ -27,6 +27,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 centerPosition;
     private float lastAttackTime;
 
+    private bool isReturningToCenter = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -45,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
         agent.isStopped = true;
         animator.SetBool("isWalking", false);
         animator.SetBool("isRunning", false);
+        isReturningToCenter = true; // Ustaw wartoœæ isReturningToCenter na true
         yield return new WaitForSeconds(stopTime);
         agent.isStopped = false;
         isWalking = true;
@@ -131,7 +134,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
 
-        if (Vector3.Distance(transform.position, centrePoint.position) > maxDistanceFromCenter)
+        if (Vector3.Distance(transform.position, centrePoint.position) > maxDistanceFromCenter && !isReturningToCenter)
         {
             agent.SetDestination(centrePoint.position);
             isWalking = false;
