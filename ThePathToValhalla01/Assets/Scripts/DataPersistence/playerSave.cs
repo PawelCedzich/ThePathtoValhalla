@@ -164,12 +164,24 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
     //bandyci A
     public SimpleEnemy banditA01;
+    public SimpleEnemy banditA02;
+    public SimpleEnemy banditA03;
     //bandyci B
     public SimpleEnemy banditB01;
+    public SimpleEnemy banditB02;
+    public SimpleEnemy banditB03;
     //bandyci C
     public SimpleEnemy banditC01;
+    public SimpleEnemy banditC02;
+    public SimpleEnemy banditC03;
+    public SimpleEnemy banditC04;
     //bandyci D
     public SimpleEnemy banditD01;
+    public SimpleEnemy banditD02;
+    public SimpleEnemy banditD03;
+    public SimpleEnemy banditD04;
+    public SimpleEnemy banditD05;
+
 
     public void LoadData(GameData data)
     {
@@ -822,15 +834,37 @@ public class playerSave : MonoBehaviour, IDataPersistence
 
         data.isBanditA01Dead = this.banditA01.isDead;
         data.banditA01Position = this.banditA01.transform.position;
-        
+        data.isBanditA02Dead = this.banditA02.isDead;
+        data.banditA02Position = this.banditA02.transform.position;
+        data.isBanditA03Dead = this.banditA03.isDead;
+        data.banditA03Position = this.banditA03.transform.position;
+
         data.isBanditB01Dead = this.banditB01.isDead;
         data.banditB01Position = this.banditB01.transform.position;
+        data.isBanditB02Dead = this.banditB02.isDead;
+        data.banditB02Position = this.banditB02.transform.position;
+        data.isBanditB03Dead = this.banditB03.isDead;
+        data.banditB03Position = this.banditB03.transform.position;
 
         data.isBanditC01Dead = this.banditC01.isDead;
         data.banditC01Position = this.banditC01.transform.position;
+        data.isBanditC02Dead = this.banditC02.isDead;
+        data.banditC02Position = this.banditC02.transform.position;
+        data.isBanditC03Dead = this.banditC03.isDead;
+        data.banditC03Position = this.banditC03.transform.position;
+        data.isBanditC04Dead = this.banditC04.isDead;
+        data.banditC04Position = this.banditC04.transform.position;
 
         data.isBanditD01Dead = this.banditD01.isDead;
         data.banditD01Position = this.banditD01.transform.position;
+        data.isBanditD02Dead = this.banditD02.isDead;
+        data.banditD02Position = this.banditD02.transform.position;
+        data.isBanditD03Dead = this.banditD03.isDead;
+        data.banditD03Position = this.banditD03.transform.position;
+        data.isBanditD04Dead = this.banditD04.isDead;
+        data.banditD04Position = this.banditD04.transform.position;
+        data.isBanditD05Dead = this.banditD05.isDead;
+        data.banditD05Position = this.banditD05.transform.position;
     }
 
 }

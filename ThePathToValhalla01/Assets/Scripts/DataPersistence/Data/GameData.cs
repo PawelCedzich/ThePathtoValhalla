@@ -323,21 +323,43 @@ public class GameData
 
     public bool isBanditA01Dead;
     public Vector3 banditA01Position;
+    public bool isBanditA02Dead;
+    public Vector3 banditA02Position;
+    public bool isBanditA03Dead;
+    public Vector3 banditA03Position;
 
     // bandyci B
 
     public bool isBanditB01Dead;
     public Vector3 banditB01Position;
-    
+    public bool isBanditB02Dead;
+    public Vector3 banditB02Position;
+    public bool isBanditB03Dead;
+    public Vector3 banditB03Position;
+
     // bandyci C
 
     public bool isBanditC01Dead;
     public Vector3 banditC01Position;
-    
+    public bool isBanditC021Dead;
+    public Vector3 banditC02Position;
+    public bool isBanditC03Dead;
+    public Vector3 banditC03Position;
+    public bool isBanditC04Dead;
+    public Vector3 banditC04Position;
+
     // bandyci D
 
     public bool isBanditD01Dead;
     public Vector3 banditD01Position;
+    public bool isBanditD02Dead;
+    public Vector3 banditD02Position;
+    public bool isBanditD03Dead;
+    public Vector3 banditD03Position;
+    public bool isBanditD04Dead;
+    public Vector3 banditD04Position;
+    public bool isBanditD05Dead;
+    public Vector3 banditD05Position;
 
 
 
@@ -516,11 +538,22 @@ public class GameData
 
         //BANDYCI A
         isBanditA01Dead = false;
+        isBanditA02Dead = false;
+        isBanditA03Dead = false;
         //BANDYCI B
         isBanditB01Dead = false;
+        isBanditB02Dead = false;
+        isBanditB03Dead = false;
         //BANDYCI C
         isBanditC01Dead = false;
+        isBanditC02Dead = false;
+        isBanditC03Dead = false;
+        isBanditC04Dead = false;
         //BANDYCI D
         isBanditD01Dead = false;
+        isBanditD02Dead = false;
+        isBanditD03Dead = false;
+        isBanditD04Dead = false;
+        isBanditD05Dead = false;
     }
 }
