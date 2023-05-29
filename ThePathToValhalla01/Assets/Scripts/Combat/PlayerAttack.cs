@@ -36,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
 
     public int ItemDamage;
 
+    public SoundPlayer soundPlayer;
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
@@ -103,6 +104,7 @@ public class PlayerAttack : MonoBehaviour
     public void OnAttack(InputValue value)
     {
         if (_isAttacking || Time.time - _lastAttackTime < 2.0f || Time.timeScale == 0f || playerStamina < 8) return;
+        soundPlayer.PlaySound("weapon_swing", 1.0f, 0.3f);
         playerStats.currentStamina -= 8;
         _lastAttackTime = Time.time;
         _animator.SetTrigger("SimpleAttack");
@@ -112,6 +114,7 @@ public class PlayerAttack : MonoBehaviour
     public void OnStrongAttack(InputValue value)
     {
         if (_isAttacking || Time.time - _lastStrongAttackTime < 4.0f || Time.timeScale == 0f || playerStamina < 16) return;
+        soundPlayer.PlaySound("weapon_hardSwing", 0.8f, 0.3f);
         playerStats.currentStamina -= 16;
         _lastStrongAttackTime = Time.time;
         _animator.SetTrigger("StrongAttack");
@@ -171,6 +174,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(strong ? StrongDamageAfterTime : DamageAfterTime);
         foreach (var attackAreaDamageable in _attackArea.Damageables)
         {
+            soundPlayer.PlaySound("hit", 1.0f, 0.2f);
             attackAreaDamageable.Damage((playerLvl * playerDamageRatio * (Damage) * (strong ? 2 : 1)) + ItemDamage);
         }
 

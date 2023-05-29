@@ -32,10 +32,7 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerStats = player.GetComponentInChildren<PlayerStats>();
-        if (agent.transform.position == new Vector3(0, 0, 0))
-        {
-            agent.transform.position = centrePoint.transform.position;
-        }
+
         centerPosition = centrePoint.position;
         isWalking = false;
         isRunning = false;

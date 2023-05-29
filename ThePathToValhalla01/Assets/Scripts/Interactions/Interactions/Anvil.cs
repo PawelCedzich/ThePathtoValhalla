@@ -10,6 +10,7 @@ public class Anvil : MonoBehaviour, IInteractable
     public Interactor interactor;
     public bool upgradedWeapon = false;
     private int timer;
+    public SoundPlayer soundPlayer;
     public void Interact()
     {
         if (timer < 0)
@@ -28,6 +29,7 @@ public class Anvil : MonoBehaviour, IInteractable
         canvas.SetActive(false);
         if (ChosenWeapon.GetCurrentSlot().Instance != null && upgradedWeapon == false)
         {
+            soundPlayer.PlaySound("anvil", 1.0f, 0.0f);
             item = ChosenWeapon.GetCurrentSlot().Instance.GetComponent<ItemPrefab>();
             item.Damage += 5;
             item.WasUpgraded = true;

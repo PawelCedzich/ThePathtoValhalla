@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour
     public List<Quest> Quests = new List<Quest>();
 
 
-
+    public SoundPlayer soundPlayer;
     void Start()
     {
         SetHealthBar();
@@ -64,6 +64,7 @@ public class PlayerStats : MonoBehaviour
         {
             if (currentLevel < maxLevel)
             {
+                soundPlayer.PlaySound("lvl_up", 0.1f, 0.0f);
                 currentXP -= 100;
                 currentLevel++;
                 maxHealth += 2;
@@ -140,6 +141,9 @@ public class PlayerStats : MonoBehaviour
         if (currentHunger > 0)
         {
             currentHunger -= 1;
+            if (currentHunger < 3) {
+                soundPlayer.PlaySound("hunger", 0.4f, 0.0f);
+            }
         }
         else
         {
@@ -173,6 +177,7 @@ public class PlayerStats : MonoBehaviour
         }
 
         if (currentHealth > 0) {
+            soundPlayer.PlaySound("hp_hurt", 0.6f, 0.0f);
             var tempColor = getDamageEffect.color;
             tempColor.a = 0.5f;
             getDamageEffect.color = tempColor;
