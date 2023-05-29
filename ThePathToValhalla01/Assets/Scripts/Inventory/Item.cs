@@ -18,11 +18,18 @@ public class Item : ScriptableObject
     public int ItemDamage;
     public int ItemHungerValue;
     public int ItemHealthValue;
+    public int StaminaValue;
+    public int SpeedValue;
+    public int DmgAddValue;
 
 
     public enum ItemType
     {
         Food,
+        HealPotion,
+        ConditionPotion,
+        DamagePotion,
+        SpeedPotion,
         Weapon,
         Other,
         Armory,

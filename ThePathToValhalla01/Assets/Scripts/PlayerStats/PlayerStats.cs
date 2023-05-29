@@ -105,6 +105,15 @@ public class PlayerStats : MonoBehaviour
         hungerBar.SetHunger(currentHunger);
         hungerBar.SetTXT();
     }
+    public void IncreaseStamina(int StaminaPoints)
+    {
+        currentStamina += StaminaPoints;
+        if (currentStamina > maxStamina)
+        {
+            currentStamina = maxStamina;
+        }
+        SetHungerBar();
+    }
 
     public void IncreaseHunger(int eatPoints)
     {
@@ -114,6 +123,16 @@ public class PlayerStats : MonoBehaviour
             currentHunger = maxHunger;
         }
         SetHungerBar();
+    }
+
+    public void IncreaseHealth(int healPoints)
+    {
+        currentHealth += healPoints;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        SetHealthBar();
     }
 
     public void DecreaseHunger()

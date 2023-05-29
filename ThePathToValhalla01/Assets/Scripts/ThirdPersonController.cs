@@ -395,5 +395,10 @@ namespace StarterAssets
             this.transform.position = data.playerPosition;
         }
 
+        public void AddSpeed(int speedPoints) {
+            MoveSpeed += speedPoints;
+            SprintSpeed += speedPoints;
+        }
+
     }
 }

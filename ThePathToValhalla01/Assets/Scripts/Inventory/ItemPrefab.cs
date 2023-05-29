@@ -22,6 +22,9 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     public int Damage = 0;
     public int healValue = 0;
     public int hungerValue = 0;
+    public int StaminaValue = 0;
+    public int SpeedValue = 0;
+    public int DmgAddValue = 0;
     public int Amount = 0;
 
     public void Start()
@@ -30,6 +33,9 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
         healValue = item.ItemHealthValue;
         hungerValue = item.ItemHungerValue;
         Amount = item.Amount;
+        StaminaValue = item.StaminaValue;
+        SpeedValue = item.SpeedValue;
+        DmgAddValue = item.DmgAddValue;
     }
 
     

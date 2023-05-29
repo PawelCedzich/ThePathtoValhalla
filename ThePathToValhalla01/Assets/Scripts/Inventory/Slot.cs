@@ -5,6 +5,7 @@ using UnityEngineInternal;
 using static Item;
 using Unity.VisualScripting;
 using UnityEditor;
+using StarterAssets;
 
 public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
 {
@@ -71,7 +72,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
                 ItemPrefab.ItemInSlot.GetComponent<CanvasGroup>().blocksRaycasts = true;
                 ChosenWeapon.CurrentItem(this);
             }
-            else if (this.slotType == SlotType.UsableSlot && ItemPrefab.DraggedItem.item.itemType == ItemType.Food)
+            else if (this.slotType == SlotType.UsableSlot && (ItemPrefab.DraggedItem.item.itemType == ItemType.Food || ItemPrefab.DraggedItem.item.itemType == ItemType.HealPotion || ItemPrefab.DraggedItem.item.itemType == ItemType.ConditionPotion || ItemPrefab.DraggedItem.item.itemType == ItemType.DamagePotion || ItemPrefab.DraggedItem.item.itemType == ItemType.SpeedPotion))
             {
                 ItemPrefab.ItemInSlot.transform.SetParent(this.transform);
                 ItemPrefab.IfDropped = true;
@@ -134,9 +135,24 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         }
     }
 
-    public void UseItem(PlayerStats p) {
+    public void UseItem(PlayerStats p, PlayerAttack PlayerAttack, ThirdPersonController thirdPersonController) {
         if (Instance.GetComponent<ItemPrefab>() != null && Instance.GetComponent<ItemPrefab>().item.itemType == ItemType.Food) {
             p.IncreaseHunger(Instance.GetComponent<ItemPrefab>().hungerValue);
+        }else if (Instance.GetComponent<ItemPrefab>() != null && Instance.GetComponent<ItemPrefab>().item.itemType == ItemType.HealPotion)
+        {
+            p.IncreaseHealth(Instance.GetComponent<ItemPrefab>().healValue);
+        }
+        else if (Instance.GetComponent<ItemPrefab>() != null && Instance.GetComponent<ItemPrefab>().item.itemType == ItemType.ConditionPotion)
+        {
+            p.IncreaseStamina(Instance.GetComponent<ItemPrefab>().StaminaValue);
+        }
+        else if (Instance.GetComponent<ItemPrefab>() != null && Instance.GetComponent<ItemPrefab>().item.itemType == ItemType.DamagePotion)
+        {
+            PlayerAttack.ItemDamage += Instance.GetComponent<ItemPrefab>().DmgAddValue;
+        }
+        else if (Instance.GetComponent<ItemPrefab>() != null && Instance.GetComponent<ItemPrefab>().item.itemType == ItemType.SpeedPotion)
+        {
+            thirdPersonController.AddSpeed(Instance.GetComponent<ItemPrefab>().SpeedValue);
         }
     }
 
