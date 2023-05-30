@@ -51,9 +51,14 @@ public class NpcQuest : MonoBehaviour, IInteractable, IDataPersistence
         if (questtrigger.AddQuest().goal.goalType == Goal.GoalType.FindPerson)
         {
             questtrigger.ActivateNextQuest(); 
-            questtrigger.QuestManager.quests[questtrigger.iterator].isCompleted = true;
-            questtrigger.QuestManager.quests[questtrigger.iterator].goal.goalGameObject.ActivateNextQuest();
-            questtrigger.QuestManager.quests[questtrigger.iterator].goal.goalGameObject.iterator++;
+            questtrigger.QuestManager.quests[questtrigger.AddQuest().goal.goalGameObject.iterator].isCompleted = true;
+            if (questtrigger.AddQuest().QuestRewardIem != null)
+            {
+                inventoryManager.AddItem(questtrigger.AddQuest().QuestRewardIem);
+
+            }
+            questtrigger.QuestManager.quests[questtrigger.AddQuest().goal.goalGameObject.iterator].goal.goalGameObject.ActivateNextQuest();
+            questtrigger.QuestManager.quests[questtrigger.AddQuest().goal.goalGameObject.iterator].goal.goalGameObject.iterator++;
             questtrigger.iterator++;
         }
         foreach (Quest quest in playerStats.Quests)
@@ -83,6 +88,11 @@ public class NpcQuest : MonoBehaviour, IInteractable, IDataPersistence
                     item.SubtractItemAmount(quest.goal.GoalAmount);
                     playerStats.IncreaseXP(quest.XPAmount);
                     questtrigger.FindAnyObjectByType<QuestRigthManager>().AddQuest(questtrigger.QuestManager).isCompleted = true;
+                    if (questtrigger.AddQuest().QuestRewardIem != null)
+                    {
+                        inventoryManager.AddItem(questtrigger.AddQuest().QuestRewardIem);
+
+                    }
                     questtrigger.ActivateNextQuest();
                     CloseInteraction();
                 }

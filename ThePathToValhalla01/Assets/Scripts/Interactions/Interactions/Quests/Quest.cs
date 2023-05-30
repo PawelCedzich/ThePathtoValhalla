@@ -17,6 +17,8 @@ public class Quest
 
     public Goal goal;
 
+    public Item QuestRewardIem;
+
     public int XPAmount;
 
 }
