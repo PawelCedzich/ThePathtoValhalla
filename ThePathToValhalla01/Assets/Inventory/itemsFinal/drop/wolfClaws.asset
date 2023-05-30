@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: wolfClaws
   m_EditorClassIdentifier: 
-  ID: 0
-  itemName: NewItem
-  icon: {fileID: 0}
+  ID: 4
+  itemName: wolfClaws
+  icon: {fileID: 21300000, guid: db5d87c62ddc6744cb72a353d8e518f5, type: 3}
   itemType: 6
-  model: {fileID: 0}
-  IsStackable: 0
+  model: {fileID: 919132149155446097, guid: 3bc2555598590624aa393c8905cdb861, type: 3}
+  IsStackable: 1
   Amount: 1
   ItemDamage: 0
   ItemHungerValue: 0

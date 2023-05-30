@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: jotunHeart
   m_EditorClassIdentifier: 
-  ID: 0
-  itemName: bearClaws
-  icon: {fileID: 0}
+  ID: 23
+  itemName: jotunHeart
+  icon: {fileID: 21300000, guid: 0fa35182cd4adb5488a2054503669109, type: 3}
   itemType: 6
-  model: {fileID: 919132149155446097, guid: 383490ad52225a74d97402ef774d4add, type: 3}
-  IsStackable: 0
+  model: {fileID: 919132149155446097, guid: 2975a308fef5f7f4b8d0e458bf214d7e, type: 3}
+  IsStackable: 1
   Amount: 1
   ItemDamage: 0
   ItemHungerValue: 0

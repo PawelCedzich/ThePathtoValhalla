@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: mediumBluePotion
   m_EditorClassIdentifier: 
-  ID: 0
-  itemName: bearClaws
-  icon: {fileID: 0}
-  itemType: 6
-  model: {fileID: 919132149155446097, guid: 383490ad52225a74d97402ef774d4add, type: 3}
-  IsStackable: 0
+  ID: 27
+  itemName: mediumBluePotion
+  icon: {fileID: 21300000, guid: 73bf49c97e03448469f46e9915bfe7c4, type: 3}
+  itemType: 2
+  model: {fileID: 919132149155446097, guid: d54cd8afa731ca44e9d276de45e68e65, type: 3}
+  IsStackable: 1
   Amount: 1
   ItemDamage: 0
   ItemHungerValue: 0
   ItemHealthValue: 0
-  StaminaValue: 0
+  StaminaValue: 3
   SpeedValue: 0
   DmgAddValue: 0

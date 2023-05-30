@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: sword3
   m_EditorClassIdentifier: 
-  ID: 0
-  itemName: bearClaws
-  icon: {fileID: 0}
-  itemType: 6
-  model: {fileID: 919132149155446097, guid: 383490ad52225a74d97402ef774d4add, type: 3}
+  ID: 41
+  itemName: sword3
+  icon: {fileID: 21300000, guid: 35cb3e5aed77aaa41ae3a2da6c3a35bb, type: 3}
+  itemType: 5
+  model: {fileID: 919132149155446097, guid: 8ba511bc6664ba7458f8fe07dd847d65, type: 3}
   IsStackable: 0
   Amount: 1
-  ItemDamage: 0
+  ItemDamage: 4
   ItemHungerValue: 0
   ItemHealthValue: 0
   StaminaValue: 0

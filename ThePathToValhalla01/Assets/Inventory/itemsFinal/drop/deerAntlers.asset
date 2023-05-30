@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: deerAntlers
   m_EditorClassIdentifier: 
-  ID: 0
-  itemName: NewItem
-  icon: {fileID: 0}
+  ID: 2
+  itemName: DeerAntlers
+  icon: {fileID: 21300000, guid: 28397f80fcad5fb4a904cfce7553d602, type: 3}
   itemType: 6
-  model: {fileID: 0}
-  IsStackable: 0
+  model: {fileID: 919132149155446097, guid: f447d702664518643aa70211d5882020, type: 3}
+  IsStackable: 1
   Amount: 1
   ItemDamage: 0
   ItemHungerValue: 0

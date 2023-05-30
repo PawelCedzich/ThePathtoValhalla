@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: bisonSkin
   m_EditorClassIdentifier: 
-  ID: 0
-  itemName: NewItem
-  icon: {fileID: 0}
+  ID: 1
+  itemName: bisonSkin
+  icon: {fileID: 21300000, guid: 99ad2bb1fd0c4e54e9449b0ee0ecf71b, type: 3}
   itemType: 6
-  model: {fileID: 0}
-  IsStackable: 0
+  model: {fileID: 919132149155446097, guid: cc8a3c6a678486149b57230a5ad72c79, type: 3}
+  IsStackable: 1
   Amount: 1
   ItemDamage: 0
   ItemHungerValue: 0
