@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: dvalinAntlers
   m_EditorClassIdentifier: 
-  ID: 21
+  ID: 43
   itemName: dvalinAntlers
   icon: {fileID: 21300000, guid: 0e1396b9b4d9cbd44970e51a62ba1cf2, type: 3}
   itemType: 6

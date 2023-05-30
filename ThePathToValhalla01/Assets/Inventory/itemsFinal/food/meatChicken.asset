@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33255653b4b87b459f3aa7b9ef6e2db, type: 3}
   m_Name: meatChicken
   m_EditorClassIdentifier: 
-  ID: 12
+  ID: 44
   itemName: meatChicken
   icon: {fileID: 21300000, guid: 700669f3699b2cd478d21690ee5c1fbe, type: 3}
   itemType: 0
