@@ -14,6 +14,7 @@ public class EndCredits : MonoBehaviour
     {
         StartCoroutine(countTime());
         yield return new WaitForSeconds(time);
+        Cursor.visible = true;
         SceneManager.LoadScene(0);
     }
 
