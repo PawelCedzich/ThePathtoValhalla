@@ -9,7 +9,6 @@ public class MusicPlayer : MonoBehaviour
     private AudioSource audioSource;
     public float newClip;
     public float timer;
-    public float volume = 1.0f;
     public Slider volumeSlider;
 
     void Start()
