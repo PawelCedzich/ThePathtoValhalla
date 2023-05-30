@@ -16,6 +16,7 @@ public class OutroPlayerController : MonoBehaviour
     private void OnVideoEnd(VideoPlayer vp)
     {
         StartCoroutine(FadeOutAudio());
+        Cursor.visible = false;
         SceneManager.LoadScene(4);
     }
 
