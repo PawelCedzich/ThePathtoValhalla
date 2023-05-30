@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class AddItem : MonoBehaviour
 {
-    public Item food;
-    public Item weapon;
-    public Item other;
-    public Item armory;
     public InventoryManager inventory;
 
     public void PickUpItem(Item item) { 
@@ -17,13 +13,6 @@ public class AddItem : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown("1"))
-        { 
-            PickUpItem(food);
-        }
-        if (Input.GetKeyDown("2"))
-        {
-            PickUpItem(weapon);
-        }
+        
     }
 }
