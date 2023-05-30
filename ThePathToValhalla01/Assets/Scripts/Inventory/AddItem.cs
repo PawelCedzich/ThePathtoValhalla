@@ -5,6 +5,7 @@ using UnityEngine;
 public class AddItem : MonoBehaviour
 {
     public InventoryManager inventory;
+    public Item item;
 
     public void PickUpItem(Item item) { 
     
@@ -13,6 +14,8 @@ public class AddItem : MonoBehaviour
 
     public void Update()
     {
-        
+        if (Input.GetKeyDown("p")) {
+            inventory.AddItem(item);
+        }
     }
 }

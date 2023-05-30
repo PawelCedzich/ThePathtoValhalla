@@ -2,6 +2,7 @@ using UnityEngine;
 using Interfaces;
 using System;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class SimpleEnemy : MonoBehaviour, IDamageable
 {
@@ -25,6 +26,10 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
     private int maxHP;
     private GameObject player;
     private PlayerStats playerStats;
+
+    public Item item;
+    public int ItemAmount = 0;
+    public InventoryManager inventoryManager;
 
     private void Awake()
     {
@@ -79,6 +84,12 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
             isDead = true;
 
             gameObject.layer = 10;
+            if (item != null) {
+                for (int i = 0; i <= ItemAmount; i++)
+                {
+                    inventoryManager.AddItem(item);
+                }
+            }
 
             healthCanvas.enabled = false;
             if (moving != null)
