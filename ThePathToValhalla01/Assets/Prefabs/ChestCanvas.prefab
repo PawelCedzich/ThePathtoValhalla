@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 6461008054233587641}
   - component: {fileID: 6461008054233587647}
   - component: {fileID: 6461008054233587646}
+  - component: {fileID: 7702474253010998577}
   m_Layer: 5
   m_Name: ChestInventory
   m_TagString: Untagged
@@ -222,6 +223,18 @@ MonoBehaviour:
   m_Spacing: {x: 12, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!225 &7702474253010998577
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6461008054233587644}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &6461008053123354869
 PrefabInstance:
   m_ObjectHideFlags: 0

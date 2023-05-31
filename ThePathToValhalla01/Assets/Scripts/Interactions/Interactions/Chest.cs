@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Chest : MonoBehaviour, IInteractable
 {
     public GameObject playerInventory;
-    public InventoryManager chestInventory;
-   
+    public GameObject chestInventory;
 
+    public void Start(){
+        chestInventory.GetComponent<CanvasGroup>().alpha = 0;
+    }
 
     public void Interact()
     {
         Time.timeScale = 0.0f;
         playerInventory.GetComponent<CanvasGroup>().alpha = 1;
-        chestInventory.gameObject.SetActive(true);
+        chestInventory.GetComponent<CanvasGroup>().alpha = 1;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -23,7 +26,7 @@ public class Chest : MonoBehaviour, IInteractable
     {
 
         Time.timeScale = 1.0f;
-        chestInventory.gameObject.SetActive(false);
+        chestInventory.GetComponent<CanvasGroup>().alpha = 0;
         playerInventory.GetComponent<CanvasGroup>().alpha = 0;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

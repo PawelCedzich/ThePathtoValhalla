@@ -111,9 +111,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2668631523381501034}
   - component: {fileID: 2668631523381501033}
+  - component: {fileID: 2668631523381501039}
   - component: {fileID: 2668631523381501032}
   - component: {fileID: 2668631523381501038}
-  - component: {fileID: 2668631523381501039}
   m_Layer: 5
   m_Name: ChestInventory
   m_TagString: Untagged
@@ -151,6 +151,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2668631523381501037}
   m_CullTransparentMesh: 1
+--- !u!114 &2668631523381501039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668631523381501037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 80, y: 80}
+  m_Spacing: {x: 12, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!114 &2668631523381501032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,30 +219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySlots: []
   ActiveStart: 0
---- !u!114 &2668631523381501039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2668631523381501037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 80, y: 80}
-  m_Spacing: {x: 12, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
 --- !u!1001 &2668631522666260161
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ MonoBehaviour:
   model: {fileID: 919132149155446097, guid: 08bbd8cc089dd2840862e1dc922a7844, type: 3}
   IsStackable: 0
   Amount: 1
-  ItemDamage: 2
+  ItemDamage: 9
   ItemHungerValue: 0
   ItemHealthValue: 0
   StaminaValue: 0

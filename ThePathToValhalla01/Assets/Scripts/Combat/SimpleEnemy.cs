@@ -55,7 +55,7 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
             healthCanvas.enabled = false;
             _animator.SetTrigger("setDead");
             currentHealth = 0;
-            Debug.Log("Martwy po wczytaniu.");
+            //Debug.Log("Martwy po wczytaniu.");
             if (moving != null)
             {
                 moving.agent.isStopped = true;
@@ -84,9 +84,11 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
             isDead = true;
 
             gameObject.layer = 10;
-            if (item != null) {
+
+            if(item != null) {
                 for (int i = 0; i <= ItemAmount; i++)
                 {
+                    Debug.Log("add item");
                     inventoryManager.AddItem(item);
                 }
             }
