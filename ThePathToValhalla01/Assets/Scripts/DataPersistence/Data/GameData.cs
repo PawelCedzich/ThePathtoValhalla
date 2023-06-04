@@ -370,6 +370,8 @@ public class GameData
     public SerializableDictionery<int, bool> NpcQuestPlayerCollected;
     public SerializableDictionery<int, int> NpcQuestTriggerID;
 
+    public float musicVolume;
+
     public GameData() {
         playerPosition = Vector3.zero;
         playerRotation = Quaternion.identity;
@@ -555,5 +557,7 @@ public class GameData
         isBanditD03Dead = false;
         isBanditD04Dead = false;
         isBanditD05Dead = false;
+
+        musicVolume = 0.5f;
     }
 }

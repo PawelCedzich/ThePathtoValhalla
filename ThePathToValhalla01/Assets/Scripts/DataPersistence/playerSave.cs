@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerSave : MonoBehaviour, IDataPersistence
 {
@@ -182,7 +183,7 @@ public class playerSave : MonoBehaviour, IDataPersistence
     public SimpleEnemy banditD04;
     public SimpleEnemy banditD05;
 
-
+    public Slider musicVolume;
     public void LoadData(GameData data)
     {
 
@@ -515,7 +516,7 @@ public class playerSave : MonoBehaviour, IDataPersistence
         this.banditD01.isDead = data.isBanditD01Dead;
         this.banditD01.transform.position = data.banditD01Position;
 
-
+        this.musicVolume.value = data.musicVolume;
     }
 
     public void SaveData(GameData data)
@@ -865,6 +866,8 @@ public class playerSave : MonoBehaviour, IDataPersistence
         data.banditD04Position = this.banditD04.transform.position;
         data.isBanditD05Dead = this.banditD05.isDead;
         data.banditD05Position = this.banditD05.transform.position;
+
+        data.musicVolume = this.musicVolume.value;
     }
 
 }
