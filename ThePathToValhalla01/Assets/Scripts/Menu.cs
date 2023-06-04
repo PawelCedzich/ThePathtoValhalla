@@ -10,7 +10,6 @@ public class Menu : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadSceneAsync(5).completed += OnSceneLoaded;
-        DataPersistenceManager.instance.NewGame();
     }
 
     private void OnSceneLoaded(AsyncOperation asyncOp)
@@ -27,7 +26,6 @@ public class Menu : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadSceneAsync(1).completed += OnSaveLoaded;
-        DataPersistenceManager.instance.LoadGame();
     }
     private void OnSaveLoaded(AsyncOperation asyncOp)
     {
