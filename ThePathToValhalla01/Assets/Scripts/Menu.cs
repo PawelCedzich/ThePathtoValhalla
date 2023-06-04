@@ -9,17 +9,34 @@ public class Menu : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(5);
+        SceneManager.LoadSceneAsync(5).completed += OnSceneLoaded;
         DataPersistenceManager.instance.NewGame();
     }
+
+    private void OnSceneLoaded(AsyncOperation asyncOp)
+    {
+        if (asyncOp.isDone)
+        {
+            DataPersistenceManager.instance.NewGame();
+        }
+    }
+
     public void ContinueGame()
     {
         Debug.Log("load");
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync(1).completed += OnSaveLoaded;
         DataPersistenceManager.instance.LoadGame();
     }
+    private void OnSaveLoaded(AsyncOperation asyncOp)
+    {
+        if (asyncOp.isDone)
+        {
+            DataPersistenceManager.instance.LoadGame();
+        }
+    }
+
     public void QuitToMenu()
     {
         Cursor.lockState = CursorLockMode.None;
