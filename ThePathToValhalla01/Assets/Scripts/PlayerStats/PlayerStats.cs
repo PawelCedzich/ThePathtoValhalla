@@ -40,20 +40,20 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(5);
-        }
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+        //    TakeDamage(5);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            currentXP += 30;
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    currentXP += 30;
+        //}
 
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            IncreaseHunger(1);
-        }
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    IncreaseHunger(1);
+        //}
     }
 
     void FixedUpdate()
