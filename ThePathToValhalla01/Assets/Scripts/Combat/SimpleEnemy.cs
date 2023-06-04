@@ -85,14 +85,6 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
 
             gameObject.layer = 10;
 
-            if(item != null) {
-                for (int i = 0; i <= ItemAmount; i++)
-                {
-                    Debug.Log("add item");
-                    inventoryManager.AddItem(item);
-                }
-            }
-
             healthCanvas.enabled = false;
             if (moving != null)
             {
@@ -100,6 +92,14 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
                 Destroy(moving);
                 _animator.SetTrigger("setDead");
                 playerStats.IncreaseXP(valueXP);
+                if (item != null)
+                {
+                    for (int i = 0; i <= ItemAmount; i++)
+                    {
+                        Debug.Log("add item");
+                        inventoryManager.AddItem(item);
+                    }
+                }
             }
             if (moving2 != null)
             {
@@ -107,6 +107,14 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
                 Destroy(moving2);
                 _animator.SetTrigger("setDead");
                 playerStats.IncreaseXP(valueXP);
+                if (item != null)
+                {
+                    for (int i = 0; i <= ItemAmount; i++)
+                    {
+                        Debug.Log("add item");
+                        inventoryManager.AddItem(item);
+                    }
+                }
             }
         }
     }
