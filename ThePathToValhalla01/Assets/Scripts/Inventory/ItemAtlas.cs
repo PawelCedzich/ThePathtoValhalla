@@ -9,5 +9,5 @@ public class ItemAtlas : MonoBehaviour
     public Item GetItemFromList(int ItemID) {
 
         return ItemsList[ItemID];
-            }
+    }
 }

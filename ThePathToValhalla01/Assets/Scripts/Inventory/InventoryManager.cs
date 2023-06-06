@@ -31,17 +31,17 @@ public class InventoryManager : MonoBehaviour
         }
         for (int i = 0; i < inventorySlots.Length; i++)
         {
+            if (i == inventorySlots.Length - 1)
+            {
+                Debug.Log("Inventory is full");
+            }
 
             if (inventorySlots[i].ItemInSlot == null)
             {
                 inventorySlots[i].AddItemToSlot(item);
                 break;
             }
-
-            if (i == inventorySlots.Length - 1)
-            {
-                Debug.Log("Inventory is full");
-            }
+            
        
         }
         

@@ -364,6 +364,7 @@ public class GameData
 
 
     public SerializableDictionery<int, int> ItemsInSLots;
+    public SerializableDictionery<int, int> DamageinSlots;
 
     public SerializableDictionery<int, bool> NpcQuestActive;
     public SerializableDictionery<int, bool> NpcQuestCompleted;

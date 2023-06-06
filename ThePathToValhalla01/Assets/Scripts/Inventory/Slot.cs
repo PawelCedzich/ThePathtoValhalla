@@ -74,7 +74,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
                 DropItem();
             }
         }
-        else if (ItemPrefab.DraggedItem.item == Instance.GetComponent<ItemPrefab>().item) {
+        else if (ItemPrefab.DraggedItem.item == Instance.GetComponent<ItemPrefab>().item && ItemPrefab.DraggedItem.item.IsStackable == true) {
             if (Instance.GetComponent<ItemPrefab>().Amount + ItemPrefab.DraggedItem.Amount > 16) {
                 return;
             }
@@ -107,25 +107,47 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
     {
        
         int value;
-        if (data.ItemsInSLots.TryGetValue(slotID, out value))
+        int val2;
+        if (data.ItemsInSLots.TryGetValue(this.slotID, out value))
         {
-            Debug.Log(value);
             AddItemToSlot(itemAtlas.GetItemFromList(value));
+
+            
         }
+        if (data.DamageinSlots.TryGetValue(this.slotID, out val2))
+        {
+            this.Instance.GetComponent<ItemPrefab>().Damage = val2;
+        }
+
     }
 
     public void SaveData(GameData data)
     {
-        if (this.Instance == null) {
-            data.ItemsInSLots.Remove(slotID);
+        if (this.Instance == null)
+        {
+            data.ItemsInSLots.Remove(this.slotID);
         }
 
         if (this.Instance != null) {
-            if (data.ItemsInSLots.ContainsKey(slotID))
+            if (data.ItemsInSLots.ContainsKey(this.slotID))
             {
-                data.ItemsInSLots.Remove(slotID);
+                data.ItemsInSLots.Remove(this.slotID);
             }
-            data.ItemsInSLots.Add(slotID, this.Instance.GetComponent<ItemPrefab>().item.ID);
+            data.ItemsInSLots.Add(this.slotID, this.Instance.GetComponent<ItemPrefab>().item.ID);
+        }
+
+        if (this.Instance == null)
+        {
+            data.DamageinSlots.Remove(this.slotID);
+        }
+
+        if (this.Instance != null)
+        {
+            if (data.DamageinSlots.ContainsKey(this.slotID))
+            {
+                data.DamageinSlots.Remove(this.slotID);
+            }
+            data.DamageinSlots.Add(this.slotID, this.Instance.GetComponent<ItemPrefab>().Damage);
         }
     }
 
