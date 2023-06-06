@@ -25,15 +25,15 @@ public class ItemPrefab : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDr
     public int StaminaValue = 0;
     public int SpeedValue = 0;
     public int DmgAddValue = 0;
-    public int Amount = 0;
+    public int Amount = 1;
 
     public int UpgradeTime = 3600;
     private int UpgradeTimer;
     public bool WasUpgraded = false;
 
+    
     public void Start()
     {
-        Damage = item.ItemDamage;
         healValue = item.ItemHealthValue;
         hungerValue = item.ItemHungerValue;
         Amount = item.Amount;

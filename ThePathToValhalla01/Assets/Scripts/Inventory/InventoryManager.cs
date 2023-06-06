@@ -22,7 +22,7 @@ public class InventoryManager : MonoBehaviour
         {
             for (int i = 0; i < inventorySlots.Length; i++)
             {
-                if (inventorySlots[i].Instance != null && item == inventorySlots[i].GetCurrentITem() && inventorySlots[i].Instance.GetComponent<ItemPrefab>().Amount != 16)
+                if (inventorySlots[i].Instance != null && item == inventorySlots[i].GetCurrentITem() && inventorySlots[i].Instance.GetComponent<ItemPrefab>().Amount <= 16)
                 {
                     inventorySlots[i].StackItem(1);
                     return;
@@ -39,12 +39,10 @@ public class InventoryManager : MonoBehaviour
             if (inventorySlots[i].ItemInSlot == null)
             {
                 inventorySlots[i].AddItemToSlot(item);
+                inventorySlots[i].Instance.GetComponent<ItemPrefab>().Amount = 1;
                 break;
             }
-            
-       
         }
-        
     }
 
     public ItemPrefab searchForItem(Item item)

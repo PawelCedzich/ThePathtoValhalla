@@ -94,9 +94,8 @@ public class SimpleEnemy : MonoBehaviour, IDamageable
                 playerStats.IncreaseXP(valueXP);
                 if (item != null)
                 {
-                    for (int i = 0; i <= ItemAmount; i++)
+                    for (int i = 1; i <= ItemAmount; i++)
                     {
-                        Debug.Log("add item");
                         inventoryManager.AddItem(item);
                     }
                 }

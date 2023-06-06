@@ -42,6 +42,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         GameObject newItem = Instantiate(PrefabItem);
         newItem.transform.SetParent(this.transform);
         newItem.GetComponent<ItemPrefab>().item = item;
+        newItem.GetComponent<ItemPrefab>().Damage = item.ItemDamage;
         newItem.GetComponent<Image>().sprite = item.icon;
         Instance = newItem;
     }
@@ -98,6 +99,7 @@ public class Slot : MonoBehaviour, IDropHandler, IDataPersistence
         {
             amount = "1";
         }
+        Debug.Log(Instance.GetComponent<ItemPrefab>().Amount);
         Instance.GetComponent<ItemPrefab>().Amount += itemAmount;
         int temp = int.Parse(amount) + itemAmount;
         Instance.GetComponent<ItemPrefab>().GetComponentInChildren<Text>().text = temp.ToString();
